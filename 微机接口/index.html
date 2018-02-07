@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="t-E3ZRZAfjzJO3vU37kiHYBNdXdrPr7VQycbI5rAoKI" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="复习," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="最小组态总线形成总线引脚 系统总线：  控制总线  数据总线：  形成 双向 8根   地址总线:  形成 单向 20根      8284外部引脚与内部结构一级同步 最大延迟1个时钟周期 二级同步 最大延迟1+1/3个时钟周期 8024的功能 时钟周期  准备好控制逻辑   8088的基本总线活动总线操作是CPU通过对外的各种操作。 8088的总线操作 描述总线的微处理器时序有三级：  指令周期">
+<meta name="keywords" content="复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微机接口">
+<meta property="og:url" content="http://hwk603.com/微机接口/index.html">
+<meta property="og:site_name" content="One Piece">
+<meta property="og:description" content="最小组态总线形成总线引脚 系统总线：  控制总线  数据总线：  形成 双向 8根   地址总线:  形成 单向 20根      8284外部引脚与内部结构一级同步 最大延迟1个时钟周期 二级同步 最大延迟1+1/3个时钟周期 8024的功能 时钟周期  准备好控制逻辑   8088的基本总线活动总线操作是CPU通过对外的各种操作。 8088的总线操作 描述总线的微处理器时序有三级：  指令周期">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-09-01T07:58:56.114Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微机接口">
+<meta name="twitter:description" content="最小组态总线形成总线引脚 系统总线：  控制总线  数据总线：  形成 双向 8根   地址总线:  形成 单向 20根      8284外部引脚与内部结构一级同步 最大延迟1个时钟周期 二级同步 最大延迟1+1/3个时钟周期 8024的功能 时钟周期  准备好控制逻辑   8088的基本总线活动总线操作是CPU通过对外的各种操作。 8088的总线操作 描述总线的微处理器时序有三级：  指令周期">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'G2ERKDYPN5',
+      apiKey: 'c1e9afb1c2f47d6b86b7ce51903006dc',
+      indexName: 'dev_NAME',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hwk603.com/微机接口/"/>
+
+
+
+
+
+  <title>微机接口 | One Piece</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57214075-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?59918ede8fb11545a8b6b16be04958be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One Piece</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">侯文魁的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/微机接口/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">微机接口</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-21T12:01:19+08:00">
+                2015-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/微机接口/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="微机接口/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/微机接口/" class="leancloud_visitors" data-flag-title="微机接口">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  867
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="最小组态总线形成"><a href="#最小组态总线形成" class="headerlink" title="最小组态总线形成"></a>最小组态总线形成</h2><h3 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h3><p>引脚</p>
+<p>系统总线：</p>
+<ol>
+<li><p>控制总线</p>
+</li>
+<li><p>数据总线：</p>
+<ul>
+<li>形成 双向 8根</li>
+</ul>
+</li>
+<li><p>地址总线:</p>
+<ul>
+<li>形成 单向 20根 </li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="8284外部引脚与内部结构"><a href="#8284外部引脚与内部结构" class="headerlink" title="8284外部引脚与内部结构"></a>8284外部引脚与内部结构</h3><p>一级同步 最大延迟1个时钟周期</p>
+<p>二级同步 最大延迟1+1/3个时钟周期</p>
+<h4 id="8024的功能"><a href="#8024的功能" class="headerlink" title="8024的功能"></a>8024的功能</h4><ol>
+<li><p>时钟周期</p>
+</li>
+<li><p>准备好控制逻辑</p>
+</li>
+</ol>
+<h3 id="8088的基本总线活动"><a href="#8088的基本总线活动" class="headerlink" title="8088的基本总线活动"></a>8088的基本总线活动</h3><p>总线操作是CPU通过对外的各种操作。</p>
+<p>8088的总线操作</p>
+<p>描述总线的微处理器时序有三级：</p>
+<ul>
+<li>指令周期-总线周期-时钟周期</li>
+</ul>
+<p>8088的基本总线周期需要4个时钟周期:</p>
+<ul>
+<li>4个时钟周期编号为T1,T2.T3和T4。</li>
+<li>总线周期中的时钟周期称为“T状态”。</li>
+</ul>
+<p>总线周期的构成</p>
+<p>8088的基本总线时序</p>
+<ul>
+<li>取指 存储器读总线 IO读总线 中断响应</li>
+</ul>
+<p>总线操作中如何实现CPU与内存/接口芯片间的时序同步是关键</p>
+<ol>
+<li><p>同步时序 </p>
+<ul>
+<li>以系统时钟信号为基准</li>
+</ul>
+</li>
+<li><p>异步时序</p>
+<ul>
+<li>通过应答联络信号实现同步操作</li>
+</ul>
+</li>
+</ol>
+<p>8088的最小组态的总线时序：</p>
+<ol>
+<li>存储器写总线周期</li>
+<li>存储器读总线周期</li>
+<li>IO写总线周期</li>
+<li>IO读总线周期</li>
+</ol>
+<p>8088最大组态中的引脚定义</p>
+<p>8088最大组态的总线形成</p>
+<p>IBM PC 总线–总线周期</p>
+<hr>
+<h2 id="半导体存储器及接口"><a href="#半导体存储器及接口" class="headerlink" title="半导体存储器及接口"></a>半导体存储器及接口</h2><p>存储系统结构</p>
+<p>CPU CACHE 主存 辅存（外存）</p>
+<ul>
+<li><p>存储体</p>
+</li>
+<li><p>地址译码电路</p>
+</li>
+<li><p>片选和读写控制电路</p>
+</li>
+</ul>
+<p>半导体存储器芯片的内部结构</p>
+<p>地址译码电路结构：</p>
+<ul>
+<li><p>单译码</p>
+</li>
+<li><p>双译码</p>
+</li>
+</ul>
+<hr>
+<p>半导体存储器与CPU的连接</p>
+<ul>
+<li>存储芯片的数据线/地址线/片选端/读写控制线。</li>
+</ul>
+<p>位扩充/位扩展</p>
+<ul>
+<li><p>芯片的数据线不足8根。</p>
+</li>
+<li><p>选中的数据总线不一样。</p>
+</li>
+</ul>
+<p>字扩充/地址扩充</p>
+<ul>
+<li><p>扩充存储器地址范围。</p>
+</li>
+<li><p>连接同一数据总线，不能同时工作。</p>
+</li>
+</ul>
+<p>片选端常有效，地址重复（高位地址不产生作用，选择全为0的）</p>
+<p>译码和译码器</p>
+<ul>
+<li><p>全译码方式不存在地址重复。</p>
+</li>
+<li><p>部分译码（只有高位地址参与存储芯片的译码）</p>
+</li>
+<li><p>线选译码</p>
+</li>
+</ul>
+<p>存储芯片与CPU的配合</p>
+<ul>
+<li><p>CPU的总线负载能力</p>
+</li>
+<li><p>存储芯片与CPU总线时序的配合</p>
+</li>
+</ul>
+<p>时序配合</p>
+<h2 id="输入-输出及接口"><a href="#输入-输出及接口" class="headerlink" title="输入/输出及接口"></a>输入/输出及接口</h2><p>I/O接口连接（主板）总线和外设。</p>
+<ul>
+<li><p>信号转换</p>
+</li>
+<li><p>外设的工作处理速度与内部CPU的处理速度不同，协调速度差异，保证数据全部接受（使用缓冲）。</p>
+</li>
+</ul>
+<p>功能：</p>
+<ul>
+<li>对输入输出数据进行缓冲和锁存，对信号的形式和数据的格式进行比变换，对I/O端口进行寻址，与CPU和I/O设备进行联络。</li>
+</ul>
+<p>缓冲的实现，锁存/隔离/驱动或它们的组合。</p>
+<p>I/O端口的内部结构：</p>
+<ul>
+<li>在I/O接口中，其内部一般包含3类可寻址的寄存器：数据寄存器/状态寄存器和控制寄存器。这三类可操作的寄存器分别称为数据端口，状态端口和控制端口，或简称为数据口/状态口和控制口。</li>
+</ul>
+<h2 id="I-O寻址方式"><a href="#I-O寻址方式" class="headerlink" title="I/O寻址方式"></a>I/O寻址方式</h2><ul>
+<li><p>8088/8086：64Kb</p>
+</li>
+<li><p>寻址方式：</p>
+<ul>
+<li><p>直接寻址（8位I/O地址）</p>
+</li>
+<li><p>dx间接寻址方式（16位I/O地址）</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    hwk603
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hwk603.com/微机接口/" title="微机接口">http://hwk603.com/微机接口/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/复习/" rel="tag"># 复习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/nodeppt-使用markdown语法来写网页ppt/" rel="next" title="nodeppt：使用markdown语法来写网页ppt">
+                <i class="fa fa-chevron-left"></i> nodeppt：使用markdown语法来写网页ppt
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/软件工程/" rel="prev" title="软件工程">
+                软件工程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hwk603.png"
+                alt="hwk603" />
+            
+              <p class="site-author-name" itemprop="name">hwk603</p>
+              <p class="site-description motion-element" itemprop="description">一些关于坑的思考和疑难解决</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hwk603" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/hwk603" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/hwk603" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.quora.com/profile/Hwk603" target="_blank" title="Quora">
+                      
+                        <i class="fa fa-fw fa-pinterest"></i>Quora</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://scucyber.cn/" title="青梅网络部" target="_blank">青梅网络部</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://camixxx.win/" title="CamiXXX" target="_blank">CamiXXX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#最小组态总线形成"><span class="nav-number">1.</span> <span class="nav-text">最小组态总线形成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总线"><span class="nav-number">1.1.</span> <span class="nav-text">总线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8284外部引脚与内部结构"><span class="nav-number">1.2.</span> <span class="nav-text">8284外部引脚与内部结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8024的功能"><span class="nav-number">1.2.1.</span> <span class="nav-text">8024的功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8088的基本总线活动"><span class="nav-number">1.3.</span> <span class="nav-text">8088的基本总线活动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#半导体存储器及接口"><span class="nav-number">2.</span> <span class="nav-text">半导体存储器及接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入-输出及接口"><span class="nav-number">3.</span> <span class="nav-text">输入/输出及接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-O寻址方式"><span class="nav-number">4.</span> <span class="nav-text">I/O寻址方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2014 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hwk603</span>
+
+  
+  
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://hwk603.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://hwk603.com/微机接口/';
+          this.page.identifier = '微机接口/';
+          this.page.title = '微机接口';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hwk603.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("O8CtzoV9ACq6kGNHKp8AIRnS-gzGzoHsz", "QG6x9FzwAdcwrKu4b93f06Bz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

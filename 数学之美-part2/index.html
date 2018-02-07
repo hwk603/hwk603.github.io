@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="t-E3ZRZAfjzJO3vU37kiHYBNdXdrPr7VQycbI5rAoKI" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="book," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="书名 ：数学之美 作者 ：吴军 出版 ：人民邮电出版社 本部分主要是介绍数学算法在实际技术中的应用，书中罗列的公式比较多，对于非数学相关专业的人可能有些晦涩。我个人在阅读过程中，对部分内容也只是了解下概念，并没有形成一个深入的理解，以后有机会尝试写几个应用程序来实践一下。">
+<meta name="keywords" content="book">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记-数学之美(part2)">
+<meta property="og:url" content="http://hwk603.com/数学之美-part2/index.html">
+<meta property="og:site_name" content="One Piece">
+<meta property="og:description" content="书名 ：数学之美 作者 ：吴军 出版 ：人民邮电出版社 本部分主要是介绍数学算法在实际技术中的应用，书中罗列的公式比较多，对于非数学相关专业的人可能有些晦涩。我个人在阅读过程中，对部分内容也只是了解下概念，并没有形成一个深入的理解，以后有机会尝试写几个应用程序来实践一下。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-02-25T05:42:17.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="读书笔记-数学之美(part2)">
+<meta name="twitter:description" content="书名 ：数学之美 作者 ：吴军 出版 ：人民邮电出版社 本部分主要是介绍数学算法在实际技术中的应用，书中罗列的公式比较多，对于非数学相关专业的人可能有些晦涩。我个人在阅读过程中，对部分内容也只是了解下概念，并没有形成一个深入的理解，以后有机会尝试写几个应用程序来实践一下。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'G2ERKDYPN5',
+      apiKey: 'c1e9afb1c2f47d6b86b7ce51903006dc',
+      indexName: 'dev_NAME',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hwk603.com/数学之美-part2/"/>
+
+
+
+
+
+  <title>读书笔记-数学之美(part2) | One Piece</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57214075-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?59918ede8fb11545a8b6b16be04958be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One Piece</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">侯文魁的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/数学之美-part2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">读书笔记-数学之美(part2)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-25T12:34:09+08:00">
+                2017-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/数学之美-part2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="数学之美-part2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/数学之美-part2/" class="leancloud_visitors" data-flag-title="读书笔记-数学之美(part2)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6,209
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  21
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>书名 ：数学之美</p>
+<p>作者 ：吴军</p>
+<p>出版 ：人民邮电出版社</p>
+<p>本部分主要是介绍数学算法在实际技术中的应用，书中罗列的公式比较多，对于非数学相关专业的人可能有些晦涩。我个人在阅读过程中，对部分内容也只是了解下概念，并没有形成一个深入的理解，以后有机会尝试写几个应用程序来实践一下。</p>
+<a id="more"></a>
+<h3 id="第十二章-有限状态机和动态规划——地图与本地搜索的核心技术"><a href="#第十二章-有限状态机和动态规划——地图与本地搜索的核心技术" class="headerlink" title="第十二章 有限状态机和动态规划——地图与本地搜索的核心技术"></a>第十二章 有限状态机和动态规划——地图与本地搜索的核心技术</h3><p>本章是概念介绍比较多，作者很形象的介绍了有限状态机和动态规划及其简单应用。</p>
+<blockquote>
+<p>地图和本地服务中要用到有限状态机和动态规划技术。这两项技术是机器智能和机器学习的工具，它们的应用非常广泛，还包括语音识别、拼写和语法纠错、拼音输入法、工业控制和生物的序列分析等。</p>
+</blockquote>
+<p>有限状态机是一个特殊的有向图，它包括一些状态（节点）和连接这些状态的有向弧。用来进行地址识别，如果一条地址能从状态机的开始状态经过状态机的若干中间状态，走到终止状态，则这条地址有效，否则无效。</p>
+<p>导航系统用动态规划来规划路线，原理是局部最优解一定包含在最后的全局最优解中，这样就可以将一个全局求最优解的问题，分解成一个个寻找局部最优解的小问题，采用动态规划可以大大降低计算的复杂度。</p>
+<h3 id="第十三章-Google-AK-47的设计者——阿米特·辛格博士"><a href="#第十三章-Google-AK-47的设计者——阿米特·辛格博士" class="headerlink" title="第十三章 Google AK-47的设计者——阿米特·辛格博士"></a>第十三章 Google AK-47的设计者——阿米特·辛格博士</h3><p>本章又是一篇人物传记，大概涉及哲学方面。</p>
+<blockquote>
+<p>在所有轻武器中最有名的是AK-47冲锋枪，因为它从不卡壳，不易损坏，可在任何环境下使用，可靠性好，杀伤力大并且操作简单。Google的产品就是按照上述原则设计的。</p>
+</blockquote>
+<p>哲学思想：保持简单，够用就好，不要过早追求完美。</p>
+<h3 id="第十四章-余弦定理和新闻的分类"><a href="#第十四章-余弦定理和新闻的分类" class="headerlink" title="第十四章 余弦定理和新闻的分类"></a>第十四章 余弦定理和新闻的分类</h3><p>本章的内容很有意思，余弦定理我们都知道，高中数学就要求掌握，但大多数人应该并不知道这个定理具体的实际应用。结合之前提过的 TF/IDF，就可以用来衡量文本之间的相关性，这就是一个简单的文本分类，也是推荐系统的基础。</p>
+<blockquote>
+<p>计算机虽然读不懂新闻，却可以准确地对新闻进行分类。其数学工具是看似毫不相干的余弦定理。 </p>
+</blockquote>
+<p>将新闻自动分类。为了让计算机能够“算”新闻，就要求我们先把文字的新闻编程一组可计算的数字，然后在设计一个算法来算出任意两篇新闻的相似性。（要用计算机解决问题，先要把问题数字化）。转换方法：对于一篇新闻中的所有实词，计算出它们的TF-IDF值，把这些值按照对应的实词在词汇表的位置依次排列，就得到一个向量。如果单词表中的某个词在新闻中没有出现，对应的值为0.这个向量是一个N维向量（N为词汇表的大小）。每一篇新闻都可以对应这样一个特征向量，向量中每一个维度的大小代表每个词对这篇新闻主题的贡献。</p>
+<p>如此转换后就可以用两个向量的夹角的大小来衡量两篇新闻的相关性了，而夹角可以用余弦定理来求出。</p>
+<p>如果事先没有这些新闻的特征向量，需要使用自底向上的文本分类聚合的方法来形成分类：计算所有新闻之间两两的余弦相似性，把相似性大于一个阈值的新闻合并成一个小类;把每个小类中所有的新闻作为一个整体，计算小类的特征向量，在计算小类之间两两的余弦相似性，然后合并成大一点的小类;如此进行下去，直到得到满意的结果。</p>
+<h3 id="第十五章-矩阵运算和文本处理中的两个分类问题"><a href="#第十五章-矩阵运算和文本处理中的两个分类问题" class="headerlink" title="第十五章 矩阵运算和文本处理中的两个分类问题"></a>第十五章 矩阵运算和文本处理中的两个分类问题</h3><p>本章依然是常见数学方法的实际应用，矩阵的奇异值分解也是大一线性代数中学过的知识。</p>
+<blockquote>
+<p>无论是词汇的聚类还是文本的分类，都可以通过线性代数中矩阵的奇异值分解来进行。这样一来，自然语言处理的问题就变成了一个数学问题。</p>
+</blockquote>
+<p>当新闻数量很大且词表也很大时，用余弦定理进行迭代很耗时，可以用矩阵的奇异值分解的方法，将大矩阵分解成三个小矩阵相乘，从而降低处理复杂度。第一个矩阵X是对词进行分类的一个而结果，它的每一行表示一个词，每一列表示一个语义相近的词类，或者简称为词义类。中间矩阵表示词的类和文章的类之间的相关性。最后一个矩阵是对文本的分类结果，它的每一列对应一篇文本，每一行对应一个主题。</p>
+<h3 id="第十六章-信息指纹及其应用"><a href="#第十六章-信息指纹及其应用" class="headerlink" title="第十六章 信息指纹及其应用"></a>第十六章 信息指纹及其应用</h3><p>本章是概念介绍，大体理解就好。</p>
+<blockquote>
+<p>世间万物都有一个唯一标识的特征，信息也是如此。每一条信息都有它特定的指纹，通过这个指纹可以区别不同的信息。</p>
+</blockquote>
+<p>将信息转换为特定长度的伪随机数，来代表这一信息，进行存储，比较等。因为伪随机数的位数很大（64位、128位等），不同信息被分配到一个相同的伪随机数的概率很低。</p>
+<h3 id="第十七章-由电视剧《暗算》所想到的——谈谈密码学的数学原理"><a href="#第十七章-由电视剧《暗算》所想到的——谈谈密码学的数学原理" class="headerlink" title="第十七章 由电视剧《暗算》所想到的——谈谈密码学的数学原理"></a>第十七章 由电视剧《暗算》所想到的——谈谈密码学的数学原理</h3><p>本章内容很简单，简要介绍了一下密码学的发展以及当今的密码学应用。</p>
+<blockquote>
+<p>密码学的根本是信息论和数学。没有信息论指导的密码是非常容易被破解的。只有在信息论被广泛应用于密码学后，密码才真正变得安全。 </p>
+</blockquote>
+<p>自发时代：基于简单代换，容易被破解。</p>
+<p>好的密码必须做到根据已知的明文和密文的对应推断不出新的密文内容。</p>
+<p>信息论时代：根据信息论，密码的最高境界是敌方在截获密码后，对我方的所知没有任何增加，即信息量没有增加。当密码之间分布均匀并且统计独立时，提供的信息最少。</p>
+<h3 id="第十八章-闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题"><a href="#第十八章-闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题" class="headerlink" title="第十八章 闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题"></a>第十八章 闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题</h3><p>本章介绍了通过计算搜索结果的权威度实现搜索引擎反作弊，在计算权威度时，采用了包括句法分析、互信息和短语（词组）的聚类，而它们的背后都是数学。</p>
+<blockquote>
+<p>闪光的不一定是金子，搜索引擎中排名靠前的网页也未必是有用的网页。消除这些作弊网页的原理和通信中过滤噪音的原理相同。这说明信息处理和通信的很多原理是相通的。</p>
+</blockquote>
+<p>搜索结果的权威性：PageRank和其他关于网页质量的度量方式都很难衡量搜索结果的权威性。通过在自然语言中找到“提及”之类的语句，找到关于某一主题的权威机构和人士：对每一个网页正文（包括标题）中的每一句话进行句法分析，然后找出涉及到主题的短语，以及对信息源的描述。这样就得到了所谓的“提及”信息；利用互信息，找到主题短语和信息源的相关性；需要对主题短语进行聚合；对一个网站中的网页进行聚合。</p>
+<h3 id="第十九章-谈谈数学模型的重要性"><a href="#第十九章-谈谈数学模型的重要性" class="headerlink" title="第十九章 谈谈数学模型的重要性"></a>第十九章 谈谈数学模型的重要性</h3><p>本章主要回顾了地心说到日心说的过程。</p>
+<blockquote>
+<p>正确的数学模型在科学和工程中至关重要，而发现正确模型的途径常常是曲折的。正确的模型在形式上通常是简单的。</p>
+</blockquote>
+<h3 id="第二十章-不要把鸡蛋放到一个篮子里：谈谈最大熵模型"><a href="#第二十章-不要把鸡蛋放到一个篮子里：谈谈最大熵模型" class="headerlink" title="第二十章 不要把鸡蛋放到一个篮子里：谈谈最大熵模型"></a>第二十章 不要把鸡蛋放到一个篮子里：谈谈最大熵模型</h3><p>本章介绍的是最大熵模型，老实说，这部分内容我粗略的过去了，没有深入思考。</p>
+<blockquote>
+<p>最大熵模型是一个完美的数学模型。它可以将各种信息整合到一个统一的模型中，在信息处理和机器学习中有着广泛的应用。它在形式上非常简单、优美，而在实现时需要有精深的数学基础和高超的技巧。</p>
+</blockquote>
+<p>最大熵原理：对一个随机事件的概率分布进行预测时，我们的预测应当满足全部已知的条件，而对未知的情况不要做任何主观假设。在这种情况下，概率分布最均匀，预测的风险最下。最大熵模型在形式上是最漂亮、最完美的统计模型，在自然语言处理和金融方面有很多有趣的应用。</p>
+<p>最原始的最大熵模型的训练方法是一种称为通用迭代算法GIS的迭代算法：(1)假定第0次迭代的初始模型为等概率的均匀分布；(2)用第N次迭代的模型来估算每种信息特征在训练数据中的分布。如果超过了实际的，就把相应的模型参数变小，否则，将它们变大；(3)重复步骤(2)，直到收敛。</p>
+<p>最大熵模型可以将各种信息整合到一个统一的模型中。它有很多良好的特性：从形式上看，它非常简单，非常优美；从效果上看，它是唯一一种既能满足各个信息源的限制条件，又能保证平滑性的模型。</p>
+<h3 id="第二十一章-拼音输入法的数学原理"><a href="#第二十一章-拼音输入法的数学原理" class="headerlink" title="第二十一章 拼音输入法的数学原理"></a>第二十一章 拼音输入法的数学原理</h3><p>本章从介绍输入法和编码，引入香农信息论概念，之前我们有提过的信息熵。然后简单介绍了拼音转汉字算法。</p>
+<blockquote>
+<p>汉字的输入过程本身就是人和计算机之间的通信。好的输入法会自觉或不自觉地遵循通信的数学模型。当然要做出最有效的输入法，应当自觉使用信息论做指导。 </p>
+</blockquote>
+<p>输入法输入汉字的快慢取决于汉字编码的平均长度。对汉字的编码分为两部分：对拼音的编码和消除歧义性的编码。</p>
+<p>假定每一个汉字出现的相对频率是：p1,p2,p3,…,p6700</p>
+<p>它们的编码长度是：L1,L2,L3,…,L6700</p>
+<p>那么平均编码长度是：P1.L1 + p2.L2 + … + P6700.L6700</p>
+<p>这一平均编码长度的最小值就是汉字的信息熵，任何输入法都不可能突破信息熵给定的极限。每个字母可以代表log26≈4.7比特的信息，输入一个汉字平均需要敲10/4.7≈2.1次键。不考虑词的上下文相关性，以词为单位统计，汉字的信息熵大约是8比特，以词为单位输入一个汉字平均只需要敲8/4.7≈1.7次键。利用上下文最好的办法是借助语言模型。</p>
+<p>拼音转汉字的算法是动态规划，跟导航用的是一样的算法。数学的妙处在于它的每一个工具都具有相当的普遍性，在不同的应用中都可以发挥很大的作用。 </p>
+<h3 id="第二十二章-自然语言处理的教父马库斯和他的优秀弟子们"><a href="#第二十二章-自然语言处理的教父马库斯和他的优秀弟子们" class="headerlink" title="第二十二章 自然语言处理的教父马库斯和他的优秀弟子们"></a>第二十二章 自然语言处理的教父马库斯和他的优秀弟子们</h3><p>本章又是一篇人物传记。</p>
+<blockquote>
+<p>将自然语言处理从基于规则的研究方法转到基于统计的研究方法上，宾夕法尼亚大学的教授米奇马库斯功不可没。他创立了今天在学术界广泛使用的LCD语料库，同时培养了一大批精英人物。 </p>
+</blockquote>
+<h3 id="第二十三章-布隆过滤器"><a href="#第二十三章-布隆过滤器" class="headerlink" title="第二十三章 布隆过滤器"></a>第二十三章 布隆过滤器</h3><p>本章是对布隆过滤器原理的介绍，顺便引申出布隆过滤器的误识别问题。</p>
+<blockquote>
+<p>日常生活中，经常要判断一个元素是否在一个集合中。布隆过滤器是计算机工程中解决这个问题最好的数学工具。</p>
+</blockquote>
+<p>需求是判断一个元素是否在一个集合中。计算机中的集合是用散列表来存储的，优点是快速准确，缺点是耗费存储空间。当集合规模巨大时，散列表存储效率低的问题就显现出来了。布隆过滤器只用散列表的1/8到1/4的大小就能解决同样的问题。</p>
+<p>对每个数据用8个不同的随机数产生器(F1，F2,…，F8)产生8个信息指纹(f1,f2,…,f8)。再用一个随机数产生器 G 把这8个位置的比特位全部设置为1。对所有数据均如此处理。检测数据是否在集合中时，用相同的8个随机数产生器对这一数据产生8个信息指纹 s1,s2,…,s8，然后将这8个指纹对应到布隆过滤器的8个比特位，分别是 t1,t2,…,t8，如果数据在集合中，这8个比特位对应的值一定是1。其不足之处是它有极小的可能将一个不在黑名单中的电子邮件地址也判定为在黑名单中。解决方法是再建一个小的白名单，存储那些可能被误判的数据。</p>
+<p>布隆过滤器背后的数学原理在于两个完全随机的数字相冲突的概率很小。</p>
+<h3 id="第二十四章-马尔科夫链的扩展：贝叶斯网络"><a href="#第二十四章-马尔科夫链的扩展：贝叶斯网络" class="headerlink" title="第二十四章 马尔科夫链的扩展：贝叶斯网络"></a>第二十四章 马尔科夫链的扩展：贝叶斯网络</h3><p>本章是对之前提到过的马尔科夫链的深入，介绍了贝叶斯网络以及贝叶斯网络在词分类中的应用。对于贝叶斯训练这一块我跳过了，暂时理解不能。</p>
+<blockquote>
+<p>贝叶斯网络是一个加权的有向图，是马尔可夫链的扩展。而从认识论的层面看：贝叶斯网络克服了马尔可夫链那种机械的线性约束，它可以把任何有关联的事件统一到它的框架下面。它在生物统计、图像处理、决策支持系统和博弈论中都有广泛的使用。</p>
+</blockquote>
+<p>对于由网络构成的相互联系（多因或多果），用贝叶斯网络来描述。计算贝叶斯网络中每个状态的取值时，只考虑了前面一个状态，这一点和马尔科夫链相同，但是，贝叶斯网络的拓扑结构比马尔科夫链灵活，它不受马尔科夫链的链状结构的约束，因此可以更准确地描述事件之间的相关性。使用贝叶斯网络必须先确定这个网络的拓扑结构，然后还要知道各个状态之间相关的概率。得到拓扑结构和这些参数的过程分别叫做结构训练和参数训练，统称训练。</p>
+<h3 id="第二十五章-条件随机场、文法分析及其他"><a href="#第二十五章-条件随机场、文法分析及其他" class="headerlink" title="第二十五章 条件随机场、文法分析及其他"></a>第二十五章 条件随机场、文法分析及其他</h3><p>本章回顾了之前提到的文法分析和计算机算法演变，介绍了条件随机场概念及其应用。</p>
+<blockquote>
+<p>条件随机场是计算联合概率分布的有效模型，而句法分析似乎是英文课上英语老师教的东西，这两者有什么联系呢？ </p>
+</blockquote>
+<p>自然语言的句法分析一般是指根据文法对一个句子进行分析，建立这个句子的语法树，即文法分析，有时也是指对一个句子中各成分的语义进行分析，得到对这个句子语义的一种描述，即语义分析。采用基于规则的方法，可以自底向上或自顶向下，但选择都不可能一次选对，一步错，需要回溯，复杂度很大。采用统计学进行文法分析，是计算量一下降低很多，而准确性却大大提高。</p>
+<p>在一个隐含马尔科夫模型中，以 x1,x2,…,xn 表示观测值序列，以 y1,y2,…,yn 表示隐含的状态序列，如果把 xi 和 yi-1,yi,yi+1 都考虑进来，这样的模型就是条件随机场。与贝叶斯网络不同的是，条件随机场是无向图。</p>
+<h3 id="第二十六章-维特比和他的维特比算法"><a href="#第二十六章-维特比和他的维特比算法" class="headerlink" title="第二十六章 维特比和他的维特比算法"></a>第二十六章 维特比和他的维特比算法</h3><p>本章主要是概念上的东西，数学家维特比的介绍和他的维特比算法。</p>
+<blockquote>
+<p>维特比算法是现代数字通信中使用最频繁的算法，同时也是很多自然语言处理的解码算法。可以毫不夸张地讲，维特比是对我们今天生活的影响力最大的科学家之一，因为如今基于CDMA的3G移动通信标准主要就是他创办的高通公司制定的</p>
+</blockquote>
+<p>维特比算法是一个特殊但应用最广的动态规划算法，是针对一个特殊的图——篱笆网络的有向图最短路径问题而提出的。它之所以重要，是因为凡是使用隐含马尔科夫模型描述的问题都可以用它来解码，包括今天的数字通信、语音识别、机器翻译、拼音转汉字、分词等。</p>
+<p>其发明人亲自创立了高通公司，将算法变成产品，从而变成全世界有史以来最富有的数学家之一。他的财富来自于他将技术转换成商业的成功。</p>
+<h3 id="第二十七章-上帝的算法：期望最大化算法"><a href="#第二十七章-上帝的算法：期望最大化算法" class="headerlink" title="第二十七章 上帝的算法：期望最大化算法"></a>第二十七章 上帝的算法：期望最大化算法</h3><p>本章内容比较抽象，我是跳着看过去的，主要是对文本的自收敛分类的介绍，以及引申出的期望最大化和收敛的必然性。</p>
+<blockquote>
+<p>只要有一些训练数据，再定义一个最大化函数，采用 EM 算法，利用计算机经过若干次迭代，就可以得到所需要的模型。这实在是太美妙了，这也许是我们的造物主刻意安排的。所以我把它称作上帝的算法。</p>
+</blockquote>
+<p>文本分类方法：既不需要实现设定好类别，也不需要对文本两两比较进行合并聚类，而是随机地挑出一些类别的中心，然后来优化这些中心，使它们和真实的聚类中心尽可能一致（即收敛）。</p>
+<p>扩展到更一般的机器学习问题中。上述算法包含两个过程和一组目标函数。这两个过程是：(1)根据现有的聚类结果，对所有数据(点)重新进行划分;(2)根据重新划分的结果，得到新的聚类。而目标函数就是上面的点到聚类的距离 d 和聚类之间的距离 D，整个过程就是要最大化目标函数。</p>
+<p>如果我们优化的目标函数是一个凸函数，那么一定能保证得到全局最优解，否则就不一定，也许是局部最优解。</p>
+<h3 id="第二十八章-逻辑回归和搜索广告"><a href="#第二十八章-逻辑回归和搜索广告" class="headerlink" title="第二十八章 逻辑回归和搜索广告"></a>第二十八章 逻辑回归和搜索广告</h3><p>本章介绍了搜索广告的发展以及逻辑回归模型。</p>
+<blockquote>
+<p>逻辑回归模型是一种将影响概率的不同因素结合在一起的指数模型，它不仅在搜索广告中起着重要的作用，而且被广泛应用于信息处理和生物统计中。</p>
+</blockquote>
+<p>预测网络广告的点击率的方法。采用逻辑回归模型。是指将一个事件出现的概率逐渐适应到一条逻辑曲线上。</p>
+<p>f(z)= e^Z/(e^z+1) = 1/(1+e^-z)</p>
+<p>假如有 k 个影响点击率的变量 x1,x2,…,xk，用线性的办法将它们组合起来。</p>
+<p>z = β0 + β1x1 + β2x2 + … + βkxk</p>
+<p>其中每一个 xi 被称为变量，代表影响概率预测的各种信息。βi 被称为其回归参数，表示相应变量的重要性。</p>
+<p>逻辑回归函数其实是一个一层的人工神经网络，可以用训练神经网络的方式来训练，找出参数。</p>
+<h3 id="第二十九章-各个击破算法和Google云计算的基础"><a href="#第二十九章-各个击破算法和Google云计算的基础" class="headerlink" title="第二十九章 各个击破算法和Google云计算的基础"></a>第二十九章 各个击破算法和Google云计算的基础</h3><p>本章讲的是谷歌云计算，MapReduce的原理。</p>
+<blockquote>
+<p>Google颇为神秘的云计算中最重要的MapReduce工具，其原理就是计算机算法中常用的“各个击破”算法，它的原理原来这么简单——将复杂的大问题分解成很多小问题分别求解，然后再把小问题的解合并成原始问题的解。由此可见，在生活中大量用到的、真正有用的方法常常都是简单朴实的。 </p>
+</blockquote>
+<h3 id="第三十章-Google大脑和人工神经网络"><a href="#第三十章-Google大脑和人工神经网络" class="headerlink" title="第三十章 Google大脑和人工神经网络"></a>第三十章 Google大脑和人工神经网络</h3><p>本章介绍了人工神经网络的概念，人工神经网络的训练以及与贝叶斯网络的关系，延展到 Google 大脑的介绍。</p>
+<blockquote>
+<p>Google大脑并不是一个什么都能思考的大脑，而是一个很能计算的人工神经网络。因此，与其说Google大脑很聪明，不如说它很能算。不过，换个角度来说，随着计算能力的不断提高，计算量大但简单的数学方法有时能够解决很复杂的问题。</p>
+</blockquote>
+<p>人工神经网络本质上是一种有向图，其特殊性在于：(1)图中的所有节点都是分层的，每一层节点可以通过有向弧指向上一层节点，但是同一层节点之间没有弧互相连接，而且每一个节点不能越过一层连接到上上层的节点上。(2)每一条弧上有一个值（称为权重或者权值），根据这些值，可以用一个非常简单的公式算出它们所指节点的值。</p>
+<p>大多数与“智能”有点关系的问题，都可以归结为一个在多维空间进行模式分类的问题。而人工神经网络所擅长的正是模式分类。</p>
+<p>人工神经网络概念开始很早，算法改进不多，进来发展主要是计算机运算速度和存储容量以摩尔定律的速度增加，使以前无法完成的大规模神经网络得以完成。</p>
+<p>随着计算能力的不断提高，计算量大但简单的数学方法有时候能够解决很复杂的问题。</p>
+<h3 id="第三十一章-大数据的威力——谈谈数据的重要性"><a href="#第三十一章-大数据的威力——谈谈数据的重要性" class="headerlink" title="第三十一章 大数据的威力——谈谈数据的重要性"></a>第三十一章 大数据的威力——谈谈数据的重要性</h3><blockquote>
+<p>如果说在过去的40年里，主导全球IT产业发展的是摩尔定律，那么在今后的20年里，主导IT行业继续发展的动力则来自于数据。</p>
+</blockquote>
+<p>越来越多的人认识到了数据的重要性，并将数据的重要性提升到了一个前所未有的高度。</p>
+<p>数据分广义和狭义的，广义的包括一切信息。人类的文明与进步，从某种意义上讲是通过对数据进行收集、处理和总结而达成的。</p>
+<p>统计首先要求数据量充足，一个事件发生的概率越小，需要的准确率越高，误差越小，则需要的数据量就越多。除了数据量足够，统计还要求采样的数据具有代表性。</p>
+<p>大数据更重要的在于它的多维度和完备性，有了这两点才能将原本看似无关的事件联系起来，恢复出对事物全方位完整的描述。随着信息技术的发展，当数据的计算和存储不再是问题时，人们发现超大量的数据会带来以前意想不到的惊喜，这才导致了大数据的兴起。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    hwk603
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hwk603.com/数学之美-part2/" title="读书笔记-数学之美(part2)">http://hwk603.com/数学之美-part2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/book/" rel="tag"># book</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/数学之美-part1/" rel="next" title="读书笔记-数学之美(part1)">
+                <i class="fa fa-chevron-left"></i> 读书笔记-数学之美(part1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/做饭/" rel="prev" title="读书笔记-做饭">
+                读书笔记-做饭 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hwk603.png"
+                alt="hwk603" />
+            
+              <p class="site-author-name" itemprop="name">hwk603</p>
+              <p class="site-description motion-element" itemprop="description">一些关于坑的思考和疑难解决</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hwk603" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/hwk603" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/hwk603" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.quora.com/profile/Hwk603" target="_blank" title="Quora">
+                      
+                        <i class="fa fa-fw fa-pinterest"></i>Quora</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://scucyber.cn/" title="青梅网络部" target="_blank">青梅网络部</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://camixxx.win/" title="CamiXXX" target="_blank">CamiXXX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第十二章-有限状态机和动态规划——地图与本地搜索的核心技术"><span class="nav-number">1.</span> <span class="nav-text">第十二章 有限状态机和动态规划——地图与本地搜索的核心技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十三章-Google-AK-47的设计者——阿米特·辛格博士"><span class="nav-number">2.</span> <span class="nav-text">第十三章 Google AK-47的设计者——阿米特·辛格博士</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十四章-余弦定理和新闻的分类"><span class="nav-number">3.</span> <span class="nav-text">第十四章 余弦定理和新闻的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十五章-矩阵运算和文本处理中的两个分类问题"><span class="nav-number">4.</span> <span class="nav-text">第十五章 矩阵运算和文本处理中的两个分类问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十六章-信息指纹及其应用"><span class="nav-number">5.</span> <span class="nav-text">第十六章 信息指纹及其应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十七章-由电视剧《暗算》所想到的——谈谈密码学的数学原理"><span class="nav-number">6.</span> <span class="nav-text">第十七章 由电视剧《暗算》所想到的——谈谈密码学的数学原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十八章-闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题"><span class="nav-number">7.</span> <span class="nav-text">第十八章 闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十九章-谈谈数学模型的重要性"><span class="nav-number">8.</span> <span class="nav-text">第十九章 谈谈数学模型的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二十章-不要把鸡蛋放到一个篮子里：谈谈最大熵模型"><span class="nav-number">9.</span> <span class="nav-text">第二十章 不要把鸡蛋放到一个篮子里：谈谈最大熵模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二十一章-拼音输入法的数学原理"><span class="nav-number">10.</span> <span class="nav-text">第二十一章 拼音输入法的数学原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二十二章-自然语言处理的教父马库斯和他的优秀弟子们"><span class="nav-number">11.</span> <span class="nav-text">第二十二章 自然语言处理的教父马库斯和他的优秀弟子们</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二十三章-布隆过滤器"><span class="nav-number">12.</span> <span class="nav-text">第二十三章 布隆过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二十四章-马尔科夫链的扩展：贝叶斯网络"><span class="nav-number">13.</span> <span class="nav-text">第二十四章 马尔科夫链的扩展：贝叶斯网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二十五章-条件随机场、文法分析及其他"><span class="nav-number">14.</span> <span class="nav-text">第二十五章 条件随机场、文法分析及其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二十六章-维特比和他的维特比算法"><span class="nav-number">15.</span> <span class="nav-text">第二十六章 维特比和他的维特比算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二十七章-上帝的算法：期望最大化算法"><span class="nav-number">16.</span> <span class="nav-text">第二十七章 上帝的算法：期望最大化算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二十八章-逻辑回归和搜索广告"><span class="nav-number">17.</span> <span class="nav-text">第二十八章 逻辑回归和搜索广告</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二十九章-各个击破算法和Google云计算的基础"><span class="nav-number">18.</span> <span class="nav-text">第二十九章 各个击破算法和Google云计算的基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三十章-Google大脑和人工神经网络"><span class="nav-number">19.</span> <span class="nav-text">第三十章 Google大脑和人工神经网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三十一章-大数据的威力——谈谈数据的重要性"><span class="nav-number">20.</span> <span class="nav-text">第三十一章 大数据的威力——谈谈数据的重要性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2014 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hwk603</span>
+
+  
+  
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://hwk603.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://hwk603.com/数学之美-part2/';
+          this.page.identifier = '数学之美-part2/';
+          this.page.title = '读书笔记-数学之美(part2)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hwk603.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("O8CtzoV9ACq6kGNHKp8AIRnS-gzGzoHsz", "QG6x9FzwAdcwrKu4b93f06Bz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

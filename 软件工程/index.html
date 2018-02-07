@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="t-E3ZRZAfjzJO3vU37kiHYBNdXdrPr7VQycbI5rAoKI" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="复习," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="过程模型惯例过程模型（沟通，策划，建模，构建，部署）  惯例过程模型 瀑布模型 增量模型 增量模型 RAD模型    演化过程模型 原型开发 螺旋模型 协同开发模型   专用过程模型 统一过程    瀑布模型 The Waterfall Model  当需求确定，工作能够采用线性的方式完成的时候，瀑布模型是一个很有用的过程模型。 经典生命周期，系统/顺序，线性特性。   增量过程模型 Increm">
+<meta name="keywords" content="复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程">
+<meta property="og:url" content="http://hwk603.com/软件工程/index.html">
+<meta property="og:site_name" content="One Piece">
+<meta property="og:description" content="过程模型惯例过程模型（沟通，策划，建模，构建，部署）  惯例过程模型 瀑布模型 增量模型 增量模型 RAD模型    演化过程模型 原型开发 螺旋模型 协同开发模型   专用过程模型 统一过程    瀑布模型 The Waterfall Model  当需求确定，工作能够采用线性的方式完成的时候，瀑布模型是一个很有用的过程模型。 经典生命周期，系统/顺序，线性特性。   增量过程模型 Increm">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-09-01T07:57:14.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件工程">
+<meta name="twitter:description" content="过程模型惯例过程模型（沟通，策划，建模，构建，部署）  惯例过程模型 瀑布模型 增量模型 增量模型 RAD模型    演化过程模型 原型开发 螺旋模型 协同开发模型   专用过程模型 统一过程    瀑布模型 The Waterfall Model  当需求确定，工作能够采用线性的方式完成的时候，瀑布模型是一个很有用的过程模型。 经典生命周期，系统/顺序，线性特性。   增量过程模型 Increm">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'G2ERKDYPN5',
+      apiKey: 'c1e9afb1c2f47d6b86b7ce51903006dc',
+      indexName: 'dev_NAME',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hwk603.com/软件工程/"/>
+
+
+
+
+
+  <title>软件工程 | One Piece</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57214075-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?59918ede8fb11545a8b6b16be04958be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One Piece</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">侯文魁的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/软件工程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">软件工程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-27T10:38:49+08:00">
+                2015-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/软件工程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="软件工程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/软件工程/" class="leancloud_visitors" data-flag-title="软件工程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,761
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="过程模型"><a href="#过程模型" class="headerlink" title="过程模型"></a>过程模型</h3><p>惯例过程模型（沟通，策划，建模，构建，部署）</p>
+<ul>
+<li>惯例过程模型</li>
+<li>瀑布模型</li>
+<li>增量模型<ol>
+<li>增量模型</li>
+<li>RAD模型 </li>
+</ol>
+</li>
+<li>演化过程模型<ol>
+<li>原型开发</li>
+<li>螺旋模型</li>
+<li>协同开发模型</li>
+</ol>
+</li>
+<li>专用过程模型</li>
+<li>统一过程</li>
+</ul>
+<hr>
+<ol>
+<li><p>瀑布模型 The Waterfall Model</p>
+<ul>
+<li>当需求确定，工作能够采用线性的方式完成的时候，瀑布模型是一个很有用的过程模型。</li>
+<li>经典生命周期，系统/顺序，线性特性。</li>
+</ul>
+</li>
+<li><p>增量过程模型 Incremental Process Models</p>
+<ul>
+<li>以迭代的方式运行瀑布模型。增量模型可以规避技术风险。</li>
+<li>增量模型发布一系列称为增量的版本，随着每个版本的交付，逐步为每个用户提供更多的功能。</li>
+<li>在项目既定的商业要求期限之前不可能找到足够的开发人员，这种情况之下增量模型显得特别有用。</li>
+</ul>
+</li>
+<li><p>RAD模型  Rapid Application Development </p>
+<ul>
+<li>快速应用程序开发是一种侧重于短暂的开发周期的增量软件过程模型。</li>
+<li>瀑布模型的“高速变体”。</li>
+<li>严格的时间要求使得RAD项目必须具备“可伸缩范围”。</li>
+<li>适用于某个商业项目的每个主要功能都能3个月内完成。每个主要功能分配给一个独立的RAD团队，然后再集成一个整体。</li>
+</ul>
+</li>
+<li><p>演化过程模型 Evolutionary Process Models</p>
+<ul>
+<li>演化过程模型中，每次迭代产生软件的一个完整的版本。</li>
+<li>适用于严格的交付时间似的开发团队不可能圆满的完成软件产品，但必须交付功能有限的版本以应对竞争和商业压力；很好地理解了核心产品和系统需求，但是产品或系统拓展的细节问题却没有定义。</li>
+<li>Evolutionary models are iterative. They are characterized in a manner that enables you to develop increasingly more complete versions of the software.In the paragraphs that follow, I present two common evolutionary process models.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p>原型开发 Prototyping</p>
+<ul>
+<li>快速设计产生一个原型，对原型进行部署，然后又客户或者用户进行评价。根据反馈，进一步细化软件的需求。</li>
+<li>适用于客户提出了软件的一些基本功能，但是没有详细定义输入/处理和输出需求；开发人员可能对算法的效率/操作系统的兼容性和人机交互的形式等情况不确定。</li>
+</ul>
+</li>
+<li><p>螺旋模型 The Spiral Model</p>
+<ul>
+<li>一种演进式软件过程模型，结合原型的迭代性质和瀑布模型的系统性和可控性特点。</li>
+<li>采用循环的方式逐步加深系统定义和实现的深度，同时降低风险；确定一系列里程碑，确保共利益者都支持可行的和令人满意的系统解决方案。</li>
+<li>螺旋模型是开发大型系统和软件的理想方法，螺旋模型把原型开发作为降低风险的机制，保留了瀑布模型（经典生命周期）中系统逐步细化的方法，（迭代框架）。</li>
+<li>螺旋模型要求在项目的所有阶段始终考虑技术风险。</li>
+</ul>
+</li>
+<li><p>协同开发模型 Concurrent Models</p>
+<ul>
+<li>协同模型可用于所有类型的软件开发，能够提供准确的项目当前状态图。</li>
+<li>定义一个活动的网络，网络中每个活动/动作和任务与其他活动/动作和任务同时存在。过程网络中某一点产生的事件可以触发状态的转换。</li>
+<li>协同模型更适合于不同的工程团队共同开发的系统工程项目。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="敏捷开发"><a href="#敏捷开发" class="headerlink" title="敏捷开发"></a>敏捷开发</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">1. What is it? </div><div class="line"></div><div class="line">Agile software engineering combines a philosophy and a set of development guidelines. The philosophy encourages customer</div><div class="line">satisfaction and early incremental delivery of</div><div class="line">software; small, highly motivated project teams;informal methods; minimal software engineering work products; and overall development simplicity. The development guidelines stress delivery over analysis and design (although these activities are not discouraged), and active and continuous communication between developers and customers.</div><div class="line"></div><div class="line">2. Who does it? </div><div class="line"></div><div class="line">Software engineers and other project stakeholders (managers, customers, end</div><div class="line">users) work together on an agile team—a team</div><div class="line">that is self-organizing and in control of its own destiny. An agile team fosters communication and collaboration among all who serve on it.</div><div class="line"></div><div class="line">3. Why is it important? </div><div class="line"></div><div class="line">The modern business environment that spawns computer-based systems and software products is fast-paced and everchanging. Agile software engineering represents a reasonable alternative to conventional software engineering for certain classes of software and certain types of software projects. It</div><div class="line">has been demonstrated to deliver successful systems quickly.</div><div class="line"></div><div class="line">4. What are the steps? </div><div class="line"></div><div class="line">Agile development might best be termed “software engineering lite.” The basic</div><div class="line">framework activities—communication, planning,</div><div class="line">modeling, construction, and deployment—</div><div class="line">remain. But they morph into a minimal task set</div><div class="line">that pushes the project team toward construction and delivery (some would argue that this is done at the expense of problem analysis and solution design).</div><div class="line"></div><div class="line">5. What is the work product? </div><div class="line"></div><div class="line">Both the customer and the software engineer have the same view—the only really important work product is an operational “software increment” that is delivered to the customer on the appropriate commitment date.</div><div class="line"></div><div class="line">6. How do I ensure that I’ve done it right? </div><div class="line"></div><div class="line">If the agile team agrees that the process works, and the team produces deliverable software increments that satisfy the customer, you’ve done it right.</div></pre></td></tr></table></figure>
+<p>敏捷宣言 </p>
+<ul>
+<li>2001年，Kent Beck和其他16位知名软件开发者/软件工程作家以及软件咨询师（被称为敏捷联盟）共同签署了“敏捷软件开发宣言”。</li>
+</ul>
+<p>敏捷建模 </p>
+<ul>
+<li><p>敏捷建模（Agile Modeling,AM）,是一种用于对软件工程有效建模和文档化的时间方法学。</p>
+</li>
+<li><p>提出大致的“核心”和“补充”的建模原则，但其中独具特色的是：</p>
+<ul>
+<li><p>有目的的建模。</p>
+</li>
+<li><p>使用多个模型。</p>
+</li>
+<li><p>前进灯。</p>
+</li>
+<li><p>内容重于表述形式。</p>
+</li>
+<li><p>理解模型及工具。</p>
+</li>
+<li><p>适用本地需求。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>敏捷过程模型 </p>
+<ul>
+<li>所有敏捷过程模型（或多或少）都遵循敏捷软件开发宣言以及敏捷联盟定义的12条原则。</li>
+</ul>
+<p>敏捷过程 ：</p>
+<ul>
+<li><p>任何一个敏捷过程都可以由所强调的三个关键假设而识别出来。</p>
+<ul>
+<li><p>提前预测那些需求是稳定和那些需求会变化非常困难。同样，预测项目进行中客户优先级的变化也很困难。</p>
+</li>
+<li><p>对很多软件来说，设计和构建是交错进行的。事实上，两种活动应当顺序开展以保证通过构建实施来验证设计模型，而在通过构建验证之前很难估计应该设计到什么程度。</p>
+</li>
+<li><p>从制定计划的角度来看/分析/设计/构建和测试并不像我们所设想的那么容易预测。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>ASD </p>
+<ul>
+<li>自适应软件开发，作为构建复杂软件和系统的一项技术，其基本概念着眼于人员协作和团队自我组织。ASD“生命周期”包括：思考/协作和学习三个阶段。使用迭代过程，该过程由自适应循环计划/相对严格的需求收集方法和一个迭代开发循环构成，其中迭代开发循环包括客户焦点组和正式技术评审作为实时反馈机制。</li>
+</ul>
+<p>XP </p>
+<ul>
+<li><p>极限编程（eXtreme Programming,XP）。</p>
+</li>
+<li><p>XP使用面向对象方法作为推荐的开发范型。XP包括了策划/设计/编码和测试4个框架活动的规则和实践。</p>
+</li>
+<li><p>极限编程过程：</p>
+<ul>
+<li><p>策划。策划活动开始于建立一系列描述待开发软件必要特征与功能的“故事”（也称为“用户故事”）。每个故事由客户书写并置于一张索引卡上，客户根据对应特征或功能的全局业务价值标明权值（优先级）。ps.一个故事的权值取决于其他相关故事的存在。</p>
+</li>
+<li><p>设计。XP设计严格遵循KIS（Keep It Simple,简洁保持）原则，即使用简单而不是复杂的表述；不鼓励额外功能性设计；鼓励使用CRC作为有效机制；故事设计中遇到困难，推荐Spike解决方案；XP鼓励既是构建技术又是设计技术的“重构”。</p>
+</li>
+<li><p>编码。XP推荐在故事开发和基本设计完成之后，开发一系列用于检测本次（软件增量）发布的包括所有故事的单元测试；XP编码活动中的关键概念之一是结对编程。</p>
+</li>
+<li><p>测试。单元测试 回归测试策略 通用测试集 XP验收测试（客户测试）。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>重构 </p>
+<ul>
+<li>重构是以不改变代码外部行为而改进其内部结构的方式来修改软件系统的过程。这是一种净化代码【并秀瑷/简化内部设计】以尽可能减少引入错误的严格方案。简而言之，重构就是在编码完成之后改进代码设计。</li>
+</ul>
+<p>结对编程 </p>
+<ul>
+<li>XP推荐/建议两个人面对同一台计算机共同为同一个“故事”开发代码。这一方案提供了实时解决问题和实时质量保证的机制，同时也使得开发者能够集中精力解决手头的问题。实施中不同成员担任的角色略有不同。 “连续集成” “冒烟测试”。</li>
+</ul>
+<p>DSDM</p>
+<ul>
+<li><p>动态系统开发方法是一种提供“通过在可控项目环境中使用增量原型开发模式完全满足对时间有约束的系统的构建和维护”的敏捷软件开发方法。</p>
+</li>
+<li><p>定义了三种迭代循环：</p>
+<ul>
+<li><p>功能模型迭代</p>
+</li>
+<li><p>设计和构建迭代</p>
+</li>
+<li><p>实现迭代</p>
+</li>
+</ul>
+</li>
+<li><p>可行性研究和业务研究两个传统的生命周期活动。</p>
+</li>
+<li><p>倡导时间调度的使用，认为每一个软件增量所需的必要工作仅仅是能够方便的进入下一次增量开发。</p>
+</li>
+</ul>
+<p>FDD </p>
+<ul>
+<li>特征驱动开发，可用于中/大型软件项目的适应性敏捷开发过程。和其他敏捷方法相比，更加强调项目管理原则和技术。</li>
+</ul>
+<p>Crystal </p>
+<ul>
+<li>Crystal敏捷方法系列，其目的是发展一种提倡“机动性”的软件开发方法。可用于具有特定特征的项目。采用迭代策略，但可以调整过程的严格程度以适应不同规模和复杂度的项目。</li>
+</ul>
+<p>Scrum </p>
+<ul>
+<li><p>一种敏捷过程模型，强调使用一系列“软件过程模型”，这些模式已被验证对时间紧迫/需求变化和业务重要的项目非常有效。每一个过程模型定义一系列开发任务并允许Scrum团队以适应期项目的方式构建过程。</p>
+</li>
+<li><p>每一个过程模式定义了一系列开发活动：</p>
+<ul>
+<li><p>待定项</p>
+</li>
+<li><p>冲刺</p>
+</li>
+<li><p>Scrum例会</p>
+</li>
+<li><p>演示</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>敏捷性 </p>
+<p>敏捷原理 </p>
+<p>政策 </p>
+<p>团队特征</p>
+<hr>
+<h2 id="软件工程实践综述"><a href="#软件工程实践综述" class="headerlink" title="软件工程实践综述"></a>软件工程实践综述</h2><ol>
+<li><p>实践的精髓</p>
+</li>
+<li><p>核心原则</p>
+</li>
+<li><p>沟通实践</p>
+</li>
+<li><p>策划实践</p>
+</li>
+<li><p>建模实践</p>
+<p>分析建模原则</p>
+<p>设计建模原则</p>
+</li>
+</ol>
+<ol>
+<li><p>构造实践</p>
+<p>编码原则和概念</p>
+<p>测试原则</p>
+</li>
+<li><p>部署</p>
+</li>
+</ol>
+<hr>
+<h2 id="需求工程"><a href="#需求工程" class="headerlink" title="需求工程"></a>需求工程</h2><h3 id="需求工程任务"><a href="#需求工程任务" class="headerlink" title="需求工程任务"></a>需求工程任务</h3><ul>
+<li><p>起始（Inception）</p>
+</li>
+<li><p>导出（elicitation）</p>
+</li>
+<li><p>精化（elaboration）</p>
+</li>
+<li><p>协商（negotiation）</p>
+</li>
+<li><p>规格说明（specification）</p>
+</li>
+<li><p>确认（validation）</p>
+</li>
+<li><p>管理（management）</p>
+</li>
+</ul>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    hwk603
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hwk603.com/软件工程/" title="软件工程">http://hwk603.com/软件工程/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/复习/" rel="tag"># 复习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/微机接口/" rel="next" title="微机接口">
+                <i class="fa fa-chevron-left"></i> 微机接口
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/linux中打开window下txt文件乱码/" rel="prev" title="linux中打开window下txt文件乱码">
+                linux中打开window下txt文件乱码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hwk603.png"
+                alt="hwk603" />
+            
+              <p class="site-author-name" itemprop="name">hwk603</p>
+              <p class="site-description motion-element" itemprop="description">一些关于坑的思考和疑难解决</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hwk603" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/hwk603" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/hwk603" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.quora.com/profile/Hwk603" target="_blank" title="Quora">
+                      
+                        <i class="fa fa-fw fa-pinterest"></i>Quora</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://scucyber.cn/" title="青梅网络部" target="_blank">青梅网络部</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://camixxx.win/" title="CamiXXX" target="_blank">CamiXXX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#过程模型"><span class="nav-number">1.</span> <span class="nav-text">过程模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#敏捷开发"><span class="nav-number">2.</span> <span class="nav-text">敏捷开发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件工程实践综述"><span class="nav-number"></span> <span class="nav-text">软件工程实践综述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求工程"><span class="nav-number"></span> <span class="nav-text">需求工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求工程任务"><span class="nav-number">1.</span> <span class="nav-text">需求工程任务</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2014 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hwk603</span>
+
+  
+  
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://hwk603.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://hwk603.com/软件工程/';
+          this.page.identifier = '软件工程/';
+          this.page.title = '软件工程';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hwk603.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("O8CtzoV9ACq6kGNHKp8AIRnS-gzGzoHsz", "QG6x9FzwAdcwrKu4b93f06Bz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

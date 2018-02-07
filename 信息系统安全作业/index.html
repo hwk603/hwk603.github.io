@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="t-E3ZRZAfjzJO3vU37kiHYBNdXdrPr7VQycbI5rAoKI" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="homework," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="作业要求：已知一段密文ciphertext.txt采用了单表替换密码，请使用频率分析法，对其进行解密，给出密码表、明文，以及解密过程。">
+<meta name="keywords" content="homework">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信息系统安全作业">
+<meta property="og:url" content="http://hwk603.com/信息系统安全作业/index.html">
+<meta property="og:site_name" content="One Piece">
+<meta property="og:description" content="作业要求：已知一段密文ciphertext.txt采用了单表替换密码，请使用频率分析法，对其进行解密，给出密码表、明文，以及解密过程。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/Image%202016-03-21-21%EF%BC%9A10.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/Image%202016-03-24-15%EF%BC%9A56.png">
+<meta property="og:updated_time" content="2016-03-25T06:04:39.665Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="信息系统安全作业">
+<meta name="twitter:description" content="作业要求：已知一段密文ciphertext.txt采用了单表替换密码，请使用频率分析法，对其进行解密，给出密码表、明文，以及解密过程。">
+<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/Image%202016-03-21-21%EF%BC%9A10.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'G2ERKDYPN5',
+      apiKey: 'c1e9afb1c2f47d6b86b7ce51903006dc',
+      indexName: 'dev_NAME',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hwk603.com/信息系统安全作业/"/>
+
+
+
+
+
+  <title>信息系统安全作业 | One Piece</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57214075-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?59918ede8fb11545a8b6b16be04958be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One Piece</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">侯文魁的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/信息系统安全作业/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">信息系统安全作业</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-22T01:52:24+08:00">
+                2016-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+
+          
+          
+             <span id="/信息系统安全作业/" class="leancloud_visitors" data-flag-title="信息系统安全作业">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,156
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="作业要求："><a href="#作业要求：" class="headerlink" title="作业要求："></a>作业要求：</h3><p>已知一段密文<code>ciphertext.txt</code>采用了单表替换密码，请使用频率分析法，对其进行解密，给出密码表、明文，以及解密过程。</p>
+<a id="more"></a>
+<h3 id="密文ciphertext-txt"><a href="#密文ciphertext-txt" class="headerlink" title="密文ciphertext.txt:"></a>密文<code>ciphertext.txt</code>:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">RWKJ BYYS O BYMJ JL JPY JPYWJFY O PWZ W EYFD QLLZ KYWJ JPY HRWD BWK EYFD OMJYFYKJOMQ O ZOZ MLJ YMTLD OJ W DLIMQ NWM WMZ W DLIMQ BLNWN BYFY KOJJOMQ VYPOMZ NY JPYD BYFY JWRSOMQ RLIZRD O QLJ EYFD WMQFD O ULIRZ MLJ PYWF JPY WUJLFK O JIFMYZ FLIMZ O RLLSYZ WJ JPY NWM WMZ JPY BLNWM WMQFORD JPYD ZOZ MLJ HWD WMD WJJYMJOLM OM JPY YMZ O ULIRZ MLJ VYWF OJ O JIFMYZ FLIMZ WQWOM O UWMJ PYWF W BLFZ O KWOZ WMQFORD OJK MLMY LX DLIF VIKOMYKK JPY DLIMQ NWM KWOZ FIZYRD JPOK OK W HFOEWJY ULMEYFKWJOLM</div></pre></td></tr></table></figure>
+<h3 id="明文plaintext-txt："><a href="#明文plaintext-txt：" class="headerlink" title="明文plaintext.txt："></a>明文<code>plaintext.txt</code>：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LAST WEEK I WENT TO THE THEATRE I HAD A VERY GOOD SEAT THE PLAY WAS VERY INTERESTING I DID NOT ENJOY IT A YOUNG MAN AND A YOUNG WOMAM WERE SITTING BEHIND ME THEY WERE TALKING LOUDLY I GOT VERY ANGRY I COULD NOT HEAR THE ACTORS I TURNED ROUND I LOOKED AT THE MAN AND THE WOMAN ANGRILY THEY DID NOT PAY ANY ATTENTION IN THE END I COULD NOT BEAR IT I TURNED ROUND AGAIN I CANT HEAR A WORD I SAID ANGRILY ITS NONE OF YOUR BUSINESS THE YOUNG MAN SAID RUDELY THIS IS A PRIVATE CONVERSATION</div></pre></td></tr></table></figure>
+<h3 id="密码表："><a href="#密码表：" class="headerlink" title="密码表："></a>密码表：</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">明文</th>
+<th style="text-align:center">密文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">W</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">V</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">U</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">Z</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">Y</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">Q</td>
+</tr>
+<tr>
+<td style="text-align:center">H</td>
+<td style="text-align:center">P</td>
+</tr>
+<tr>
+<td style="text-align:center">I</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td style="text-align:center">J</td>
+<td style="text-align:center">T</td>
+</tr>
+<tr>
+<td style="text-align:center">K</td>
+<td style="text-align:center">S</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">R</td>
+</tr>
+<tr>
+<td style="text-align:center">M</td>
+<td style="text-align:center">N</td>
+</tr>
+<tr>
+<td style="text-align:center">N</td>
+<td style="text-align:center">M</td>
+</tr>
+<tr>
+<td style="text-align:center">O</td>
+<td style="text-align:center">L</td>
+</tr>
+<tr>
+<td style="text-align:center">P</td>
+<td style="text-align:center">H</td>
+</tr>
+<tr>
+<td style="text-align:center">Q</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:center">R</td>
+<td style="text-align:center">F</td>
+</tr>
+<tr>
+<td style="text-align:center">S</td>
+<td style="text-align:center">K</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">J</td>
+</tr>
+<tr>
+<td style="text-align:center">U</td>
+<td style="text-align:center">I</td>
+</tr>
+<tr>
+<td style="text-align:center">V</td>
+<td style="text-align:center">E</td>
+</tr>
+<tr>
+<td style="text-align:center">W</td>
+<td style="text-align:center">B</td>
+</tr>
+<tr>
+<td style="text-align:center">X</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">D</td>
+</tr>
+<tr>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">*</td>
+</tr>
+</tbody>
+</table>
+<h3 id="解密过程"><a href="#解密过程" class="headerlink" title="解密过程"></a>解密过程</h3><ul>
+<li>通过程序分析密文中字母出现的次数和频率：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">出现次数</th>
+<th style="text-align:center">密文字母</th>
+<th style="text-align:center">概率/%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">40</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">10.44</td>
+</tr>
+<tr>
+<td style="text-align:center">39</td>
+<td style="text-align:center">M&amp;J</td>
+<td style="text-align:center">10.18</td>
+</tr>
+<tr>
+<td style="text-align:center">37</td>
+<td style="text-align:center">W</td>
+<td style="text-align:center">9.66</td>
+</tr>
+<tr>
+<td style="text-align:center">34</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">8.88</td>
+</tr>
+<tr>
+<td style="text-align:center">29</td>
+<td style="text-align:center">L</td>
+<td style="text-align:center">7.57</td>
+</tr>
+<tr>
+<td style="text-align:center">23</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">6.00</td>
+</tr>
+<tr>
+<td style="text-align:center">22</td>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">5.74</td>
+</tr>
+<tr>
+<td style="text-align:center">18</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">4.70</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:center">K&amp;P</td>
+<td style="text-align:center">3.92</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">Q</td>
+<td style="text-align:center">3.13</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">2.09</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">1.82</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">E&amp;U</td>
+<td style="text-align:center">1.31</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">X&amp;T&amp;I</td>
+<td style="text-align:center">0.26</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">A&amp;C&amp;G</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>程序统计密文中的单词：</li>
+</ul>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/Image%202016-03-21-21%EF%BC%9A10.png" alt="word"></p>
+<ul>
+<li>英文字母分析:</li>
+</ul>
+<blockquote>
+<p>英文字母出现的概率按大小排列如下:<code>E T A O I N S H R D L C U M W F G Y P B V K J X Q Z</code><br>小词的使用频率:<br>1-letter: a,i,o<br>2-letter: of,to,in,is,it,be,as,at<br>3-letter:the,and,for,are,but,not,you,all<br>4-letter:that,with,have,this,will,your,from,they<br>5-letter: which,would,there</p>
+</blockquote>
+<p>如果四字单词词末有两个相同字母，往往是<code>ll</code>；</p>
+<p>以<code>a</code>开头的三字单词只能是<code>and are</code>中的一个；</p>
+<p>两个字母的组合中如果出现<code>q*</code>，则<code>*</code>是<code>u</code>(<code>q</code>后几乎总是<code>u</code>)；</p>
+<p>如果一个单词的开头和结尾是同一个字母，最可能的是：<code>s t d</code>；</p>
+<p>两个都是辅音的双字母组合，常含有<code>n</code>或<code>t</code>；<code>io</code>、<code>ou</code>和<code>ea</code>是最常见的双元音字母组；</p>
+<p>如果单词的头两个字母都是辅音，则第二个字母最可能是：<code>r</code>、<code>l</code>和<code>h</code>；</p>
+<p>如果一个三次以三个辅音结尾，那最常见的是<code>-ght</code>和<code>-tch</code>；</p>
+<ul>
+<li>综上：</li>
+</ul>
+<p>首先可以确定出现次数最多的字母Y所对应的明文是E,其次对于单字母单词可以确定:<code>O对应I,W对应A</code>；</p>
+<p>由双字母单词和三字母单词推出：<code>J对应T,L对应O,X对应F,K对应S</code>;</p>
+<p>之后利用自然语言的文字结合规律进行猜测，得出其他对应关系，得到明文如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LAST WEEK I WENT TO THE THEATRE I HAD A VERY GOOD SEAT THE PLAY WAS VERY INTERESTING I DID NOT ENJOY IT A YOUNG MAN AND A YOUNG WOMAM WERE SITTING BEHIND ME THEY WERE TALKING LOUDLY I GOT VERY ANGRY I COULD NOT HEAR THE ACTORS I TURNED ROUND I LOOKED AT THE MAN AND THE WOMAN ANGRILY THEY DID NOT PAY ANY ATTENTION IN THE END I COULD NOT BEAR IT I TURNED ROUND AGAIN I CANT HEAR A WORD I SAID ANGRILY ITS NONE OF YOUR BUSINESS THE YOUNG MAN SAID RUDELY THIS IS A PRIVATE CONVERSATION</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="作业要求：-1"><a href="#作业要求：-1" class="headerlink" title="作业要求："></a>作业要求：</h3><p>模仿题1中的加密程序，按autokey密码的处理方法，写出加、解密软件。</p>
+<h3 id="code："><a href="#code：" class="headerlink" title="code："></a>code：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;string.h&gt;</div><div class="line">#include&lt;stdio.h&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	int len;//明文长度 </div><div class="line">	int operation;//操作数</div><div class="line">	char plaintext[128],ciphertext[128],autokey[128],key[16];</div><div class="line">	 </div><div class="line">	while(1)&#123;</div><div class="line">		do&#123;</div><div class="line">			cout&lt;&lt;&quot;加密：0\n解密：1\n退出：2&quot;&lt;&lt;endl;</div><div class="line">			cin&gt;&gt;operation;</div><div class="line">		&#125;</div><div class="line">		while(operation != 0 &amp;&amp; operation != 1);</div><div class="line">		if(operation == 2)&#123;</div><div class="line">			//退出 </div><div class="line">			return 0;</div><div class="line">		&#125;</div><div class="line">		else if(operation == 0)&#123;</div><div class="line">			//加密程序</div><div class="line">			 cout&lt;&lt;&quot;input plaintext:(end with #)&quot;&lt;&lt;endl;</div><div class="line">			 //cin&gt;&gt;plaintext;</div><div class="line">			 cin.getline(plaintext,128,&apos;#&apos;);</div><div class="line">			 len = strlen(plaintext);</div><div class="line">			 cout&lt;&lt;&quot;the plaintext is:&quot;;</div><div class="line">			 //cout&lt;&lt;len&lt;&lt;endl;</div><div class="line">			 /**</div><div class="line">			 for(int i=0;i&lt;len;i++)&#123;</div><div class="line">			 	cout&lt;&lt;plaintext[i];</div><div class="line">			 &#125;</div><div class="line">			 */</div><div class="line">			 cout&lt;&lt;plaintext&lt;&lt;endl;</div><div class="line">			 cout&lt;&lt;&quot;input key:(end with #)&quot;&lt;&lt;endl;</div><div class="line">			 cin.getline(key,16,&apos;#&apos;);</div><div class="line">			 //cin&gt;&gt;key;</div><div class="line">			 //生成autokey </div><div class="line">			 </div><div class="line">			 int k = strlen(key);</div><div class="line">			 //cout&lt;&lt;key&lt;&lt;endl;</div><div class="line">			 </div><div class="line">			 for(int i=0;i&lt;k;i++)&#123;</div><div class="line">			 	autokey[i]=key[i];</div><div class="line">			 &#125;</div><div class="line">			 </div><div class="line">			 for(int i=k;i&lt;len;i++)&#123;</div><div class="line">			 	autokey[i]=plaintext[i-k+1];</div><div class="line">			 &#125;</div><div class="line">			 cout&lt;&lt;&quot;the autokey is:&quot;;</div><div class="line">			 int a = strlen(autokey);</div><div class="line">			 //cout&lt;&lt;a&lt;&lt;endl;</div><div class="line">			 //cout&lt;&lt;autokey;</div><div class="line">			 for(int i=0;i&lt;len;i++)&#123;</div><div class="line">			 	cout&lt;&lt;autokey[i];</div><div class="line">			 &#125;</div><div class="line">			 //cout&lt;&lt;auto;</div><div class="line">			 cout&lt;&lt;endl;</div><div class="line">			 //cout&lt;&lt;(char)(((int)plaintext[1]+(int)autokey[1])%26+97);</div><div class="line">			 for(int i=0;i&lt;len;i++)&#123;</div><div class="line">			 	</div><div class="line">				 ciphertext[i]=((plaintext[i]-&apos;a&apos;+(int)autokey[i]-&apos;a&apos;)%26+&apos;a&apos;);</div><div class="line">			 	</div><div class="line">				 /**</div><div class="line">				 if(plaintext[i]&gt;=65&amp;&amp;plaintext[i]&lt;=90)&#123;</div><div class="line">			 		plaintext[i]+=32;</div><div class="line">			 		ciphertext[i]=((plaintext[i]-97)+(autokey[i]-97))&amp;+97;</div><div class="line">				 &#125;</div><div class="line">				 */</div><div class="line">			 &#125;</div><div class="line">			 cout&lt;&lt;&quot;the ciphertext is:&quot;&lt;&lt;endl;</div><div class="line">			 for(int i=1;i&lt;len;i++)&#123;</div><div class="line">			 	cout&lt;&lt;ciphertext[i];</div><div class="line">			 &#125;</div><div class="line">			 cout&lt;&lt;endl;</div><div class="line">			 //cout&lt;&lt;ciphertext&lt;&lt;endl;;</div><div class="line">		&#125;</div><div class="line">		else if(operation==1)&#123;</div><div class="line">			//解密程序</div><div class="line">			cout&lt;&lt;&quot;input the ciphertext:(end with #)&quot;&lt;&lt;endl;</div><div class="line">			cin.getline(ciphertext,128,&apos;#&apos;);</div><div class="line">			cout&lt;&lt;&quot;the ciphertext is:&quot;;</div><div class="line">			cout&lt;&lt;ciphertext&lt;&lt;endl;</div><div class="line">			cout&lt;&lt;&quot;input the autokey:&quot;&lt;&lt;endl;</div><div class="line">			cin.getline(autokey,128,&apos;#&apos;);</div><div class="line">			cout&lt;&lt;&quot;the autokey is:&quot;;</div><div class="line">			cout&lt;&lt;autokey&lt;&lt;endl;</div><div class="line">		    for(int i=0;i&lt;len;i++)&#123;</div><div class="line">			 	plaintext[i+1]=((ciphertext[i]-autokey[i]+26)%26+&apos;a&apos;);</div><div class="line">		    &#125;</div><div class="line">		    cout&lt;&lt;&quot;the plaintext is:&quot;&lt;&lt;endl;</div><div class="line">		    //cout&lt;&lt;plaintext&lt;&lt;endl;</div><div class="line">		    for(int i=2;i&lt;=len;i++)&#123;</div><div class="line">		    	cout&lt;&lt;plaintext[i];</div><div class="line">			&#125;</div><div class="line">			cout&lt;&lt;endl;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/Image%202016-03-24-15%EF%BC%9A56.png" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    hwk603
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hwk603.com/信息系统安全作业/" title="信息系统安全作业">http://hwk603.com/信息系统安全作业/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/homework/" rel="tag"># homework</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/编译原理作业-正则匹配/" rel="next" title="编译原理作业-正则匹配">
+                <i class="fa fa-chevron-left"></i> 编译原理作业-正则匹配
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/pandoc-转换-markdown-格式/" rel="prev" title="pandoc 转换 markdown 格式">
+                pandoc 转换 markdown 格式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hwk603.png"
+                alt="hwk603" />
+            
+              <p class="site-author-name" itemprop="name">hwk603</p>
+              <p class="site-description motion-element" itemprop="description">一些关于坑的思考和疑难解决</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hwk603" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/hwk603" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/hwk603" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.quora.com/profile/Hwk603" target="_blank" title="Quora">
+                      
+                        <i class="fa fa-fw fa-pinterest"></i>Quora</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://scucyber.cn/" title="青梅网络部" target="_blank">青梅网络部</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://camixxx.win/" title="CamiXXX" target="_blank">CamiXXX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#作业要求："><span class="nav-number">1.</span> <span class="nav-text">作业要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#密文ciphertext-txt"><span class="nav-number">2.</span> <span class="nav-text">密文ciphertext.txt:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#明文plaintext-txt："><span class="nav-number">3.</span> <span class="nav-text">明文plaintext.txt：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#密码表："><span class="nav-number">4.</span> <span class="nav-text">密码表：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解密过程"><span class="nav-number">5.</span> <span class="nav-text">解密过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作业要求：-1"><span class="nav-number">6.</span> <span class="nav-text">作业要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#code："><span class="nav-number">7.</span> <span class="nav-text">code：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2014 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hwk603</span>
+
+  
+  
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://hwk603.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("O8CtzoV9ACq6kGNHKp8AIRnS-gzGzoHsz", "QG6x9FzwAdcwrKu4b93f06Bz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

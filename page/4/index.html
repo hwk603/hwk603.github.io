@@ -1,0 +1,3298 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="t-E3ZRZAfjzJO3vU37kiHYBNdXdrPr7VQycbI5rAoKI" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hwk603, 侯文魁" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一些关于坑的思考和疑难解决">
+<meta property="og:type" content="website">
+<meta property="og:title" content="One Piece">
+<meta property="og:url" content="http://hwk603.com/page/4/index.html">
+<meta property="og:site_name" content="One Piece">
+<meta property="og:description" content="一些关于坑的思考和疑难解决">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="One Piece">
+<meta name="twitter:description" content="一些关于坑的思考和疑难解决">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'G2ERKDYPN5',
+      apiKey: 'c1e9afb1c2f47d6b86b7ce51903006dc',
+      indexName: 'dev_NAME',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hwk603.com/page/4/"/>
+
+
+
+
+
+  <title>One Piece</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57214075-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?59918ede8fb11545a8b6b16be04958be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One Piece</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">侯文魁的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/计网缩写/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/计网缩写/" itemprop="url">计网缩写</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-02T18:38:49+08:00">
+                2015-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/计网缩写/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="计网缩写/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/计网缩写/" class="leancloud_visitors" data-flag-title="计网缩写">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  867
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>计算机网络复习总结</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/计网缩写/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/MongoDB在windows上的配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/MongoDB在windows上的配置/" itemprop="url">MongoDB在windows上的配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-01T21:55:00+08:00">
+                2015-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/MongoDB在windows上的配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="MongoDB在windows上的配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/MongoDB在windows上的配置/" class="leancloud_visitors" data-flag-title="MongoDB在windows上的配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  368
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><a href="https://www.mongodb.org/downloads#production" target="_blank" rel="external">MongoDB的官方下载</a></p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/mongo-01.png" alt="此处输入图片的描述"></p>
+<ul>
+<li><code>MongoDB for Windows 64-bit</code> 适合 64 位的 Windows Server 2008 R2, Windows 7 , 及最新版本的 Window 系统。</li>
+<li><code>MongoDB for Windows 32-bit</code> 适合 32 位的 Window 系统及最新的 Windows Vista。 32 位系统上 MongoDB 的数据库最大为 2GB。</li>
+<li><code>MongoDB for Windows 64-bit Legacy</code> 适合 64 位的 Windows Vista, Windows Server 2003, 及 Windows Server 2008 。</li>
+</ul>
+<hr>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/MongoDB在windows上的配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/计网/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/计网/" itemprop="url">计算机网络笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-01T10:38:49+08:00">
+                2015-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/计网/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="计网/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/计网/" class="leancloud_visitors" data-flag-title="计算机网络笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  67
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="因特网与网络"><a href="#因特网与网络" class="headerlink" title="因特网与网络"></a>因特网与网络</h2><h3 id="电路交换-circuit-switching"><a href="#电路交换-circuit-switching" class="headerlink" title="电路交换 (circuit switching)"></a>电路交换 (circuit switching)</h3><p>提前预约，通信质量好</p>
+<p>频分/时分复用</p>
+<h3 id="分组交换-packet-switching"><a href="#分组交换-packet-switching" class="headerlink" title="分组交换 (packet switching)"></a>分组交换 (packet switching)</h3><p>资源共享，通信质量差 </p>
+<p>拥塞  丢包  时延</p>
+<p>存储转发（store-and-forward transmission）   分组交换机  路由</p>
+<p>统计复用</p>
+<!--more>
+
+- 数据报网络（INTERNET因特网）：无连接
+
+- 虚电路网络（帧中继，ATM）：需要建立连接
+
+路由（Route）
+
+---
+## 应用层
+
+### 应用层协议
+
+1. C/S 
+
+2. P2P
+
+3. C/S混合P2P
+
+进程通信
+
+应用程序编程接口（API）
+
+
+
+因特网提供的运输服务：
+
+- TCP服务
+
+- UDP服务
+
+
+#### HTTP
+
+HTTP/1.0
+
+HTTP/1.1
+
+IP+PORT:标识主机进程
+
+WEB服务
+
+web page ：
+
+- base
+
+- object（URL）
+
+RTT 往返时间
+
+HTTP工作原理 C/S模式 对象为单位 无状态协议
+
+B/S(浏览器/服务器)
+
+- 非持久连接
+
+ - 串行
+
+ - 并行
+
+- 持久连接
+
+ - 非流水
+
+ - 流水
+
+HTTP报文格式
+
+
+- 请求行
+
+ - 方法字段
+
+ - URL字段
+
+ - HTTP协议版本字段
+
+- 首部行
+
+ - Web代理高速缓存所要求
+
+- 空行
+
+
+- 实体主体
+
+
+#### COOKIE
+
+1. 在HTTP响应报文中有一个cookie首部行；
+
+2. 在HTTP请求报文中有一个cookie首部行；
+
+3. 在用户端系统中保留有一个cookie文件，由用户的浏览器管理；
+
+4. 在web站点有一个后端数据库。
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># Netscape HTTP Cookie File</div><div class="line"># http://curlm.haxx.se/rfc/cookie_spec.html</div><div class="line"># This file was generated by libcurl! Edit at your own risk.</div><div class="line"></div><div class="line">202.115.47.141	FALSE	/	FALSE	0	JSESSIONID	dbazcFE-LrkHb6W-H5XUu</div></pre></td></tr></table></figure>
+<h4 id="WEB-CACHES"><a href="#WEB-CACHES" class="headerlink" title="WEB CACHES"></a>WEB CACHES</h4><p>Web缓存器也叫代理服务器，它能够代表初始Web服务器来满足HTTP请求的网络实体。</p>
+<p>Web缓存器既是服务器又是客户机。</p>
+<h4 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h4><p>文件传输协议。</p>
+<p>FTP使用两个并行的TCP连接来传输文件：</p>
+<ul>
+<li><p>控制连接（21端口）</p>
+<ul>
+<li>用于在两个主机之间传输控制信息（用户标识/口令/改变远程目录的命令以及“put”和“get”文件的命令）。</li>
+</ul>
+</li>
+<li><p>数据连接（20端口）</p>
+<ul>
+<li><p>用于实际传输一个文件。</p>
+</li>
+<li><p>非持久连接。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>FTP协议使用一个分离的控制连接</p>
+<p>FTP的控制信息是带外（out-of-band）传送的。</p>
+<p>HTTP协议是在传输文件的TCP连接中发送请求和响应首部行的，因此HTTP是带内（in-band）发送控制信息的。</p>
+<hr>
+<h3 id="电子邮件的相关协议"><a href="#电子邮件的相关协议" class="headerlink" title="电子邮件的相关协议"></a>电子邮件的相关协议</h3><ul>
+<li><p>用户代理 (user agent)</p>
+</li>
+<li><p>邮件服务器 (mail server)</p>
+</li>
+<li><p>简单邮件传输协议 (Simple Mail Transfer Protocol,SMTP)</p>
+<ul>
+<li><p>7位ASCLL码。</p>
+</li>
+<li><p>SMTP一般不使用中间服务器发送邮件。</p>
+</li>
+<li><p>以 <code>CTRF.CTRL</code>结束。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>SMTP/HTTP比较</p>
+<ul>
+<li><p>HTTP:pull protocol</p>
+</li>
+<li><p>SMTP:push protocol</p>
+</li>
+<li><p>SMTP要求每个报文都是用7位ASCLL吗格式，HTTP没有这个限制。</p>
+</li>
+<li><p>HTTP把每个对象封装在他自己的HTTP响应报文中，而SMTP把所有报文对象放在同一个报文中。</p>
+</li>
+</ul>
+<p>邮件报文格式与MIME</p>
+<ul>
+<li><p>非ASCLL数据的MIME扩展</p>
+<ul>
+<li><p><code>Content-Type</code></p>
+</li>
+<li><p><code>Content-Transfer-Encoding</code></p>
+</li>
+<li><p>混合类型,分割符<code>--987667889</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>邮件访问协议</p>
+<ul>
+<li><p>POP3</p>
+</li>
+<li><p>IMAP</p>
+</li>
+<li><p>HTTP</p>
+</li>
+</ul>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>域名系统（Domain-Name-System）</p>
+<ol>
+<li><p>一个由分层的DNS服务器实现的分布式数据库。</p>
+</li>
+<li><p>一个允许主机查询分布式数据库的应用层协议。</p>
+</li>
+</ol>
+<p>服务：</p>
+<ul>
+<li><p>主机名到ip地址的转换</p>
+</li>
+<li><p>主机别名（host aliasing）</p>
+</li>
+<li><p>邮件服务器别名（mail server aliasing）</p>
+</li>
+<li><p>负载分配（load distribution）</p>
+</li>
+</ul>
+<p>DNS工作机理概述</p>
+<ul>
+<li><p>分布式，层次数据库</p>
+<ul>
+<li><p>根DNS服务器</p>
+</li>
+<li><p>顶级域（TLD）服务器</p>
+</li>
+<li><p>权威DNA服务器（authoritative）</p>
+</li>
+<li><p>本地DNS服务器</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>DNS域名解析的工作模式：</p>
+<ul>
+<li><p>迭代 </p>
+</li>
+<li><p>递归</p>
+</li>
+</ul>
+<p>DNS缓存（DNS caching)</p>
+<p>DNS记录和报文</p>
+<ul>
+<li><p>资源记录（Resource Record）</p>
+<ul>
+<li><p><code>(Name,Value,Type,TTL)</code></p>
+</li>
+<li><p>`Type:A,NS,CNAME,MS``</p>
+</li>
+</ul>
+</li>
+<li><p>DNS报文</p>
+</li>
+</ul>
+<h3 id="P2P应用"><a href="#P2P应用" class="headerlink" title="P2P应用"></a>P2P应用</h3><ul>
+<li><p>P2P文件分发（file distribution）</p>
+</li>
+<li><p>BitTorrent</p>
+<ul>
+<li><p>最稀罕最优先（rarest first）</p>
+</li>
+<li><p>对换算法</p>
+</li>
+<li><p>free-riding</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>P2P区域中搜索信息</p>
+<ul>
+<li><p>集中式索引（centralized index）</p>
+<ul>
+<li><p>单点故障</p>
+</li>
+<li><p>性能瓶颈和基础设施费用</p>
+</li>
+<li><p>侵犯版权</p>
+</li>
+</ul>
+</li>
+<li><p>查询洪泛（query flooding）</p>
+<ul>
+<li>广播量太大</li>
+</ul>
+</li>
+<li><p>层次覆盖（hierarchical overlay design）</p>
+</li>
+</ul>
+<h3 id="TCP套接字编程"><a href="#TCP套接字编程" class="headerlink" title="TCP套接字编程"></a>TCP套接字编程</h3><hr>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><ul>
+<li><p>应用层PDU：message-&gt;传输层PDU：segment</p>
+</li>
+<li><p>多路复用和多路分解</p>
+<ul>
+<li><p>source port</p>
+</li>
+<li><p>dest port</p>
+</li>
+</ul>
+</li>
+<li><p>面向无连接的UDP</p>
+<p>二元组</p>
+<p>why use UDP:</p>
+<ul>
+<li><p>无连接 no connection</p>
+</li>
+<li><p>协议简单 simple:：no connection state at sender</p>
+</li>
+<li><p>samll segment head</p>
+</li>
+<li><p>no congestion coonstrol: UDP can blast away as fast as desired </p>
+</li>
+</ul>
+<p>UDP的适用: 在多播和广播中只能使用UDP（网络层）；DNA、SNMP;loss tolerrant、rate sensitive;</p>
+</li>
+<li><p>面向连接的TCP</p>
+<p>四元组（源端口，目的端口，源IP,目的IP）</p>
+</li>
+<li><p>可靠数据传输的原理</p>
+<ul>
+<li><p>rdt 1.0</p>
+</li>
+<li><p>rdt 1.1</p>
+</li>
+<li><p>rdt 2.0</p>
+</li>
+<li><p>rdt 2.1</p>
+</li>
+<li><p>rdt 3.0</p>
+</li>
+</ul>
+<p>流水线可靠数据传输协议：GBN(回退N步),SR(选择重传)。</p>
+<p>滑动窗口原理</p>
+</li>
+</ul>
+<h2 id="可靠数据传输原理"><a href="#可靠数据传输原理" class="headerlink" title="可靠数据传输原理"></a>可靠数据传输原理</h2><h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>单工，半双工，全双工</p>
+<p>TCP的结构</p>
+<p>序号（segment number） 确认号（acknowledge number）</p>
+-->
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/linux中打开window下txt文件乱码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/linux中打开window下txt文件乱码/" itemprop="url">linux中打开window下txt文件乱码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-29T00:10:17+08:00">
+                2015-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/linux中打开window下txt文件乱码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="linux中打开window下txt文件乱码/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/linux中打开window下txt文件乱码/" class="leancloud_visitors" data-flag-title="linux中打开window下txt文件乱码">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  219
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>有些在Windows下能够打开的txt文件在linux下用gedit打开时，中文显示是乱码，这是因为编码方式不同造成的。Windows下默认txt文件的编码方式是GBk，而linux下的gedit默认没有对GBK的支持。解决方法如下：</p>
+<p>  在终端运行<code>gconf-editor</code>，在<code>apps -&gt; gedit-2 -&gt; preference -&gt; encodings</code>里面有个<code>auto-detect</code>，在它的前面加上GBK或GB18030就OK了。</p>
+<p>vim打开文件乱码</p>
+<p>解决方法：<br>在<code>~/.vimrc</code>中输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936</div></pre></td></tr></table></figure></p>
+<p>在我的机器上没有<code>.vimrc</code>这个文件，我找到了<code>/etc/vim/vimrc</code>这个文件，于是加入了上面的行，测试好使了，我想是不是直接编辑<code>.vimrc</code>放到<code>~</code>下面也可以呢，于是删除了<code>/etc/vim/vimrc</code>里的那行，之后创建<code>.vimrc</code>文件，并写入<code>set file.....</code>这句，并复制到<code>~</code>目录下，测试也成功了。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/软件工程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/软件工程/" itemprop="url">软件工程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-27T10:38:49+08:00">
+                2015-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/软件工程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="软件工程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/软件工程/" class="leancloud_visitors" data-flag-title="软件工程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,761
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="过程模型"><a href="#过程模型" class="headerlink" title="过程模型"></a>过程模型</h3><p>惯例过程模型（沟通，策划，建模，构建，部署）</p>
+<ul>
+<li>惯例过程模型</li>
+<li>瀑布模型</li>
+<li>增量模型<ol>
+<li>增量模型</li>
+<li>RAD模型 </li>
+</ol>
+</li>
+<li>演化过程模型<ol>
+<li>原型开发</li>
+<li>螺旋模型</li>
+<li>协同开发模型</li>
+</ol>
+</li>
+<li>专用过程模型</li>
+<li>统一过程</li>
+</ul>
+<hr>
+<ol>
+<li><p>瀑布模型 The Waterfall Model</p>
+<ul>
+<li>当需求确定，工作能够采用线性的方式完成的时候，瀑布模型是一个很有用的过程模型。</li>
+<li>经典生命周期，系统/顺序，线性特性。</li>
+</ul>
+</li>
+<li><p>增量过程模型 Incremental Process Models</p>
+<ul>
+<li>以迭代的方式运行瀑布模型。增量模型可以规避技术风险。</li>
+<li>增量模型发布一系列称为增量的版本，随着每个版本的交付，逐步为每个用户提供更多的功能。</li>
+<li>在项目既定的商业要求期限之前不可能找到足够的开发人员，这种情况之下增量模型显得特别有用。</li>
+</ul>
+</li>
+<li><p>RAD模型  Rapid Application Development </p>
+<ul>
+<li>快速应用程序开发是一种侧重于短暂的开发周期的增量软件过程模型。</li>
+<li>瀑布模型的“高速变体”。</li>
+<li>严格的时间要求使得RAD项目必须具备“可伸缩范围”。</li>
+<li>适用于某个商业项目的每个主要功能都能3个月内完成。每个主要功能分配给一个独立的RAD团队，然后再集成一个整体。</li>
+</ul>
+</li>
+<li><p>演化过程模型 Evolutionary Process Models</p>
+<ul>
+<li>演化过程模型中，每次迭代产生软件的一个完整的版本。</li>
+<li>适用于严格的交付时间似的开发团队不可能圆满的完成软件产品，但必须交付功能有限的版本以应对竞争和商业压力；很好地理解了核心产品和系统需求，但是产品或系统拓展的细节问题却没有定义。</li>
+<li>Evolutionary models are iterative. They are characterized in a manner that enables you to develop increasingly more complete versions of the software.In the paragraphs that follow, I present two common evolutionary process models.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p>原型开发 Prototyping</p>
+<ul>
+<li>快速设计产生一个原型，对原型进行部署，然后又客户或者用户进行评价。根据反馈，进一步细化软件的需求。</li>
+<li>适用于客户提出了软件的一些基本功能，但是没有详细定义输入/处理和输出需求；开发人员可能对算法的效率/操作系统的兼容性和人机交互的形式等情况不确定。</li>
+</ul>
+</li>
+<li><p>螺旋模型 The Spiral Model</p>
+<ul>
+<li>一种演进式软件过程模型，结合原型的迭代性质和瀑布模型的系统性和可控性特点。</li>
+<li>采用循环的方式逐步加深系统定义和实现的深度，同时降低风险；确定一系列里程碑，确保共利益者都支持可行的和令人满意的系统解决方案。</li>
+<li>螺旋模型是开发大型系统和软件的理想方法，螺旋模型把原型开发作为降低风险的机制，保留了瀑布模型（经典生命周期）中系统逐步细化的方法，（迭代框架）。</li>
+<li>螺旋模型要求在项目的所有阶段始终考虑技术风险。</li>
+</ul>
+</li>
+<li><p>协同开发模型 Concurrent Models</p>
+<ul>
+<li>协同模型可用于所有类型的软件开发，能够提供准确的项目当前状态图。</li>
+<li>定义一个活动的网络，网络中每个活动/动作和任务与其他活动/动作和任务同时存在。过程网络中某一点产生的事件可以触发状态的转换。</li>
+<li>协同模型更适合于不同的工程团队共同开发的系统工程项目。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="敏捷开发"><a href="#敏捷开发" class="headerlink" title="敏捷开发"></a>敏捷开发</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">1. What is it? </div><div class="line"></div><div class="line">Agile software engineering combines a philosophy and a set of development guidelines. The philosophy encourages customer</div><div class="line">satisfaction and early incremental delivery of</div><div class="line">software; small, highly motivated project teams;informal methods; minimal software engineering work products; and overall development simplicity. The development guidelines stress delivery over analysis and design (although these activities are not discouraged), and active and continuous communication between developers and customers.</div><div class="line"></div><div class="line">2. Who does it? </div><div class="line"></div><div class="line">Software engineers and other project stakeholders (managers, customers, end</div><div class="line">users) work together on an agile team—a team</div><div class="line">that is self-organizing and in control of its own destiny. An agile team fosters communication and collaboration among all who serve on it.</div><div class="line"></div><div class="line">3. Why is it important? </div><div class="line"></div><div class="line">The modern business environment that spawns computer-based systems and software products is fast-paced and everchanging. Agile software engineering represents a reasonable alternative to conventional software engineering for certain classes of software and certain types of software projects. It</div><div class="line">has been demonstrated to deliver successful systems quickly.</div><div class="line"></div><div class="line">4. What are the steps? </div><div class="line"></div><div class="line">Agile development might best be termed “software engineering lite.” The basic</div><div class="line">framework activities—communication, planning,</div><div class="line">modeling, construction, and deployment—</div><div class="line">remain. But they morph into a minimal task set</div><div class="line">that pushes the project team toward construction and delivery (some would argue that this is done at the expense of problem analysis and solution design).</div><div class="line"></div><div class="line">5. What is the work product? </div><div class="line"></div><div class="line">Both the customer and the software engineer have the same view—the only really important work product is an operational “software increment” that is delivered to the customer on the appropriate commitment date.</div><div class="line"></div><div class="line">6. How do I ensure that I’ve done it right? </div><div class="line"></div><div class="line">If the agile team agrees that the process works, and the team produces deliverable software increments that satisfy the customer, you’ve done it right.</div></pre></td></tr></table></figure>
+<p>敏捷宣言 </p>
+<ul>
+<li>2001年，Kent Beck和其他16位知名软件开发者/软件工程作家以及软件咨询师（被称为敏捷联盟）共同签署了“敏捷软件开发宣言”。</li>
+</ul>
+<p>敏捷建模 </p>
+<ul>
+<li><p>敏捷建模（Agile Modeling,AM）,是一种用于对软件工程有效建模和文档化的时间方法学。</p>
+</li>
+<li><p>提出大致的“核心”和“补充”的建模原则，但其中独具特色的是：</p>
+<ul>
+<li><p>有目的的建模。</p>
+</li>
+<li><p>使用多个模型。</p>
+</li>
+<li><p>前进灯。</p>
+</li>
+<li><p>内容重于表述形式。</p>
+</li>
+<li><p>理解模型及工具。</p>
+</li>
+<li><p>适用本地需求。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>敏捷过程模型 </p>
+<ul>
+<li>所有敏捷过程模型（或多或少）都遵循敏捷软件开发宣言以及敏捷联盟定义的12条原则。</li>
+</ul>
+<p>敏捷过程 ：</p>
+<ul>
+<li><p>任何一个敏捷过程都可以由所强调的三个关键假设而识别出来。</p>
+<ul>
+<li><p>提前预测那些需求是稳定和那些需求会变化非常困难。同样，预测项目进行中客户优先级的变化也很困难。</p>
+</li>
+<li><p>对很多软件来说，设计和构建是交错进行的。事实上，两种活动应当顺序开展以保证通过构建实施来验证设计模型，而在通过构建验证之前很难估计应该设计到什么程度。</p>
+</li>
+<li><p>从制定计划的角度来看/分析/设计/构建和测试并不像我们所设想的那么容易预测。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>ASD </p>
+<ul>
+<li>自适应软件开发，作为构建复杂软件和系统的一项技术，其基本概念着眼于人员协作和团队自我组织。ASD“生命周期”包括：思考/协作和学习三个阶段。使用迭代过程，该过程由自适应循环计划/相对严格的需求收集方法和一个迭代开发循环构成，其中迭代开发循环包括客户焦点组和正式技术评审作为实时反馈机制。</li>
+</ul>
+<p>XP </p>
+<ul>
+<li><p>极限编程（eXtreme Programming,XP）。</p>
+</li>
+<li><p>XP使用面向对象方法作为推荐的开发范型。XP包括了策划/设计/编码和测试4个框架活动的规则和实践。</p>
+</li>
+<li><p>极限编程过程：</p>
+<ul>
+<li><p>策划。策划活动开始于建立一系列描述待开发软件必要特征与功能的“故事”（也称为“用户故事”）。每个故事由客户书写并置于一张索引卡上，客户根据对应特征或功能的全局业务价值标明权值（优先级）。ps.一个故事的权值取决于其他相关故事的存在。</p>
+</li>
+<li><p>设计。XP设计严格遵循KIS（Keep It Simple,简洁保持）原则，即使用简单而不是复杂的表述；不鼓励额外功能性设计；鼓励使用CRC作为有效机制；故事设计中遇到困难，推荐Spike解决方案；XP鼓励既是构建技术又是设计技术的“重构”。</p>
+</li>
+<li><p>编码。XP推荐在故事开发和基本设计完成之后，开发一系列用于检测本次（软件增量）发布的包括所有故事的单元测试；XP编码活动中的关键概念之一是结对编程。</p>
+</li>
+<li><p>测试。单元测试 回归测试策略 通用测试集 XP验收测试（客户测试）。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>重构 </p>
+<ul>
+<li>重构是以不改变代码外部行为而改进其内部结构的方式来修改软件系统的过程。这是一种净化代码【并秀瑷/简化内部设计】以尽可能减少引入错误的严格方案。简而言之，重构就是在编码完成之后改进代码设计。</li>
+</ul>
+<p>结对编程 </p>
+<ul>
+<li>XP推荐/建议两个人面对同一台计算机共同为同一个“故事”开发代码。这一方案提供了实时解决问题和实时质量保证的机制，同时也使得开发者能够集中精力解决手头的问题。实施中不同成员担任的角色略有不同。 “连续集成” “冒烟测试”。</li>
+</ul>
+<p>DSDM</p>
+<ul>
+<li><p>动态系统开发方法是一种提供“通过在可控项目环境中使用增量原型开发模式完全满足对时间有约束的系统的构建和维护”的敏捷软件开发方法。</p>
+</li>
+<li><p>定义了三种迭代循环：</p>
+<ul>
+<li><p>功能模型迭代</p>
+</li>
+<li><p>设计和构建迭代</p>
+</li>
+<li><p>实现迭代</p>
+</li>
+</ul>
+</li>
+<li><p>可行性研究和业务研究两个传统的生命周期活动。</p>
+</li>
+<li><p>倡导时间调度的使用，认为每一个软件增量所需的必要工作仅仅是能够方便的进入下一次增量开发。</p>
+</li>
+</ul>
+<p>FDD </p>
+<ul>
+<li>特征驱动开发，可用于中/大型软件项目的适应性敏捷开发过程。和其他敏捷方法相比，更加强调项目管理原则和技术。</li>
+</ul>
+<p>Crystal </p>
+<ul>
+<li>Crystal敏捷方法系列，其目的是发展一种提倡“机动性”的软件开发方法。可用于具有特定特征的项目。采用迭代策略，但可以调整过程的严格程度以适应不同规模和复杂度的项目。</li>
+</ul>
+<p>Scrum </p>
+<ul>
+<li><p>一种敏捷过程模型，强调使用一系列“软件过程模型”，这些模式已被验证对时间紧迫/需求变化和业务重要的项目非常有效。每一个过程模型定义一系列开发任务并允许Scrum团队以适应期项目的方式构建过程。</p>
+</li>
+<li><p>每一个过程模式定义了一系列开发活动：</p>
+<ul>
+<li><p>待定项</p>
+</li>
+<li><p>冲刺</p>
+</li>
+<li><p>Scrum例会</p>
+</li>
+<li><p>演示</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>敏捷性 </p>
+<p>敏捷原理 </p>
+<p>政策 </p>
+<p>团队特征</p>
+<hr>
+<h2 id="软件工程实践综述"><a href="#软件工程实践综述" class="headerlink" title="软件工程实践综述"></a>软件工程实践综述</h2><ol>
+<li><p>实践的精髓</p>
+</li>
+<li><p>核心原则</p>
+</li>
+<li><p>沟通实践</p>
+</li>
+<li><p>策划实践</p>
+</li>
+<li><p>建模实践</p>
+<p>分析建模原则</p>
+<p>设计建模原则</p>
+</li>
+</ol>
+<ol>
+<li><p>构造实践</p>
+<p>编码原则和概念</p>
+<p>测试原则</p>
+</li>
+<li><p>部署</p>
+</li>
+</ol>
+<hr>
+<h2 id="需求工程"><a href="#需求工程" class="headerlink" title="需求工程"></a>需求工程</h2><h3 id="需求工程任务"><a href="#需求工程任务" class="headerlink" title="需求工程任务"></a>需求工程任务</h3><ul>
+<li><p>起始（Inception）</p>
+</li>
+<li><p>导出（elicitation）</p>
+</li>
+<li><p>精化（elaboration）</p>
+</li>
+<li><p>协商（negotiation）</p>
+</li>
+<li><p>规格说明（specification）</p>
+</li>
+<li><p>确认（validation）</p>
+</li>
+<li><p>管理（management）</p>
+</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/微机接口/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/微机接口/" itemprop="url">微机接口</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-21T12:01:19+08:00">
+                2015-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/微机接口/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="微机接口/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/微机接口/" class="leancloud_visitors" data-flag-title="微机接口">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  867
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="最小组态总线形成"><a href="#最小组态总线形成" class="headerlink" title="最小组态总线形成"></a>最小组态总线形成</h2><h3 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h3><p>引脚</p>
+<p>系统总线：</p>
+<ol>
+<li><p>控制总线</p>
+</li>
+<li><p>数据总线：</p>
+<ul>
+<li>形成 双向 8根</li>
+</ul>
+</li>
+<li><p>地址总线:</p>
+<ul>
+<li>形成 单向 20根 </li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="8284外部引脚与内部结构"><a href="#8284外部引脚与内部结构" class="headerlink" title="8284外部引脚与内部结构"></a>8284外部引脚与内部结构</h3><p>一级同步 最大延迟1个时钟周期</p>
+<p>二级同步 最大延迟1+1/3个时钟周期</p>
+<h4 id="8024的功能"><a href="#8024的功能" class="headerlink" title="8024的功能"></a>8024的功能</h4><ol>
+<li><p>时钟周期</p>
+</li>
+<li><p>准备好控制逻辑</p>
+</li>
+</ol>
+<h3 id="8088的基本总线活动"><a href="#8088的基本总线活动" class="headerlink" title="8088的基本总线活动"></a>8088的基本总线活动</h3><p>总线操作是CPU通过对外的各种操作。</p>
+<p>8088的总线操作</p>
+<p>描述总线的微处理器时序有三级：</p>
+<ul>
+<li>指令周期-总线周期-时钟周期</li>
+</ul>
+<p>8088的基本总线周期需要4个时钟周期:</p>
+<ul>
+<li>4个时钟周期编号为T1,T2.T3和T4。</li>
+<li>总线周期中的时钟周期称为“T状态”。</li>
+</ul>
+<p>总线周期的构成</p>
+<p>8088的基本总线时序</p>
+<ul>
+<li>取指 存储器读总线 IO读总线 中断响应</li>
+</ul>
+<p>总线操作中如何实现CPU与内存/接口芯片间的时序同步是关键</p>
+<ol>
+<li><p>同步时序 </p>
+<ul>
+<li>以系统时钟信号为基准</li>
+</ul>
+</li>
+<li><p>异步时序</p>
+<ul>
+<li>通过应答联络信号实现同步操作</li>
+</ul>
+</li>
+</ol>
+<p>8088的最小组态的总线时序：</p>
+<ol>
+<li>存储器写总线周期</li>
+<li>存储器读总线周期</li>
+<li>IO写总线周期</li>
+<li>IO读总线周期</li>
+</ol>
+<p>8088最大组态中的引脚定义</p>
+<p>8088最大组态的总线形成</p>
+<p>IBM PC 总线–总线周期</p>
+<hr>
+<h2 id="半导体存储器及接口"><a href="#半导体存储器及接口" class="headerlink" title="半导体存储器及接口"></a>半导体存储器及接口</h2><p>存储系统结构</p>
+<p>CPU CACHE 主存 辅存（外存）</p>
+<ul>
+<li><p>存储体</p>
+</li>
+<li><p>地址译码电路</p>
+</li>
+<li><p>片选和读写控制电路</p>
+</li>
+</ul>
+<p>半导体存储器芯片的内部结构</p>
+<p>地址译码电路结构：</p>
+<ul>
+<li><p>单译码</p>
+</li>
+<li><p>双译码</p>
+</li>
+</ul>
+<hr>
+<p>半导体存储器与CPU的连接</p>
+<ul>
+<li>存储芯片的数据线/地址线/片选端/读写控制线。</li>
+</ul>
+<p>位扩充/位扩展</p>
+<ul>
+<li><p>芯片的数据线不足8根。</p>
+</li>
+<li><p>选中的数据总线不一样。</p>
+</li>
+</ul>
+<p>字扩充/地址扩充</p>
+<ul>
+<li><p>扩充存储器地址范围。</p>
+</li>
+<li><p>连接同一数据总线，不能同时工作。</p>
+</li>
+</ul>
+<p>片选端常有效，地址重复（高位地址不产生作用，选择全为0的）</p>
+<p>译码和译码器</p>
+<ul>
+<li><p>全译码方式不存在地址重复。</p>
+</li>
+<li><p>部分译码（只有高位地址参与存储芯片的译码）</p>
+</li>
+<li><p>线选译码</p>
+</li>
+</ul>
+<p>存储芯片与CPU的配合</p>
+<ul>
+<li><p>CPU的总线负载能力</p>
+</li>
+<li><p>存储芯片与CPU总线时序的配合</p>
+</li>
+</ul>
+<p>时序配合</p>
+<h2 id="输入-输出及接口"><a href="#输入-输出及接口" class="headerlink" title="输入/输出及接口"></a>输入/输出及接口</h2><p>I/O接口连接（主板）总线和外设。</p>
+<ul>
+<li><p>信号转换</p>
+</li>
+<li><p>外设的工作处理速度与内部CPU的处理速度不同，协调速度差异，保证数据全部接受（使用缓冲）。</p>
+</li>
+</ul>
+<p>功能：</p>
+<ul>
+<li>对输入输出数据进行缓冲和锁存，对信号的形式和数据的格式进行比变换，对I/O端口进行寻址，与CPU和I/O设备进行联络。</li>
+</ul>
+<p>缓冲的实现，锁存/隔离/驱动或它们的组合。</p>
+<p>I/O端口的内部结构：</p>
+<ul>
+<li>在I/O接口中，其内部一般包含3类可寻址的寄存器：数据寄存器/状态寄存器和控制寄存器。这三类可操作的寄存器分别称为数据端口，状态端口和控制端口，或简称为数据口/状态口和控制口。</li>
+</ul>
+<h2 id="I-O寻址方式"><a href="#I-O寻址方式" class="headerlink" title="I/O寻址方式"></a>I/O寻址方式</h2><ul>
+<li><p>8088/8086：64Kb</p>
+</li>
+<li><p>寻址方式：</p>
+<ul>
+<li><p>直接寻址（8位I/O地址）</p>
+</li>
+<li><p>dx间接寻址方式（16位I/O地址）</p>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/nodeppt-使用markdown语法来写网页ppt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/nodeppt-使用markdown语法来写网页ppt/" itemprop="url">nodeppt：使用markdown语法来写网页ppt</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-19T23:26:46+08:00">
+                2015-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/nodeppt-使用markdown语法来写网页ppt/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="nodeppt-使用markdown语法来写网页ppt/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/nodeppt-使用markdown语法来写网页ppt/" class="leancloud_visitors" data-flag-title="nodeppt：使用markdown语法来写网页ppt">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,201
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><code>nodePPT</code> 是<a href="http://js8.in/" target="_blank" rel="external">@三水清</a>基于nodejs来写的网页PPT，之前的版本仅仅是html语法，现在可以支持通过<code>markdown</code>来写网页ppt了。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/nodeppt-使用markdown语法来写网页ppt/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/hexo-deploy时重复输入用户名密码的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-deploy时重复输入用户名密码的问题/" itemprop="url">hexo deploy时重复输入用户名密码的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-18T01:08:12+08:00">
+                2015-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/hexo-deploy时重复输入用户名密码的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="hexo-deploy时重复输入用户名密码的问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/hexo-deploy时重复输入用户名密码的问题/" class="leancloud_visitors" data-flag-title="hexo deploy时重复输入用户名密码的问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  57
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>每次部署执行<code>hexo deploy</code>都需要输入用户名</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/hexo-01.png" alt="此处输入图片的描述"></p>
+<p>问题原因及解决方案：</p>
+<p>最主要的原因可能是你木有采用<code>git@github.com</code></p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/hexo-04.png" alt="此处输入图片的描述"></p>
+<p>而是用<code>https//github.com</code>。</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/hexo-03.png" alt="此处输入图片的描述"></p>
+<p>修改后重新提交部署：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/hexo-02.png" alt="此处输入图片的描述"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/hexo部署提示找不到git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo部署提示找不到git/" itemprop="url">hexo部署提示找不到git</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-18T00:27:02+08:00">
+                2015-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/hexo部署提示找不到git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="hexo部署提示找不到git/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/hexo部署提示找不到git/" class="leancloud_visitors" data-flag-title="hexo部署提示找不到git">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  53
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>部署提示找不到git</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/github-06.png" alt="此处输入图片的描述"></p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/github-05.png" alt="此处输入图片的描述"></p>
+<p>解决办法：</p>
+<p>在<code>Hexo 3.0</code>版本后<code>deploy git</code>被分开的，所以需要安装，安装命令如下:<code>npm install hexo-deployer-git --save</code> ,安装好后在尝试一下就ok。</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/github-04.png" alt="此处输入图片的描述"></p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/github-07.png" alt="此处输入图片的描述"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/debian8无法挂载u盘解决方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/debian8无法挂载u盘解决方法/" itemprop="url">debian8无法挂载u盘解决方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-17T01:48:01+08:00">
+                2015-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/debian8无法挂载u盘解决方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="debian8无法挂载u盘解决方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/debian8无法挂载u盘解决方法/" class="leancloud_visitors" data-flag-title="debian8无法挂载u盘解决方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  93
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在文件管理器里点击 U 盘图标，提示 vfat 无法识别；在终端里使用 mount 命令挂载，也会出现错误提示：<br><code>&quot;mount: unknown filesystem type &#39;vfat&#39;&quot;</code></p>
+<p>解决方法：<br>重新安装内核：<br><code># apt-get install --reinstall &lt;linux-image-内核版本号-系统架构&gt;</code><br>例如：<br><code>$ sudo apt-get install --reinstall linux-image-3.16.0-4-amd64</code></p>
+<p>ps.以上来自我的舍友lxhillwind</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hwk603.png"
+                alt="hwk603" />
+            
+              <p class="site-author-name" itemprop="name">hwk603</p>
+              <p class="site-description motion-element" itemprop="description">一些关于坑的思考和疑难解决</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hwk603" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/hwk603" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/hwk603" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.quora.com/profile/Hwk603" target="_blank" title="Quora">
+                      
+                        <i class="fa fa-fw fa-pinterest"></i>Quora</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://scucyber.cn/" title="青梅网络部" target="_blank">青梅网络部</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://camixxx.win/" title="CamiXXX" target="_blank">CamiXXX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2014 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hwk603</span>
+
+  
+  
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://hwk603.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("O8CtzoV9ACq6kGNHKp8AIRnS-gzGzoHsz", "QG6x9FzwAdcwrKu4b93f06Bz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="t-E3ZRZAfjzJO3vU37kiHYBNdXdrPr7VQycbI5rAoKI" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="TDSQL," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="腾讯云金融级数据库CDB for TDSQL （Cloud DataBase for Tecent DistributeSQL）是一个适用于OLTP场景且与MySQL 5.5 、5.6兼容的分布式关系型数据库。 其前身是腾讯计费平台部为托管公司的虚拟账户，如QB、Q点、包月服务、游戏的二级账户等数据而打造的高性能数据库集群。在支持各大业务实时在线交易顺畅进行的同时，保证在各种灾难场景下数据的一致">
+<meta name="keywords" content="TDSQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="腾讯金融级数据库TDSQL的架构与应用">
+<meta property="og:url" content="http://hwk603.com/腾讯金融级数据库TDSQL的架构与应用/index.html">
+<meta property="og:site_name" content="One Piece">
+<meta property="og:description" content="腾讯云金融级数据库CDB for TDSQL （Cloud DataBase for Tecent DistributeSQL）是一个适用于OLTP场景且与MySQL 5.5 、5.6兼容的分布式关系型数据库。 其前身是腾讯计费平台部为托管公司的虚拟账户，如QB、Q点、包月服务、游戏的二级账户等数据而打造的高性能数据库集群。在支持各大业务实时在线交易顺畅进行的同时，保证在各种灾难场景下数据的一致">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108201140.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108201336.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108201806.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108201932.jpg">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108202310.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108202503.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108202552.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108202709.jpg">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108202831.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203103.jpg">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203419.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203526.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203637.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203717.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203809.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203856.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203952.png">
+<meta property="og:updated_time" content="2016-01-08T14:37:09.457Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="腾讯金融级数据库TDSQL的架构与应用">
+<meta name="twitter:description" content="腾讯云金融级数据库CDB for TDSQL （Cloud DataBase for Tecent DistributeSQL）是一个适用于OLTP场景且与MySQL 5.5 、5.6兼容的分布式关系型数据库。 其前身是腾讯计费平台部为托管公司的虚拟账户，如QB、Q点、包月服务、游戏的二级账户等数据而打造的高性能数据库集群。在支持各大业务实时在线交易顺畅进行的同时，保证在各种灾难场景下数据的一致">
+<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108201140.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'G2ERKDYPN5',
+      apiKey: 'c1e9afb1c2f47d6b86b7ce51903006dc',
+      indexName: 'dev_NAME',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hwk603.com/腾讯金融级数据库TDSQL的架构与应用/"/>
+
+
+
+
+
+  <title>腾讯金融级数据库TDSQL的架构与应用 | One Piece</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57214075-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?59918ede8fb11545a8b6b16be04958be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One Piece</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">侯文魁的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/腾讯金融级数据库TDSQL的架构与应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">腾讯金融级数据库TDSQL的架构与应用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-08T20:59:36+08:00">
+                2016-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/腾讯金融级数据库TDSQL的架构与应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="腾讯金融级数据库TDSQL的架构与应用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/腾讯金融级数据库TDSQL的架构与应用/" class="leancloud_visitors" data-flag-title="腾讯金融级数据库TDSQL的架构与应用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,984
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>腾讯云金融级数据库CDB for TDSQL （Cloud DataBase for Tecent Distribute<br>SQL）是一个适用于OLTP场景且与MySQL 5.5 、5.6兼容的分布式关系型数据库。</p>
+<p>其前身是腾讯计费平台部为托管公司的虚拟账户，如QB、Q点、包月服务、游戏的二级账户等数据而打造的高性能数据库集群。在支持各大业务实时在线交易顺畅进行的同时，保证在各种灾难场景下数据的一致性、可用性。目前已经承载了包括webank、米大师等多家金融领域的主要业务数据。下面主要介绍TDSQL的核心架构和应用场景。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="金融领域数据库的挑战："><a href="#金融领域数据库的挑战：" class="headerlink" title="金融领域数据库的挑战："></a>金融领域数据库的挑战：</h2><h3 id="数据高一致性："><a href="#数据高一致性：" class="headerlink" title="数据高一致性："></a>数据高一致性：</h3><p>对金融业务来讲，数据的强一致（Consistency）尤为重要，因为如果出现数据丢失，就意味着交易的丢失，这会给组织或用户带来直接的金钱方面损失，也有损企业商誉和信。因此，数据的一致性是DBA应该最需要考虑的问题之一。然而，传统数据库如果不使用共享存储的情况下很难做到主库出问题时数据不丢失。即使采用一些强同步的方案进行改造，也会造成数据库性能的下降，无法满足业务高并发需求。</p>
+<h3 id="服务高可用性："><a href="#服务高可用性：" class="headerlink" title="服务高可用性："></a>服务高可用性：</h3><p>随着业务需求的不断提高，搭建一个数据库高可用环境已经成为很多企业迫切的需求。确保企业中的计算资源持续可用性是DBA的主要目标之一。如果支持应用程序的数据库不可用，不仅会带来大量投诉或用户流失，也会给组织带来金钱方面的损失，损失信誉和商。高可用性和减少停机时间是数据库系统的目标，在诸如订单、支付等需要24*7无障碍运行的金融业务环境中尤其如此。</p>
+<h3 id="高并发和益伸缩性："><a href="#高并发和益伸缩性：" class="headerlink" title="高并发和益伸缩性："></a>高并发和益伸缩性：</h3><p>互联网金融的到来让金融服务向高效率、碎片化、低成本的方向快速转化。数据体量不断膨胀的同时，对业务请求的响应时间要求也愈加苛刻。在保证前两点的前提下，不断提升系统容量和吞吐率，保证毫秒级请求响应时长也是一个必不可少的能力。</p>
+<h3 id="投资和回报："><a href="#投资和回报：" class="headerlink" title="投资和回报："></a>投资和回报：</h3><p>当前企业信息化的投入越发理性，决定企业信息系统构成的除了基础架构，通常还包括企业 的预算模型。对于或大或小的业务系统，在保证高一致性和高可用性的同时，也必须要考虑到企业预算和成本。商业数据库基于许可的采购模式，势必会导致建设成本高昂，难以扩展，且需要大量的资源来配置和维护。事实上，为维持可用、稳定的生产环境甚至非生产环境，企业需要不断地投入建设和管理费用，最终导致企业为数据库资源投入巨额成本。</p>
+<hr>
+<h2 id="腾讯云金融级云数据库解决方案"><a href="#腾讯云金融级云数据库解决方案" class="headerlink" title="腾讯云金融级云数据库解决方案"></a>腾讯云金融级云数据库解决方案</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>CDB for TDSQL的诞生经历了十余年：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108201140.png" alt="此处输入图片的描述"></p>
+<p>2002年，基于运营商SP业务，腾讯数据库团队开始对 MySQL进行改造；<br>2004年，腾讯互联网增值业务开始爆发，业务量的爆炸给数据库层带来了巨大扩容压力，这就开始引入分库表机制来解决难题；<br>2008年，腾讯游戏、QQ空间、财付通等各类业务再次爆发，为提高可用性，减少故障带来的损失和投诉，腾讯数据库团队全力解决一致性这个问题，引入多种机制保障主备数据的一致性，并提供数据自动恢复的能力。<br>2010年，基于正在火热的互联网支付业务超高可用性、超高并发和极短响应需求，腾讯数据库团队启动高一致（分布式）集群存储项目，最终达成了完全自动化的，在数据底层实现跨IDC的强同步、跨城容灾、切换一致性保障、数据自动分片、集群管理等能力。<br>2012年，腾讯内部正式给这款产品命名为TDSQL（Tecent Distribute SQL），且为了提高扩展性和开放性，将MariaDB作为数据库引擎的基础。在后续两年时间，陆续支撑米大师（Midas）、微众银行（WeBank）等多个兄弟业务的上线，并针对银行场景的数据关系模型设计了关系紧密的数据聚合，同时将跨节点的分布式架构转换扩展到单机架构，有效的覆盖了大中小多层次的用户。<br>2015年，TDSQL正式进驻腾讯云，并更名为腾讯云金融级数据库CDB for TDSQL，开始面向腾讯之外的企业提供金融级云数据库服务。</p>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108201336.png" alt="此处输入图片的描述"></p>
+<p>系统由三个模块组成：Scheduler、Agent、网关，三个模块的信息交换都是通过ZooKeeper完成，极大简化了各个节点之间的通信机制。</p>
+<p>先说下Set这个逻辑概念：由一主多从多个节点构成，每个节点包含一个Mysql实例和一个Agent实例，是承载数据存储和服务的底层物理数据库。一个或多个set可以通过网关形成一个逻辑数据库。</p>
+<p><strong>Scheduler作为集群的管理调度中心，主要功能包括：</strong></p>
+<ul>
+<li>管理set，提供创建、删除set、set内节点替换等工作     所有的DDL操作统一下发和调度</li>
+<li>监控set内各个节点的存活状态，当set内主节点故障，发起高一致性主备切换流程</li>
+<li>监控各个set的CPU、磁盘容量、各个表的资源消耗情况，必要的时候自动发起扩容流程</li>
+<li>Scheduler自身的容灾通过ZooKeeper的选举机制完成，保证中心控制节点无单点。</li>
+</ul>
+<p><strong>Agent模块负责监控本机MySQL实例的运行情况，主要功能包括：</strong></p>
+<ul>
+<li>用短连接的方式周期性访问本机的MySQL实例，检测是否可读、可写，若发生异常，会将异常信息上报到ZooKeeper，最终会由上面描述的Scheduler模块检测到这个异常情况，从而发起容灾切换；</li>
+<li>检测主备复制的执行情况，会定期上报主备复制的延时和延迟的事务数，若发生了主备切换，自动向新主机重建主备，因此MySQL的主备不需要DBA干预，对于新增的实例会自动采用xtrabackup通过主机自动重建数据；</li>
+<li>检测MySQL实例的CPU利用率和各个表的请求量、数据量、CPU利用率，上报到ZooKeeper，ZooKeeper通过全局的资源情况抉择如何扩容、缩容；</li>
+<li>监控是否有下发到自身的扩容任务，如有则会执行扩容流程；</li>
+<li>监控是否要发生容灾切换，并按计划执行主备切换流程。</li>
+</ul>
+<p><strong>网关基于MySQL Proxy开发，在网络层、连接管理、SQL解析、路由等方面做了大量优化，主要特点和功能如下：</strong></p>
+<ul>
+<li>解析SQL，将识别出的DDL语句直接存到ZooKeeper，让Scheduler来统一调度；</li>
+<li>Watch ZooKeeper的路由信息，拉取最新的路由表保存到本地文件和内存；</li>
+<li>将SQL请求路由到对应的set，支持读写分离；</li>
+<li>对接入的IP、用户名、密码进行鉴权；</li>
+<li>记录完整的SQL执行信息，与秒级监控平台对接完成实时的SQL请求的时耗，成功率等指标监控分析；</li>
+<li>对<code>count、distinct、sum、avg、max、min、order by、group by</code>等聚合类SQL一般需要访问后端的多个set，网关会分析结果并做合并再返回，暂不支持跨set join和分布式事务；</li>
+<li>网关无状态，既支持与业务部署到一起，也可以独立部署（可通过TGW或者LVS做容灾）。</li>
+</ul>
+<hr>
+<h2 id="分表逻辑"><a href="#分表逻辑" class="headerlink" title="分表逻辑"></a>分表逻辑</h2><p>在TDSQL中，每个表（逻辑表）可能会拆分成多个子表（建表的时候通过在建表语句中嵌入注释的方式提供一个shard字段名，最多会拆分出多个子表），每个子表在MySQL上都是一个真实的物理表，这里称为一个shard，分布在某个set中，因此一张表的数据可能会按这样的方式分布在多个Set中，如下图：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108201806.png" alt="此处输入图片的描述"></p>
+<p>每个SQL请求到达网关之后，网关会做词法和语法解析，重点会解析出shard字段，如果带了shard字段就可以直接查询路由表并发送到某个具体的set中。计费的OLTP类业务99%的请求都会带上shard字段；如果某笔请求没有shard字段，查询路由之后会将请求发送到所有的shard对应的set中，并对所有返回的结果做一些聚合运算。</p>
+<h2 id="分片方式比较"><a href="#分片方式比较" class="headerlink" title="分片方式比较"></a>分片方式比较</h2><p>TABLE SHARD：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108201932.jpg" alt="此处输入图片的描述"></p>
+<p>GROUP SHARD特点：逻辑A、B、C表中具有同样的shard id的数据分布到同个set中。</p>
+<p>目前TDSQL在腾讯云上暂时只支持单SET模式，GROUP SHARD模式也会很快上线。</p>
+<hr>
+<h2 id="容灾机制"><a href="#容灾机制" class="headerlink" title="容灾机制"></a>容灾机制</h2><p>对于TDSQL来说，我们希望容灾做到自动切换，自动恢复，主备一致性（保证业务提交的事务在切换过程不丢失），跨IDC容灾。</p>
+<p>对于TDSQL来说，我们希望容灾做到自动切换，自动恢复，主备一致性（保证业务提交的事务在切换过程不丢失），跨IDC容灾。</p>
+<p>对比下MYSQL的一些方案：</p>
+<ul>
+<li><p>MySQL异步复制：</p>
+<p>在MySQL发展的早期，就提供了异步复制的技术，只要写的压力不是特别大，在网络条件较好的情况下，发生主备切换基本上能将影响控制到秒级别，因此吸引了很多开发者的关注和使用。但这套方案提供的一致性保证，对于计费或者金融行业是不够的。</p>
+</li>
+<li><p>MySQL半同步复制：</p>
+<p>到了MySQL 5.5版本的时候，Google提供了一个半同步半异步的插件，确保必须收到一个备机的应答才让事务在主机中提交；当备机应答超时的情况下，强同步就会自动退化成异步模式（这也是半同步半异步名字的由来）；</p>
+</li>
+</ul>
+<p>下图是二者的比较：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108202310.png" alt="此处输入图片的描述"></p>
+<p>半同步复制可保障一致性，但是：</p>
+<ol>
+<li>超时后蜕化成异步，金融场景不合适</li>
+<li>跨IDC的情况下性能不容乐观</li>
+</ol>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108202503.png" alt="此处输入图片的描述"></p>
+<p>半同步性能不好的原因分析：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108202552.png" alt="此处输入图片的描述"></p>
+<p>不管是模型一还是模型二，每次执行SQL，都要先写binlog，然后往从机同步binlog，等待从机应答，然后再返回给client应答。虽然是多个线程，但执行流是同步的，CPU利用不起来。</p>
+<hr>
+<h2 id="TDSQL的线程异步化改造"><a href="#TDSQL的线程异步化改造" class="headerlink" title="TDSQL的线程异步化改造"></a>TDSQL的线程异步化改造</h2><p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108202709.jpg" alt="此处输入图片的描述"></p>
+<ul>
+<li>上半部分：任务执行到写binlog为止，然后将会话保存到session中，接着执行下一轮循环去处理其他请求了，这样就避免让线程阻塞等待应答了；</li>
+<li>然后：MySQL自身负责主备同步的dump线程会将binlog立即发送出去，备机的IO线程收到binlog并写入到relay log之后，再通过UDP给主机一个应答；</li>
+<li>在主机上，开一组线程来处理应答，收到应答之后找到对应的会话，执行下半部分的commit，send应答，绑定到epoll等操作。绑定到epoll之后这个连接又可以被其他线程检测到并执行了。</li>
+</ul>
+<p><strong>效果：</strong></p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108202831.png" alt="此处输入图片的描述"></p>
+<hr>
+<h2 id="数据高可用性保障机制"><a href="#数据高可用性保障机制" class="headerlink" title="数据高可用性保障机制"></a>数据高可用性保障机制</h2><h3 id="主备自动切换"><a href="#主备自动切换" class="headerlink" title="主备自动切换"></a>主备自动切换</h3><p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203103.jpg" alt="此处输入图片的描述"></p>
+<p>上面的强同步还有点小缺陷：比如主机用kill -9杀掉，那么可能写了binlog但没有来得及发送到远端，此时当然也不会返回给业务成功，备机上不存在这笔数据，但主机起来之后会多出来这笔事务。我们的做法是对新增的事务根据row格式的binlog做闪回，当然回退不了的比如drop table之类的，就直接提醒运维手工确认是保留还是清除数据库，然后会由Xtrabakcup机制自动从新的备机全量拉取数据重构。</p>
+<h3 id="灵活的主备配置"><a href="#灵活的主备配置" class="headerlink" title="灵活的主备配置"></a>灵活的主备配置</h3><p>通常为了保证可用性，TDSQL最少要求一主二从分布在3个IDC的部署方式，保证任意一个IDC挂掉都不影响系统的可用性和数据一致性。2个IDC同时挂掉，系统还可以提供只读服务。当然业务可以根据自身需要增加更多的从节点，同时可以选择性的将读请求分到从机，进一步提高系统的可用性和处理能力。甚至可以选择增加异地的灾备节点（通常采用异步的方式），提供跨城容灾的能力。</p>
+<hr>
+<h2 id="TDSQL应用"><a href="#TDSQL应用" class="headerlink" title="TDSQL应用"></a>TDSQL应用</h2><p>目前TDSQL已经在腾讯云官网对外开放售卖；</p>
+<p><strong>完善的帐号和权限管理：</strong></p>
+<p>为了更好的控制风险，TDSQL默认不提供超级用户，也无法直接通过SQL语句进行帐号和权限管理。响应的，在WEB管理页面，有非常方便的管理模块：</p>
+<p> <img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203419.png" alt="此处输入图片的描述"></p>
+<p>上图是帐号列表，点击左上按钮可以新建用户，指定用户名和主机，主机支持%这样的匹配方式，点击克隆帐号可以完全复制当前帐号的权限来新建一个帐号。</p>
+<p><strong>点击修改权限，如下图：</strong></p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203526.png" alt="此处输入图片的描述"></p>
+<p>可以看到，通过左边的导航栏，提供了完全兼容mysql管理方式的图形化界面，权限管理可以细化到列级。（图中因为是系统表，所以只提供SELECT权限的授权）。</p>
+<p><strong>支持批量设置参数</strong></p>
+<p>高效便捷的数据库参数设置：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203637.png" alt="此处输入图片的描述"></p>
+<p>支持查看参数修改历史记录：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203717.png" alt="此处输入图片的描述"></p>
+<h3 id="慢查询分析"><a href="#慢查询分析" class="headerlink" title="慢查询分析"></a>慢查询分析</h3><p>下图是按时间段列出的不同慢查询（抽象后的）的列表：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203809.png" alt=""></p>
+<p>下图是某条慢查询（抽象后的）详细统计数据：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203856.png" alt="此处输入图片的描述"></p>
+<p>操作日志，记录60天内所有相关管理操作记录：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160108203952.png" alt="此处输入图片的描述"></p>
+<hr>
+<h2 id="TDSQL的未来规划"><a href="#TDSQL的未来规划" class="headerlink" title="TDSQL的未来规划"></a>TDSQL的未来规划</h2><ol>
+<li><p>SQL审计：满足客户的信息安全需求，进一步提高数据安全性；</p>
+</li>
+<li><p>SQL加密：提供文件级别的加密保护，就算丢了硬盘也不怕；</p>
+</li>
+<li><p>支持GROUP SHARD的分布式方案；</p>
+</li>
+<li><p>用户SQL性能分析和故障诊断工具；</p>
+</li>
+</ol>
+<hr>
+<ul>
+<li><p>tdsql 是如何量化优化的query，带来的性能提升?</p>
+<p>答: tdsql基于mariadb，如果是单set版本，你可以认为就是一个mariadb。如果是shard版本，则在网关层面做了解析shard id，分发sql，聚合结果等操作。主要是解决分布式的问题。性能上主要在主从同步上做了线程异步话改造。query解析层面并没有针对性能做太多工作。</p>
+</li>
+</ul>
+<ul>
+<li><p>tdsql怎么支持前端应用性能线性扩容？ </p>
+<p>答：TDSQL在网关层做sql进行分析，路由，聚合。底层set可以线性扩展。系统整体容量和吞吐量也会线性提高。</p>
+</li>
+<li><p>采用shard，与MySQL cluster有什么区别？ </p>
+<p>答：shard的方式与cluster没有本质区别，分布式采用shard的方式，提供自动缩容、扩容的弹性管理方式。业界方案其实差别不大。但高可用方面，业界有主从同步和多主的方式。TDSQL采用前者，且在保证强一致性的前提下对性能做了优化。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    hwk603
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hwk603.com/腾讯金融级数据库TDSQL的架构与应用/" title="腾讯金融级数据库TDSQL的架构与应用">http://hwk603.com/腾讯金融级数据库TDSQL的架构与应用/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TDSQL/" rel="tag"># TDSQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Apache开启Rewrite/" rel="next" title="Apache开启Rewrite">
+                <i class="fa fa-chevron-left"></i> Apache开启Rewrite
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Windows下编译 Lua 5.3.0/" rel="prev" title="compile Lua 5.3.0 for Windows">
+                compile Lua 5.3.0 for Windows <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hwk603.png"
+                alt="hwk603" />
+            
+              <p class="site-author-name" itemprop="name">hwk603</p>
+              <p class="site-description motion-element" itemprop="description">一些关于坑的思考和疑难解决</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hwk603" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/hwk603" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/hwk603" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.quora.com/profile/Hwk603" target="_blank" title="Quora">
+                      
+                        <i class="fa fa-fw fa-pinterest"></i>Quora</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://scucyber.cn/" title="青梅网络部" target="_blank">青梅网络部</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://camixxx.win/" title="CamiXXX" target="_blank">CamiXXX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#金融领域数据库的挑战："><span class="nav-number">1.</span> <span class="nav-text">金融领域数据库的挑战：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据高一致性："><span class="nav-number">1.1.</span> <span class="nav-text">数据高一致性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务高可用性："><span class="nav-number">1.2.</span> <span class="nav-text">服务高可用性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高并发和益伸缩性："><span class="nav-number">1.3.</span> <span class="nav-text">高并发和益伸缩性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#投资和回报："><span class="nav-number">1.4.</span> <span class="nav-text">投资和回报：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#腾讯云金融级云数据库解决方案"><span class="nav-number">2.</span> <span class="nav-text">腾讯云金融级云数据库解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">2.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#架构"><span class="nav-number">2.2.</span> <span class="nav-text">架构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分表逻辑"><span class="nav-number">3.</span> <span class="nav-text">分表逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分片方式比较"><span class="nav-number">4.</span> <span class="nav-text">分片方式比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容灾机制"><span class="nav-number">5.</span> <span class="nav-text">容灾机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TDSQL的线程异步化改造"><span class="nav-number">6.</span> <span class="nav-text">TDSQL的线程异步化改造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据高可用性保障机制"><span class="nav-number">7.</span> <span class="nav-text">数据高可用性保障机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主备自动切换"><span class="nav-number">7.1.</span> <span class="nav-text">主备自动切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#灵活的主备配置"><span class="nav-number">7.2.</span> <span class="nav-text">灵活的主备配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TDSQL应用"><span class="nav-number">8.</span> <span class="nav-text">TDSQL应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#慢查询分析"><span class="nav-number">8.1.</span> <span class="nav-text">慢查询分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TDSQL的未来规划"><span class="nav-number">9.</span> <span class="nav-text">TDSQL的未来规划</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2014 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hwk603</span>
+
+  
+  
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://hwk603.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://hwk603.com/腾讯金融级数据库TDSQL的架构与应用/';
+          this.page.identifier = '腾讯金融级数据库TDSQL的架构与应用/';
+          this.page.title = '腾讯金融级数据库TDSQL的架构与应用';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hwk603.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("O8CtzoV9ACq6kGNHKp8AIRnS-gzGzoHsz", "QG6x9FzwAdcwrKu4b93f06Bz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

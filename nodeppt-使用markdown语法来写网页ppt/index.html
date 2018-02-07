@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="t-E3ZRZAfjzJO3vU37kiHYBNdXdrPr7VQycbI5rAoKI" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="nodeppt," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="nodePPT 是@三水清基于nodejs来写的网页PPT，之前的版本仅仅是html语法，现在可以支持通过markdown来写网页ppt了。">
+<meta name="keywords" content="nodeppt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodeppt：使用markdown语法来写网页ppt">
+<meta property="og:url" content="http://hwk603.com/nodeppt-使用markdown语法来写网页ppt/index.html">
+<meta property="og:site_name" content="One Piece">
+<meta property="og:description" content="nodePPT 是@三水清基于nodejs来写的网页PPT，之前的版本仅仅是html语法，现在可以支持通过markdown来写网页ppt了。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-01.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-02.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-03.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-04.png">
+<meta property="og:updated_time" content="2015-10-19T15:27:50.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nodeppt：使用markdown语法来写网页ppt">
+<meta name="twitter:description" content="nodePPT 是@三水清基于nodejs来写的网页PPT，之前的版本仅仅是html语法，现在可以支持通过markdown来写网页ppt了。">
+<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'G2ERKDYPN5',
+      apiKey: 'c1e9afb1c2f47d6b86b7ce51903006dc',
+      indexName: 'dev_NAME',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hwk603.com/nodeppt-使用markdown语法来写网页ppt/"/>
+
+
+
+
+
+  <title>nodeppt：使用markdown语法来写网页ppt | One Piece</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57214075-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?59918ede8fb11545a8b6b16be04958be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One Piece</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">侯文魁的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/nodeppt-使用markdown语法来写网页ppt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">nodeppt：使用markdown语法来写网页ppt</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-19T23:26:46+08:00">
+                2015-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/nodeppt-使用markdown语法来写网页ppt/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="nodeppt-使用markdown语法来写网页ppt/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/nodeppt-使用markdown语法来写网页ppt/" class="leancloud_visitors" data-flag-title="nodeppt：使用markdown语法来写网页ppt">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,201
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>nodePPT</code> 是<a href="http://js8.in/" target="_blank" rel="external">@三水清</a>基于nodejs来写的网页PPT，之前的版本仅仅是html语法，现在可以支持通过<code>markdown</code>来写网页ppt了。</p>
+<a id="more"></a>
+<h2 id="nodeppt-Demo"><a href="#nodeppt-Demo" class="headerlink" title="nodeppt Demo"></a>nodeppt Demo</h2><p>查看demo：<a href="http://qdemo.sinaapp.com/" target="_blank" rel="external">http://qdemo.sinaapp.com/</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>nodeppt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g nodeppt</div></pre></td></tr></table></figure>
+<h2 id="使用nodeppt命令行"><a href="#使用nodeppt命令行" class="headerlink" title="使用nodeppt命令行"></a>使用nodeppt命令行</h2><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">nodeppt start -p port</div><div class="line"># or</div><div class="line">nodeppt start -p port -d path/for/ppts</div></pre></td></tr></table></figure>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>支持markdown语法快速创建网页幻灯片。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nodeppt create ppt-name</div></pre></td></tr></table></figure></p>
+<p>按照提示输入基本信息后就可以创建，默认创建是markdown版本，如果需要创建html版本，可以使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">nodeppt create ppt-name.html</div><div class="line"># or</div><div class="line">nodeppt create ppt-name.htm</div></pre></td></tr></table></figure>
+<h2 id="nodeppt-markdown语法"><a href="#nodeppt-markdown语法" class="headerlink" title="nodeppt markdown语法"></a>nodeppt markdown语法</h2><p>说明</p>
+<p>nodeppt是支持marked语法的，但是为了制作出来更加完美的ppt，扩展了下面的语法</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>基本配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: 这是演讲的题目</div><div class="line">speaker: 演讲者名字</div><div class="line">url: 可以设置链接</div><div class="line">transition: 转场效果，例如：zoomin</div><div class="line">files: 引入js和css的地址，如果有的话~自动放在页面底部</div></pre></td></tr></table></figure></p>
+<p><strong>目录关系</strong>：可以在md同级目录下创建img、js、css等文件夹，然后在markdown里面引用，nodeppt默认会先查找md文件同级目录下面的静态资源，没有再找默认的 <code>assets</code>文件夹下静态内容</p>
+<p>支持的18种转场动画包括：</p>
+<pre><code>horizontal3d horizontal
+vertical3d zoomin
+zoomout cards
+等等
+</code></pre><p>如果设置单页动画，请参考下面的*单页动画设置部分~</p>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>通过<code>[slide]</code>作为每页ppt的间隔，如果需要添加单页背景，使用下面的语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[slide style=&quot;background-image:url(&apos;/img/bg1.png&apos;)&quot;]</div><div class="line"># 这是个有背景的家伙</div><div class="line">## 我是副标题</div></pre></td></tr></table></figure>
+<h3 id="单页ppt上下布局"><a href="#单页ppt上下布局" class="headerlink" title="单页ppt上下布局"></a>单页ppt上下布局</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[slide]</div><div class="line">## 主页面样式</div><div class="line">### ----是上下分界线</div><div class="line">----</div><div class="line">nodeppt是基于nodejs写的支持 **Markdown!** 语法的网页PPT</div><div class="line"></div><div class="line">nodeppt：https://github.com/ksky521/nodePPT</div></pre></td></tr></table></figure>
+<h3 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h3><p>语法跟<code>Github Flavored Markdown</code> 一样~</p>
+<h3 id="单页动画设置"><a href="#单页动画设置" class="headerlink" title="单页动画设置"></a>单页动画设置</h3><p>在md文件，顶部 <code>配置</code> 可以设置全局转场动画，如果要设置单页的转场动画，可以通过下面的语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[slide data-transition=&quot;vertical3d&quot;]</div><div class="line">## 这是一个vertical3d的动画</div></pre></td></tr></table></figure>
+<h3 id="插入html代码"><a href="#插入html代码" class="headerlink" title="插入html代码"></a>插入html代码</h3><p>如果需要完全diy自己的ppt内容，可以markdown和html混编代码。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">## 混编html和markdown</div><div class="line">----</div><div class="line"></div><div class="line">&lt;div class=&quot;file-setting&quot;&gt;</div><div class="line">    &lt;p&gt;这是html&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;p id=&quot;css-demo&quot;&gt;这是css样式&lt;/p&gt;</div><div class="line">&lt;p&gt;使用[code][/code]包裹的代码，会直接插入到页面&lt;/p&gt;</div><div class="line">&lt;p&gt;具体看下项目中 ppts/demo.md 代码&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    function testScriptTag()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    console.log(typeof testScriptTag);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style&gt;</div><div class="line">#css-demo&#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<h3 id="出入回调"><a href="#出入回调" class="headerlink" title="出入回调"></a>出入回调</h3><p>前端的ppt，难免会在页面中演示一些demo，除了上面的插入html语法：<code>[code][/code]</code> 之外，还提供了<code>in-callback</code>和<code>out-callback</code>，分别用于：切换（切走）到当前ppt，执行的js函数名。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[slide data-outcallback=&quot;outcallback&quot; data-incallback=&quot;incallback&quot;]</div><div class="line">## 当进入此页，就执行incallback函数</div><div class="line">## 当离开此页面，就执行outcallback函数</div></pre></td></tr></table></figure>
+<h3 id="表格实例"><a href="#表格实例" class="headerlink" title="表格实例"></a>表格实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">### 市面上主要的css预处理器：less\sass\stylus</div><div class="line">---</div><div class="line"> |less| sass | stylus</div><div class="line">:-------|:------:|-------:|--------</div><div class="line">环境 |js/nodejs | Ruby | nodejs</div><div class="line">扩展名 | .less | .sass/.scss | .styl</div><div class="line">特点 | 老牌，用户多，支持js解析 | 功能全，有成型框架，发展快 | 语法多样，小众</div><div class="line">案例/框架 | [Bootstrap](http://getbootstrap.com/) | [compass](http://compass-style.org) [bourbon](http://bourbon.io) |</div></pre></td></tr></table></figure>
+<h3 id="插入iframe"><a href="#插入iframe" class="headerlink" title="插入iframe"></a>插入iframe</h3><p>使用<code>data-src</code>作为iframe的url，这样只有切换到当前页才会加载url内容~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;iframe data-src=&quot;http://www.google.com/doodle4google/resources/history.html&quot; src=&quot;about:blank;&quot;&gt;&lt;/iframe&gt;</div></pre></td></tr></table></figure>
+<h2 id="导出ppt"><a href="#导出ppt" class="headerlink" title="导出ppt"></a>导出ppt</h2><p>这么高端大气上档次的ppt，怎么能不导出分享给大家呢？？<br>导出ppt有两种，一种是pdf版，一种是html版</p>
+<h3 id="pdf版"><a href="#pdf版" class="headerlink" title="pdf版"></a>pdf版</h3><p>需要安装<a href="http://phantomjs.org/" target="_blank" rel="external">phantomJS</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 安装phantomjs，如果安装了，请忽略</div><div class="line">npm install -g phantomjs</div><div class="line"># 启动nodeppt server</div><div class="line">nodeppt start</div><div class="line"># 导出文件</div><div class="line">nodeppt pdf http://127.0.0.1:8080/md/demo.md -o a.pdf</div></pre></td></tr></table></figure>
+<h3 id="html版"><a href="#html版" class="headerlink" title="html版"></a>html版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 使用generate命令</div><div class="line">nodeppt generate filepath</div><div class="line"># 导出全部，包括nodeppt的js、img和css文件夹</div><div class="line"># 默认导出在publish文件夹</div><div class="line">nodeppt generate ./ppts/demo.md -a</div><div class="line"># 指定导出文件夹</div><div class="line">nodeppt generate ./ppts/demo.md -a -o output/path</div></pre></td></tr></table></figure>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-01.png" alt="此处输入图片的描述"></p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-02.png" alt="此处输入图片的描述"></p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-03.png" alt="此处输入图片的描述"></p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-04.png" alt="此处输入图片的描述"></p>
+<p>导出目录下所有ppt，并且生成ppt list首页：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nodeppt path -o output/path -a</div></pre></td></tr></table></figure></p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>类似下面的语法：(更多用法查看ppts/demo.md文件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">title: nodeppt markdown 演示</div><div class="line">speaker: Theo Wang</div><div class="line">url: https://github.com/ksky521/nodePPT</div><div class="line">transition: zoomin</div><div class="line"></div><div class="line">[slide]</div><div class="line"></div><div class="line"># 封面样式</div><div class="line">## h1是作为封面用的，内部的都用h2</div><div class="line"></div><div class="line">[slide style=&quot;background-image:url(&apos;/img/bg1.png&apos;)&quot;]</div><div class="line"></div><div class="line"># 背景图片 &#123;:&amp;.flexbox.vleft&#125;</div><div class="line">## 使用方法：[slide style=&quot;background-image:url(&apos;/img/bg1.png&apos;)&quot;]</div><div class="line"></div><div class="line">[slide]</div><div class="line"></div><div class="line">## 主页面样式</div><div class="line">### ----是上下分界线</div><div class="line">----</div><div class="line"></div><div class="line">nodeppt是基于nodejs写的支持 **Markdown!** 语法的网页PPT</div><div class="line"></div><div class="line">nodeppt：https://github.com/ksky521/nodePPT</div><div class="line"></div><div class="line">[slide]</div><div class="line"></div><div class="line">什么？这些功能还不够用？</div><div class="line"></div><div class="line">极客模式：查看源码的nodeppt.js，相信你会找到牛逼的手机互动（摇一摇换页）功能</div><div class="line"></div><div class="line">查看项目目录ppts获取更多帮助信息</div></pre></td></tr></table></figure></p>
+<p>更多demo，查看<code>ppts</code>目录的demo</p>
+<h3 id="查看帮助"><a href="#查看帮助" class="headerlink" title="查看帮助"></a>查看帮助</h3><p><code>nodeppt -h</code></p>
+<h3 id="demo演示-amp-使用方法"><a href="#demo演示-amp-使用方法" class="headerlink" title="demo演示 &amp; 使用方法"></a>demo演示 &amp; 使用方法</h3><p>执行 <code>nodeppt start</code><br>访问 <a href="http://127.0.0.1:8080/" target="_blank" rel="external">http://127.0.0.1:8080/</a><br>查看在线demo：<a href="http://qdemo.sinaapp.com/" target="_blank" rel="external">http://qdemo.sinaapp.com/</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    hwk603
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hwk603.com/nodeppt-使用markdown语法来写网页ppt/" title="nodeppt：使用markdown语法来写网页ppt">http://hwk603.com/nodeppt-使用markdown语法来写网页ppt/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nodeppt/" rel="tag"># nodeppt</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo-deploy时重复输入用户名密码的问题/" rel="next" title="hexo deploy时重复输入用户名密码的问题">
+                <i class="fa fa-chevron-left"></i> hexo deploy时重复输入用户名密码的问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/微机接口/" rel="prev" title="微机接口">
+                微机接口 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hwk603.png"
+                alt="hwk603" />
+            
+              <p class="site-author-name" itemprop="name">hwk603</p>
+              <p class="site-description motion-element" itemprop="description">一些关于坑的思考和疑难解决</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hwk603" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/hwk603" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/hwk603" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.quora.com/profile/Hwk603" target="_blank" title="Quora">
+                      
+                        <i class="fa fa-fw fa-pinterest"></i>Quora</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://scucyber.cn/" title="青梅网络部" target="_blank">青梅网络部</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://camixxx.win/" title="CamiXXX" target="_blank">CamiXXX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#nodeppt-Demo"><span class="nav-number">1.</span> <span class="nav-text">nodeppt Demo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用nodeppt命令行"><span class="nav-number">3.</span> <span class="nav-text">使用nodeppt命令行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动"><span class="nav-number">3.1.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建"><span class="nav-number">3.2.</span> <span class="nav-text">创建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodeppt-markdown语法"><span class="nav-number">4.</span> <span class="nav-text">nodeppt markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">4.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分页"><span class="nav-number">4.2.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单页ppt上下布局"><span class="nav-number">4.3.</span> <span class="nav-text">单页ppt上下布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码格式化"><span class="nav-number">4.4.</span> <span class="nav-text">代码格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单页动画设置"><span class="nav-number">4.5.</span> <span class="nav-text">单页动画设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入html代码"><span class="nav-number">4.6.</span> <span class="nav-text">插入html代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出入回调"><span class="nav-number">4.7.</span> <span class="nav-text">出入回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格实例"><span class="nav-number">4.8.</span> <span class="nav-text">表格实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入iframe"><span class="nav-number">4.9.</span> <span class="nav-text">插入iframe</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导出ppt"><span class="nav-number">5.</span> <span class="nav-text">导出ppt</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pdf版"><span class="nav-number">5.1.</span> <span class="nav-text">pdf版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html版"><span class="nav-number">5.2.</span> <span class="nav-text">html版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">5.3.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看帮助"><span class="nav-number">5.4.</span> <span class="nav-text">查看帮助</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#demo演示-amp-使用方法"><span class="nav-number">5.5.</span> <span class="nav-text">demo演示 & 使用方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2014 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hwk603</span>
+
+  
+  
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://hwk603.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://hwk603.com/nodeppt-使用markdown语法来写网页ppt/';
+          this.page.identifier = 'nodeppt-使用markdown语法来写网页ppt/';
+          this.page.title = 'nodeppt：使用markdown语法来写网页ppt';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hwk603.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("O8CtzoV9ACq6kGNHKp8AIRnS-gzGzoHsz", "QG6x9FzwAdcwrKu4b93f06Bz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

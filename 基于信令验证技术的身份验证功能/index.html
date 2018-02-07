@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="t-E3ZRZAfjzJO3vU37kiHYBNdXdrPr7VQycbI5rAoKI" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="php," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、实验简介 1.1 说明区别于短信验证方式，CIA易验证通过信令验证技术，验证过程更可靠，用户本机号码验证可自动完成验证，免去输入短信验证码的繁琐过程，验证更准确、速度更快。 1.2 知识点 bootstrap 前端框架 JavaScript 实现数据传递 php 实现 REST API 中的验证 API 的使用  1.3 效果">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于信令验证技术的身份验证功能">
+<meta property="og:url" content="http://hwk603.com/基于信令验证技术的身份验证功能/index.html">
+<meta property="og:site_name" content="One Piece">
+<meta property="og:description" content="一、实验简介 1.1 说明区别于短信验证方式，CIA易验证通过信令验证技术，验证过程更可靠，用户本机号码验证可自动完成验证，免去输入短信验证码的繁琐过程，验证更准确、速度更快。 1.2 知识点 bootstrap 前端框架 JavaScript 实现数据传递 php 实现 REST API 中的验证 API 的使用  1.3 效果">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/images%202016-08-23%201471949789.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/ciaQQ%E6%88%AA%E5%9B%BE20160825104151.png">
+<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/cia-new.png">
+<meta property="og:updated_time" content="2016-09-03T16:15:47.627Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于信令验证技术的身份验证功能">
+<meta name="twitter:description" content="一、实验简介 1.1 说明区别于短信验证方式，CIA易验证通过信令验证技术，验证过程更可靠，用户本机号码验证可自动完成验证，免去输入短信验证码的繁琐过程，验证更准确、速度更快。 1.2 知识点 bootstrap 前端框架 JavaScript 实现数据传递 php 实现 REST API 中的验证 API 的使用  1.3 效果">
+<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/images%202016-08-23%201471949789.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'G2ERKDYPN5',
+      apiKey: 'c1e9afb1c2f47d6b86b7ce51903006dc',
+      indexName: 'dev_NAME',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hwk603.com/基于信令验证技术的身份验证功能/"/>
+
+
+
+
+
+  <title>基于信令验证技术的身份验证功能 | One Piece</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57214075-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?59918ede8fb11545a8b6b16be04958be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One Piece</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">侯文魁的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/基于信令验证技术的身份验证功能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于信令验证技术的身份验证功能</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-01T10:38:49+08:00">
+                2016-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/基于信令验证技术的身份验证功能/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="基于信令验证技术的身份验证功能/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/基于信令验证技术的身份验证功能/" class="leancloud_visitors" data-flag-title="基于信令验证技术的身份验证功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,337
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、实验简介"><a href="#一、实验简介" class="headerlink" title="一、实验简介"></a>一、实验简介</h2><hr>
+<h3 id="1-1-说明"><a href="#1-1-说明" class="headerlink" title="1.1 说明"></a>1.1 说明</h3><p>区别于短信验证方式，CIA易验证通过信令验证技术，验证过程更可靠，用户本机号码验证可自动完成验证，免去输入短信验证码的繁琐过程，验证更准确、速度更快。</p>
+<h3 id="1-2-知识点"><a href="#1-2-知识点" class="headerlink" title="1.2 知识点"></a>1.2 知识点</h3><ul>
+<li>bootstrap 前端框架</li>
+<li>JavaScript 实现数据传递</li>
+<li>php 实现 REST API 中的验证 API 的使用</li>
+</ul>
+<h3 id="1-3-效果"><a href="#1-3-效果" class="headerlink" title="1.3 效果"></a>1.3 效果</h3><p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/images%202016-08-23%201471949789.png" alt=""></p>
+<a id="more"></a>
+<h2 id="二、实验步骤"><a href="#二、实验步骤" class="headerlink" title="二、实验步骤"></a>二、实验步骤</h2><hr>
+<h3 id="2-1-CIA易验证"><a href="#2-1-CIA易验证" class="headerlink" title="2.1 CIA易验证"></a>2.1 CIA易验证</h3><h4 id="2-1-1-简介"><a href="#2-1-1-简介" class="headerlink" title="2.1.1 简介"></a>2.1.1 简介</h4><p>CIA（Communication &amp; Internet Authentication） 易验证是通过专利技术开发一款移动互联网身份验证产品，基于电信网络与互联网，采用“信令交互认证技术”完成身份验证，信令交互不使用短信网关通道，而是电话呼叫信号，从而可以替代短信验证码，兼顾短信验证码及语音验证码两种方式的优势，是下一代移动互联网身份验证技术。</p>
+<p>CIA 易验证基于手机号通过呼入电话的信令进行验证，即当用户输入本机号码发起验证后，系统呼入的一个来电的后四位就是验证码。</p>
+<p>短信验证码送达率在90%就已经是一个不错的效果，CIA 易验证送达率可以达到99%，从而可以有效的提高用户注册环节的用户转化率。另外，短信验证码容易被第三方应用所拦截，如果开发者选择一些廉价的短信通道，这种情况会更加严重，造成的结果就是用户流失。应用场景基本与短信验证码相同，包括注册用户、找回密码、确认手机号、绑定手机号、异常登录及账户变动。</p>
+<h4 id="2-1-2-使用"><a href="#2-1-2-使用" class="headerlink" title="2.1.2 使用"></a>2.1.2 使用</h4><p>访问网址 <code>http://www.ciaapp.cn/ciaWebsite/</code>，注册一个账号。</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/ciaQQ%E6%88%AA%E5%9B%BE20160825104151.png" alt="cia 后台"></p>
+<p>点击”应用-&gt;新增”，添加一个应用，获得 APP ID 和授权码。</p>
+<h3 id="2-2-编码"><a href="#2-2-编码" class="headerlink" title="2.2 编码"></a>2.2 编码</h3><p>打开 <code>Xfce</code>，进入 <code>Code\</code>目录，然后在 <code>Code\</code> 目录下新建一个 <code>project</code>，并在 <code>project</code> 中创建 <code>index.html</code> 和 <code>agent.php</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd Code</div><div class="line">mkdir project</div><div class="line">cd project</div><div class="line">vim index.html</div><div class="line">vim agent.php</div></pre></td></tr></table></figure>
+<h4 id="2-2-1-bootstrap"><a href="#2-2-1-bootstrap" class="headerlink" title="2.2.1 bootstrap"></a>2.2.1 bootstrap</h4><p>使用前端框架 bootstrap3 的模板和组件来快速搭建一个简单的注册界面。</p>
+<p><code>index.html</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</div><div class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</div><div class="line">  &lt;title&gt;CIA Test&lt;/title&gt;</div><div class="line">  &lt;!--Bootstrap 核心 CSS 文件，基于国内云厂商的免费 CDN 加速服务--&gt;</div><div class="line">  &lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css&quot;&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div class=&quot;container&quot;&gt;</div><div class="line">    &lt;div class=&quot;panel panel-primary&quot; style=&quot;width:50%;margin-left:auto;margin-right:auto;&quot;&gt;</div><div class="line">      &lt;div class=&quot;panel-body&quot;&gt;</div><div class="line">        &lt;legend&gt;CIA电话验证&lt;/legend&gt;</div><div class="line">        &lt;form class=&quot;form-horizontal&quot;&gt;</div><div class="line">          &lt;div class=&quot;form-group&quot;&gt;</div><div class="line">            &lt;label for=&quot;phoneNumber&quot; class=&quot;col-sm-2 control-label&quot;&gt;手机号&lt;/label&gt;</div><div class="line">            &lt;div class=&quot;col-sm-10&quot;&gt;</div><div class="line">              &lt;input type=&quot;text&quot; name=&quot;number&quot; id=&quot;number&quot; class=&quot;form-control&quot; placeholder=&quot;请输入手机号&quot; style=&quot;width:80%;&quot;&gt;&lt;/input&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">          &lt;div class=&quot;form-group&quot;&gt;</div><div class="line">            &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;</div><div class="line">              &lt;input type=&quot;button&quot; class=&quot;btn btn-default&quot; value=&quot;获取验证码&quot; onclick=&quot;getCode()&quot;&gt;&lt;/input&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">          &lt;div class=&quot;form-group&quot;&gt;</div><div class="line">            &lt;label for=&quot;code&quot; class=&quot;col-sm-2 control-label&quot;&gt;验证码&lt;/label&gt;</div><div class="line">            &lt;div class=&quot;col-sm-10&quot;&gt;</div><div class="line">              &lt;input type=&quot;text&quot; name=&quot;authenticateCode&quot; id=&quot;authenticateCode&quot; class=&quot;form-control&quot; placeholder=&quot;未接来电后四位&quot; style=&quot;width:80%;&quot;&gt;&lt;/input&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">          &lt;div class=&quot;form-group&quot;&gt;</div><div class="line">            &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;</div><div class="line">              &lt;input type=&quot;button&quot; class=&quot;btn btn-default&quot; value=&quot;注册&quot; onclick=&quot;Authenticate()&quot;&gt;&lt;/input&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">        &lt;/form&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;!-- jQuery文件。--&gt;</div><div class="line">&lt;script src=&quot;//cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;!-- 最新的 Bootstrap 核心 JavaScript 文件。--&gt;</div><div class="line">&lt;script src=&quot;//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-2-2-JavaScript"><a href="#2-2-2-JavaScript" class="headerlink" title="2.2.2 JavaScript"></a>2.2.2 JavaScript</h4><p>从上面的前端代码可以看到，我们在实现”获取验证码”和”注册”两个按钮的时候，给这两个按钮都添加了 <code>onclick</code> 属性，当鼠标点击按钮时，会触发两个函数。下面我们就来通过 JavaScript 实现这两个函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  //定义全局变量，用来保存验证码</div><div class="line">  var result;</div><div class="line">  function getCode()&#123;</div><div class="line">    //从 input 输入框获取输入的手机号</div><div class="line">    var number = document.getElementById(&quot;number&quot;).value;</div><div class="line">    //将手机号 AJAX POST 到 php 实现的后台程序，将返回的验证码赋值给 result。</div><div class="line">    $.post(&apos;agent.php&apos;,&#123;&apos;number&apos;:number&#125;,function(data)&#123;</div><div class="line">      alert(&quot;发送成功!&quot;);</div><div class="line">      result = data;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  function Authenticate()&#123;</div><div class="line">    //从 input 输入框获取输入的验证码</div><div class="line">    var code = document.getElementById(&quot;authenticateCode&quot;).value;</div><div class="line">    //验证获取的验证码是否正确</div><div class="line">    if(code===result)&#123;</div><div class="line">      alert(&quot;注册成功!&quot;);</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">      alert(&quot;注册失败!&quot;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h4 id="2-2-3-php"><a href="#2-2-3-php" class="headerlink" title="2.2.3 php"></a>2.2.3 php</h4><p>根据 CIA 易验证提供的 REST API 实现的后台程序,用注册 CIA 易验证时获得的 APP ID 和授权码粘贴在代码相应位置：</p>
+<p><code>agent.php</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">//APP Id</div><div class="line">$appID = &quot;填写在 CAI 易验证获得的 APP ID&quot;;</div><div class="line">//授权码</div><div class="line">$authKey = &quot;填写在 CAI 易验证获得的授权码&quot;;</div><div class="line">//待验证手机号</div><div class="line">$pn = $_POST[&quot;number&quot;];</div><div class="line">$version = &quot;1.0&quot;;</div><div class="line">$url = &quot;https://api.ciaapp.cn/&#123;$version&#125;/agent&quot;;</div><div class="line">$headerList = array(&quot;Host:api.ciaapp.cn&quot;,</div><div class="line">				&quot;Accept:application/json&quot;,</div><div class="line">				&quot;Content-Type:application/json;charset=utf-8&quot;,</div><div class="line">				&quot;appId:&#123;$appID&#125;&quot;,</div><div class="line">				&quot;authKey:&#123;$authKey&#125;&quot;,</div><div class="line">				&quot;pn:&#123;$pn&#125;&quot;</div><div class="line">			);</div><div class="line">//使用 cURL  的 POST 调用 api</div><div class="line"></div><div class="line">$ch = curl_init($url);</div><div class="line">curl_setopt($ch, CURLOPT_POST, true);</div><div class="line">curl_setopt($ch, CURLOPT_TIMEOUT,100);</div><div class="line">curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);</div><div class="line">curl_setopt($ch, CURLOPT_HTTPHEADER, $headerList);</div><div class="line">curl_setopt($ch, CURLOPT_POSTFIELDS, $params);</div><div class="line">curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);</div><div class="line">curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);</div><div class="line">$returnData = curl_exec($ch);</div><div class="line">//对返回的 json 格式的字符串进行解析，并截取 authCode 后四位作为验证码</div><div class="line">$return = json_decode($returnData);</div><div class="line">$returnCode = $return-&gt;authCode;</div><div class="line">$code = substr($returnCode,-4);</div><div class="line">curl_close($ch);</div><div class="line">echo $code;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h3 id="2-3-发布"><a href="#2-3-发布" class="headerlink" title="2.3 发布"></a>2.3 发布</h3><p>PHP 5.4 之后内置了 web 服务器，在当前目录下，执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php -S localhost:8000</div></pre></td></tr></table></figure>
+<p>ps. 如果端口被占用，可以尝试其他端口，如8001。</p>
+<p>打开浏览器访问：</p>
+<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/cia-new.png" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    hwk603
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hwk603.com/基于信令验证技术的身份验证功能/" title="基于信令验证技术的身份验证功能">http://hwk603.com/基于信令验证技术的身份验证功能/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Hadoop-分布式集群配置/" rel="next" title="Hadoop 分布式集群配置">
+                <i class="fa fa-chevron-left"></i> Hadoop 分布式集群配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/基于-BosonNLP-实现自然语言交互的火车票查询/" rel="prev" title="基于 BosonNLP 实现自然语言交互的火车票查询">
+                基于 BosonNLP 实现自然语言交互的火车票查询 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hwk603.png"
+                alt="hwk603" />
+            
+              <p class="site-author-name" itemprop="name">hwk603</p>
+              <p class="site-description motion-element" itemprop="description">一些关于坑的思考和疑难解决</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hwk603" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/hwk603" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/hwk603" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.quora.com/profile/Hwk603" target="_blank" title="Quora">
+                      
+                        <i class="fa fa-fw fa-pinterest"></i>Quora</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://scucyber.cn/" title="青梅网络部" target="_blank">青梅网络部</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://camixxx.win/" title="CamiXXX" target="_blank">CamiXXX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、实验简介"><span class="nav-number">1.</span> <span class="nav-text">一、实验简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-说明"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-知识点"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 知识点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-效果"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、实验步骤"><span class="nav-number">2.</span> <span class="nav-text">二、实验步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-CIA易验证"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 CIA易验证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-简介"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-使用"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.1.2 使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-编码"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-bootstrap"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 bootstrap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-JavaScript"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 JavaScript</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-php"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.3 php</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-发布"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 发布</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2014 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hwk603</span>
+
+  
+  
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://hwk603.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://hwk603.com/基于信令验证技术的身份验证功能/';
+          this.page.identifier = '基于信令验证技术的身份验证功能/';
+          this.page.title = '基于信令验证技术的身份验证功能';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hwk603.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("O8CtzoV9ACq6kGNHKp8AIRnS-gzGzoHsz", "QG6x9FzwAdcwrKu4b93f06Bz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="t-E3ZRZAfjzJO3vU37kiHYBNdXdrPr7VQycbI5rAoKI" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="book," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="书名 ：数学之美 作者 ：吴军 出版 ：人民邮电出版社 本书所涉及内容可以总结自然语言处理，Google 搜索引擎原理，一系列算法和技术的实际应用以及相关人物传记。 本书共31章，大概两百七十多页。这次阅读主要是前小半本书的内容，包括自然语言处理和搜索引擎背后的数学原理，至于书中后半部分因为涉及到很多知识我没有掌握就暂时放下，打算下周继续。">
+<meta name="keywords" content="book">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记-数学之美(part1)">
+<meta property="og:url" content="http://hwk603.com/数学之美-part1/index.html">
+<meta property="og:site_name" content="One Piece">
+<meta property="og:description" content="书名 ：数学之美 作者 ：吴军 出版 ：人民邮电出版社 本书所涉及内容可以总结自然语言处理，Google 搜索引擎原理，一系列算法和技术的实际应用以及相关人物传记。 本书共31章，大概两百七十多页。这次阅读主要是前小半本书的内容，包括自然语言处理和搜索引擎背后的数学原理，至于书中后半部分因为涉及到很多知识我没有掌握就暂时放下，打算下周继续。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-02-25T05:40:00.748Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="读书笔记-数学之美(part1)">
+<meta name="twitter:description" content="书名 ：数学之美 作者 ：吴军 出版 ：人民邮电出版社 本书所涉及内容可以总结自然语言处理，Google 搜索引擎原理，一系列算法和技术的实际应用以及相关人物传记。 本书共31章，大概两百七十多页。这次阅读主要是前小半本书的内容，包括自然语言处理和搜索引擎背后的数学原理，至于书中后半部分因为涉及到很多知识我没有掌握就暂时放下，打算下周继续。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'G2ERKDYPN5',
+      apiKey: 'c1e9afb1c2f47d6b86b7ce51903006dc',
+      indexName: 'dev_NAME',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hwk603.com/数学之美-part1/"/>
+
+
+
+
+
+  <title>读书笔记-数学之美(part1) | One Piece</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-57214075-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?59918ede8fb11545a8b6b16be04958be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">One Piece</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">侯文魁的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hwk603.com/数学之美-part1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="hwk603">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hwk603.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="One Piece">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">读书笔记-数学之美(part1)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T17:46:00+08:00">
+                2017-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/数学之美-part1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="数学之美-part1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/数学之美-part1/" class="leancloud_visitors" data-flag-title="读书笔记-数学之美(part1)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,966
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  18
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>书名 ：数学之美</p>
+<p>作者 ：吴军</p>
+<p>出版 ：人民邮电出版社</p>
+<p>本书所涉及内容可以总结自然语言处理，Google 搜索引擎原理，一系列算法和技术的实际应用以及相关人物传记。</p>
+<p>本书共31章，大概两百七十多页。这次阅读主要是前小半本书的内容，包括自然语言处理和搜索引擎背后的数学原理，至于书中后半部分因为涉及到很多知识我没有掌握就暂时放下，打算下周继续。</p>
+<a id="more"></a>
+<h3 id="第一章-文字和语言-vs-数字和信息"><a href="#第一章-文字和语言-vs-数字和信息" class="headerlink" title="第一章 文字和语言 vs 数字和信息"></a>第一章 文字和语言 vs 数字和信息</h3><p>本章主要讲述了数学、文字、语言、信息这四者的关系。从信息的起源讲起，阐述了文字、数学和语言的历史以及他们之间的内在联系。</p>
+<p>这部分的主要作用是引出后面章节的重点：通信原理和信息传播的模型，(信源)编码和最短编码，解码的规则/语言，聚类，校验位，双语对照文本/语料库和机器翻译，多义性和利用上下文消除歧义性。</p>
+<h3 id="第二章-自然语言处理：从规则到统计"><a href="#第二章-自然语言处理：从规则到统计" class="headerlink" title="第二章 自然语言处理：从规则到统计"></a>第二章 自然语言处理：从规则到统计</h3><p>本章主要说了自然语言处理的发展历史，从基于规则的方法发展到基于统计的方法</p>
+<blockquote>
+<p>语言的数学本质：人把一个要表达的意思，通过某种语言的一句话表达出来，就是用这种语言的编码方式对头脑中的信息做了一次编码，编码的结果就是一串文字。而如果对方懂得这门语言，就可以用这门语言的解码方法获得说话人要表达的信息。</p>
+</blockquote>
+<p>任何一种语言都是一种编码方式，而语法对应的语法规则是编解码的算法。 即是说，我们把思考的东西表达为文字、语言的过程对应编码。而我们看到文字、听到语言到理解的过程对应解码。这些不同国家的文字、语音即是传递的信息。 上述为人类日常交流的过程，自然语言处理就是让机器可以完成上述的解码过程。</p>
+<p>机器智能 = 向人类传达信息 + 从人类获取信息（并理解） = 自然语言的编码 + 自然语言的解码。这大概就是对上一章中编解码理论的解释。</p>
+<blockquote>
+<p>自然语言处理分为两个阶段，第一个阶段局限在人类学习语言的方式上，没有取得成功。第二个阶段是基于数学模型和统计方法。第一个阶段时，人们认为要让机器完成翻译或者语音识别等只有人类才能做的事情，就必须先让计算机理解自然语言，而做到这一点就必须让计算机拥有类似我们人类这样的智能。当时认为首先要做的两件事是分析语句和获取语义。其中句法分析用的是文法分析树的方法，但太复杂，文法规则的覆盖率太低，算法复杂度也太高。对语义的处理遇到更大的麻烦，不能很好的解决上下文歧义等问题。<br>1970年以后统计语言学的出现使得自然语言处理重获新生，并取得了今天的非凡成就。经过15年，随着方法的不断完善，计算机能力和数据量的不断增加，才使基于统计的方法代替了传统的方法。</p>
+<p>基于统计的自然语言处理方法，在数学模型上和通信是相通的，甚至就是相同的。在数学意义上自然语言处理又和语言的初衷——通信联系在一起了。</p>
+</blockquote>
+<p>为什么基于规则的自然语言处理方法行不通？</p>
+<ul>
+<li><p>自然语言的语法规则太过复杂。</p>
+</li>
+<li><p>对于自然语言的语法规则大多是靠人类语言学家手写，无法写出覆盖所有的自然现象的语言规则集合。</p>
+</li>
+<li><p>自然语言的文法是复杂的上下文有关文法，和计算机高级程序语言的文法不同，难以通过计算机解析。</p>
+</li>
+</ul>
+<h3 id="第三章-统计语言模型"><a href="#第三章-统计语言模型" class="headerlink" title="第三章 统计语言模型"></a>第三章 统计语言模型</h3><blockquote>
+<p>自然语言从它产生开始，逐渐演变成一种上下文相关的信息表达和传递方式，因此让计算机处理自然语言，一个基本问题就是为自然语言这种上下文相关的特性建立数学模型。</p>
+</blockquote>
+<p>统计语言模型产生的初衷是为了解决语音识别问题。 在语言识别中，计算机需要知道一个文字序列是否能构成一个大家理解并且有意义的语句。 基于规则的方法在解决这个问题的时候，试图判断这个文字序列是否合乎文法、含义是否正确。 基于统计的方法则只是“简单”地通过可能性大小来判断这个文字序列是否合法。</p>
+<p>假定S表示某一个有意义的句子，由一连串特定顺序排列的词w1,w2,…,wn组成，P(S)为这个句子在文本中出现的概率。</p>
+<p>P(S)= P(w1,w2,…,wn)</p>
+<p>利用条件概率公式：</p>
+<p>P(w1,w2,…,wn) = P(w1)<em>P(w2|w1)</em>P(w3|w1,w2)…P(wn|w1,w2,…,wn-1)</p>
+<p>但越到后来，这些条件概率越难计算。</p>
+<p>采用马尔科夫链理论对上面进行化简，即假设任意一个词wi出现的概率只同它前面的词wi-1有关，于是有:</p>
+<p>P(S)=P(w1)<em>P(w2|w1)</em>P(w3|w2)…P(wi|wi-1)…P(wn|wn-1)</p>
+<p>这即是统计语言模型的二元模型。</p>
+<p>根据定义，P(wi|wi-1) = P(wi-1,wi)/P(wi-1)</p>
+<p>可以用语料库中的相应频率来代替概率：</p>
+<p>f(wi-1,wi) = #(wi-1,wi)/# (“#”代表出现次数)</p>
+<p>f(wi-1) = #(wi-1)/#</p>
+<p>故 P(wi|wi-1)≈#(wi-1,wi)/#(wi-1)</p>
+<p>(咦，这不就是概率论上的贝叶斯么？)</p>
+<p>统计语言模型的工程诀窍：模型规模的选取（二元、三元还是四元），训练中零概率问题的解决，语料库的选取。</p>
+<p>更高阶的模型，即假定文本中的每个词wi和前面的N-1个词有关，而与更前面的词无关。即：</p>
+<p>P(wi|w1,w2,w3,…,wi-1) = P(wi|wi-N+1,wi-N+2,…,wi-1)</p>
+<p>一般实际中用到N=3或N=4，更高的很少用，因为复杂度剧增，且增加N的提升不大。</p>
+<p>对于出现频率稀少或零概率的问题，解决方法不是增加数据量（因为需要的数据太大），而是采用古德-图灵估计对对可信的统计数据打折扣的方法。当词的出现次数小于一定阈值或未出现时，给其赋予一个很小的非零值，从而解决零概率的问题。同时下调了出现频率很低的词的概率。</p>
+<p>语料库的选取，要选取与目标应用领域相似的语料库，否则效果不太好。另外要对训练语料的噪音进行预处理。</p>
+<p>后面的古德-图灵估计已经看不懂了，所以跳过。</p>
+<blockquote>
+<p>马尔科夫链，为状态空间中经过从一个状态到另一个状态的转换的随机过程。该过程要求具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。</p>
+</blockquote>
+<h3 id="第四章-谈谈分词"><a href="#第四章-谈谈分词" class="headerlink" title="第四章 谈谈分词"></a>第四章 谈谈分词</h3><p>这章主要的核心是分词，理论推导并不多。</p>
+<blockquote>
+<p>语言模型是建立在词的基础上的，因为词是表达语义的最小单位。对于东方语言，需要先对句子进行分词，才能做进一步的自然语言处理。</p>
+</blockquote>
+<p>最早也是最容易的分词方法是查字典，从左到右扫描句子，遇到字典里有的词就标识出来。遇到复合词就找最长的词匹配。但其正确率不高。</p>
+<p>利用统计语言模型分词的方法，假设有多种分词方法，最好的一种分词方法应该保证分完词后这个句子出现的概率最大。因为不能穷尽所有分词方法，可以把它看成是一个动态规划的问题，并利用维特比算法快速地找到最佳分词。后来又开发了没有词典时的分词方法。中文分词问题是一个已经解决的问题，但是对于分词的粒度，不同的应用有不同的需要。</p>
+<p>统计语言模型的分词方法同样适用于英文词组的分割，或者手写体的西方语言分割（因为手写体的空格并不好判断）。</p>
+<h3 id="第五章-隐含马尔科夫模型"><a href="#第五章-隐含马尔科夫模型" class="headerlink" title="第五章 隐含马尔科夫模型"></a>第五章 隐含马尔科夫模型</h3><p>本章是第三章的进一步拓展。</p>
+<p>隐含马尔科夫模型被认为是解决大多数自然语言处理问题最为快速、有效的方法。</p>
+<blockquote>
+<p>雅各布森通信六要素：发送者（信源）、信道、接受者、信息、上下文和编码。</p>
+</blockquote>
+<p>在通信中，如何根据接收端的观测信号o1,o2,o3,…来推测信号源发送的信息s1,s2,s3,…?只需要从所有的源信息中找到最可能产生出观测信号的那个信息。即，在已知o1,o2,o3,…的情况下，求得令条件概率P(s1,s2,s3,…|o1,o2,o3,…)达到最大值的那个信号串s1,s2,s3,…，即：</p>
+<p>s1,s2,s3,…=ArgMaxP(s1,s2,s3,…|o1,o2,o3,…) (对所有s1,s2,s3,…)</p>
+<p>利用贝叶斯公式：</p>
+<p>s1,s2,s3,…=P(o1,o2,o3,…|s1,s2,s3,…)*P(s1,s2,s3,…)/P(o1,o2,o3,…)</p>
+<p>其中P(o1,o2,o3,…|s1,s2,s3,…)表示信息s1,s2,s3,…在传输后变成接受的信号o1,o2,o3,…的可能性。</p>
+<p>一旦信息o1,o2,o3,…产生了，它就不会改变了。这时P(o1,o2,o3,…)就是一个可以忽略的常数，于是，上面公式变为:</p>
+<p>s1,s2,s3,…=P(o1,o2,o3,…|s1,s2,s3,…)*P(s1,s2,s3,…) (1)</p>
+<p>隐含马尔科夫模型是马尔科夫链的一个扩展，在任意时刻t的状态st是不可见的，但每个时刻t会输出一个符号ot，而且ot跟st相关且仅跟st相关。这被称为独立输出假设。</p>
+<p>某个特定序列s1,s2,s3,…产生出输出符号o1,o2,o3,…的概率：</p>
+<p>P(s1,s2,s3,…,o1,o2,o3,…)=∏ P(st|st-1)*P(ot|st) (2)</p>
+<p>把马尔科夫假设和独立输出假设用于 (1)</p>
+<p>P(o1,o2,o3,…|s1,s2,s3,…) = ∏ P(ot|st)</p>
+<p>P(s1,s2,s3,…) = ∏ P(st|st-1)</p>
+<p>正好得到公式(2)。这样通信的解码问题就可以用隐含马尔科夫模型来解决了。</p>
+<p>再后面对于隐含马尔科夫模型的训练，还是看不懂，mark 一下，跳过。以后有机会再深入研究。</p>
+<blockquote>
+<p>隐含马尔可夫模型 : 在隐含马尔可夫模型中，状态并不是直接可见的，但受状态影响的某些变量则是可见的。每一个状态在可能输出的符号上都有一概率分布，因此输出符号的序列能够透露出状态序列的一些信息。</p>
+</blockquote>
+<h3 id="第六章-信息的度量和作用"><a href="#第六章-信息的度量和作用" class="headerlink" title="第六章 信息的度量和作用"></a>第六章 信息的度量和作用</h3><p>本章主要是对信息论的探讨。</p>
+<blockquote>
+<p>信息量就等于不确定性的多少;变量的不确定性越大，熵也就越大。要把它搞清楚，需要的信息量也就越大;信息是消除系统不确定性的唯一办法，在没有获得任何信息前，一个系统就像是一个黑盒，引入信息，就可以了解系统黑盒的内部结构;几乎所有的自然语言处理，信息与信号处理的应用都是一个消除不确定性的过程。 </p>
+</blockquote>
+<p>熵的定义：</p>
+<p>H(X) = -ΣP(x)logP(x) (其中x∈X)</p>
+<p>我觉得对于信息论，暂时只要掌握以下几个概念就够了。</p>
+<p>信息熵：衡量信息的多少和不确定性的大小,可以衡量统计模型的好坏</p>
+<p>条件熵：已知一个变量时，另一个变量的信息熵</p>
+<p>相对熵：用来衡量两个函数的相似性</p>
+<p>信息熵是网页搜索的基础，它可以衡量关键词和网页之间的相关性。</p>
+<p>当我们知道Y的一些情况，包括它和X一起出现的概率，在数学上称为联合概率分布，以及在Y取不同值的前提下X的概率分布，在数学上称为条件概率分布，定义在Y条件下的条件熵为：</p>
+<p>H(X|Y) = -ΣP(x,y)logP(x|y) (其中x∈X，y∈Y)</p>
+<p>可以证明H(X)≥H(X|Y)，即多了Y的信息后，关于X的不确定性下降了。当Y信息与要研究的事物无关时，取等号。</p>
+<p>两个随机事件X,Y，它们的互信息定义为:</p>
+<p>I(X;Y) = ΣP(x,y)log(P(x,y)/P(x)*P(y)) (其中x∈X，y∈Y)</p>
+<p>可以证明，I(X;Y) = H(X) - H(X|Y)，所谓两个事件相关性的量化度量，就是在了解了其中一个Y的前提下，对消除另一个X不确定性所提供的信息量。当XY完全相关时，取值为1，当它们完全无关时，取值为0。</p>
+<p>对于两个函数f(x)和g(x)，它们的相对熵定义如下：</p>
+<p>KL(f(x)||g(x)) = Σ f(x)*log f(x)/g(x) (其中x∈X)</p>
+<p>对于两个完全相同的函数，他们的相对熵等于零；相对熵越大，两个函数差异越大；对于概率分布和概率密度函数，如果取值均大于零，那么相对熵可以度量两个随机分布的差异性。</p>
+<h3 id="第七章-贾里尼克和现代语言处理"><a href="#第七章-贾里尼克和现代语言处理" class="headerlink" title="第七章 贾里尼克和现代语言处理"></a>第七章 贾里尼克和现代语言处理</h3><p>本章是一篇人物传记，作为现代自然语言处理的奠基者，贾里尼克教授成功地将数学原理应用于自然语言处理领域中，他的一生富于传奇色彩。</p>
+<p>本章的目的在纪念贾里尼克之外，我认为作者还传递了对教育的思考。</p>
+<ul>
+<li>少年时期树立志向的重要性；</li>
+<li>学习是一生的；</li>
+<li>学习的内容不重要，这些可以追赶，但是人的成长奠定后就无法改变了。</li>
+</ul>
+<h3 id="第八章-简单之美-—-布尔代数和搜索引擎索引"><a href="#第八章-简单之美-—-布尔代数和搜索引擎索引" class="headerlink" title="第八章 简单之美 — 布尔代数和搜索引擎索引"></a>第八章 简单之美 — 布尔代数和搜索引擎索引</h3><p>本章进入搜索引擎部分，布尔代数作为一切的基础，引出基本的搜索原理。</p>
+<blockquote>
+<p>布尔代数是电子计算机的基础，所有的数学和逻辑运算，全都能转换成二值的布尔运算。</p>
+<p>数学的发展实际上是不断地抽象和概括的过程，这些抽象了的方法看似离生活越来越远，但是它们最终能找到适用的地方，布尔代数便是如此</p>
+</blockquote>
+<p>搜索引擎搜索文献时，通过对输入的关键字进行判断，如果文献内容中包含该关键字，则该文献对应该关键字的赋值就为1，否则为0。</p>
+<p>而像百度/谷歌这种搜索引擎之所以能够实现快速检索，是因为其将网上存在的每一个网页都作为一个文献，然后对于我们已知的每一个词语作为关键字建立索引，可以理解为用一个哈希表存储一个关键字的索引，哈希表的每一位都代表一个网页，如果网页包含该关键字，值为1，否则为0。搜索引擎的索引本质上就是布尔运算。</p>
+<h3 id="第九章-图论和爬虫"><a href="#第九章-图论和爬虫" class="headerlink" title="第九章 图论和爬虫"></a>第九章 图论和爬虫</h3><p>本章主要涉及概念性知识。</p>
+<blockquote>
+<p>互联网搜索引擎在建立索引前需要用一个程序自动地将所有的网页下载到服务器上，这个程序称为网络爬虫，它的编写是基于离散数学中图论的原理。</p>
+</blockquote>
+<p>可以把每一个网页当做一个节点，把超链接当作连接网页的弧。网络爬虫从某一网页开始，爬取该网页，分析其中的链接，并访问这些链接，将访问过的链接记入哈希表中，避免重复访问。</p>
+<p>(是不是有种似曾相识的感觉，欧拉七桥问题。)</p>
+<p>广度优先 vs 深度优先？广度优先是理所应当的，爬虫应该先下载各大网站的首页再去下载它的子页，但是广度优先需要较长的握手时间（下载服务器与网站建立通讯的时间），所以广度优先和深度优先之间要做一定的权衡。</p>
+<p>解析源代码找到链接，对于某些脚本来说有难度。使用哈希表记录访问过的网页，数据量过大会带来一些问题，需要使用分布式存储。</p>
+<h3 id="第十章-PageRank-—-Google-的民主表决式网页排名技术"><a href="#第十章-PageRank-—-Google-的民主表决式网页排名技术" class="headerlink" title="第十章 PageRank — Google 的民主表决式网页排名技术"></a>第十章 PageRank — Google 的民主表决式网页排名技术</h3><p>网页排名技术PageRank是早期Google的杀手锏，它的出现使得网页搜索的质量上了一个大的台阶。它背后的原理是图论和线性代数的矩阵运算。</p>
+<blockquote>
+<p>对于一个特定的查询，搜索结果的排名取决于两组信息：关于网页的质量信息，以及这个查询与每个网页的相关性信息。</p>
+<p>衡量网页的质量的方法为 PageRank 算法。Pagerank 算法的核心是迭代计算每个网页的权重，然后通过权重的大小对网页排名。</p>
+</blockquote>
+<p>以前在选修课有留过 PageRank 算法应用的作业，所以对这个算法还是比较熟悉的。首先，对于所有的网页权重都赋初值，然后每迭代一次，更新网页权重数值。如此往复，网页的排名即会接近其真实值。这就是矩阵乘法问题，这个矩阵相当大。</p>
+<p>假定B=(b1,b2,…,bN)^T 是N个网站的排名，A为网页之间链接数目的矩阵，Bi = A*Bi-1，假定初始时B0=(1/N,1/N, … , 1/N)，进行迭代多次，最终得到网页排名Bi。因为A为稀疏矩阵，还可以进行简化。</p>
+<p>算法可以理解为：当一个网页被越多的网页引用时，它的权重越大；当一个网页的权重越大时，它引用的网页的权重也随之变大；当一个网页引用的网页越多时，被它引用的网页获得的权重就越小。</p>
+<h3 id="第十一章-如何确定网页和查询的相关性"><a href="#第十一章-如何确定网页和查询的相关性" class="headerlink" title="第十一章 如何确定网页和查询的相关性"></a>第十一章 如何确定网页和查询的相关性</h3><p>确定网页和查询的相关性是网页搜索的根本问题，其中确定查询中每个关键词的重要性有多高是关键。TF-IDF是目前通用的关键词重要性的度量，其背后的原理是信息论。</p>
+<p>这里采用 TF/IDF 来度量关键词的相关性。</p>
+<p>TF(单文本词汇频率) = 某个词在文章中出现次数/文章中总字数</p>
+<p>IDF(逆文本频率) = log(D/Dw) (D是全部网页数，Dw是包含该关键词的网页数)</p>
+<p>加权求和，网页与某一关键词的相关性 = TF1<em>IDF1 + TF2</em>IDF2 + … + TFN*IDFN</p>
+<p>IDF的概念就是一个特定条件下关键词的概率分布的相对熵，这里有扯回到了信息论。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    hwk603
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hwk603.com/数学之美-part1/" title="读书笔记-数学之美(part1)">http://hwk603.com/数学之美-part1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/book/" rel="tag"># book</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/基于-BosonNLP-实现自然语言交互的火车票查询/" rel="next" title="基于 BosonNLP 实现自然语言交互的火车票查询">
+                <i class="fa fa-chevron-left"></i> 基于 BosonNLP 实现自然语言交互的火车票查询
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/数学之美-part2/" rel="prev" title="读书笔记-数学之美(part2)">
+                读书笔记-数学之美(part2) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hwk603.png"
+                alt="hwk603" />
+            
+              <p class="site-author-name" itemprop="name">hwk603</p>
+              <p class="site-description motion-element" itemprop="description">一些关于坑的思考和疑难解决</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hwk603" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/hwk603" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/hwk603" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.quora.com/profile/Hwk603" target="_blank" title="Quora">
+                      
+                        <i class="fa fa-fw fa-pinterest"></i>Quora</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://scucyber.cn/" title="青梅网络部" target="_blank">青梅网络部</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://camixxx.win/" title="CamiXXX" target="_blank">CamiXXX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一章-文字和语言-vs-数字和信息"><span class="nav-number">1.</span> <span class="nav-text">第一章 文字和语言 vs 数字和信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二章-自然语言处理：从规则到统计"><span class="nav-number">2.</span> <span class="nav-text">第二章 自然语言处理：从规则到统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三章-统计语言模型"><span class="nav-number">3.</span> <span class="nav-text">第三章 统计语言模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四章-谈谈分词"><span class="nav-number">4.</span> <span class="nav-text">第四章 谈谈分词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五章-隐含马尔科夫模型"><span class="nav-number">5.</span> <span class="nav-text">第五章 隐含马尔科夫模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六章-信息的度量和作用"><span class="nav-number">6.</span> <span class="nav-text">第六章 信息的度量和作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七章-贾里尼克和现代语言处理"><span class="nav-number">7.</span> <span class="nav-text">第七章 贾里尼克和现代语言处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八章-简单之美-—-布尔代数和搜索引擎索引"><span class="nav-number">8.</span> <span class="nav-text">第八章 简单之美 — 布尔代数和搜索引擎索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第九章-图论和爬虫"><span class="nav-number">9.</span> <span class="nav-text">第九章 图论和爬虫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十章-PageRank-—-Google-的民主表决式网页排名技术"><span class="nav-number">10.</span> <span class="nav-text">第十章 PageRank — Google 的民主表决式网页排名技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十一章-如何确定网页和查询的相关性"><span class="nav-number">11.</span> <span class="nav-text">第十一章 如何确定网页和查询的相关性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2014 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hwk603</span>
+
+  
+  
+  <!--以下3行为一条竖线和Coding Page-->
+  <div class="powered-by">
+  </div>
+  <span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://hwk603.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://hwk603.com/数学之美-part1/';
+          this.page.identifier = '数学之美-part1/';
+          this.page.title = '读书笔记-数学之美(part1)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hwk603.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("O8CtzoV9ACq6kGNHKp8AIRnS-gzGzoHsz", "QG6x9FzwAdcwrKu4b93f06Bz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
