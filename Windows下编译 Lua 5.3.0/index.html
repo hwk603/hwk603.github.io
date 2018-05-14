@@ -89,17 +89,17 @@
 <meta property="og:site_name" content="One Piece">
 <meta property="og:description" content="最近想研究一下lua，平时常用的都是windows，所以原本打算使用lua for windows ，然而最新的版本却只有lua 5.1，再加上莫名其妙下载不了【墙的错】，所以决定在windows上自己编译一下lua源码。 ps.祝自己期末不挂科~ 系统：windows 10 编译器：Visual Studio 2015 源码：lua-5.3.0">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/lua-01-1.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/lua-01.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/lua-02.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/lua-03.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/lua-04.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/lua-05.png">
-<meta property="og:updated_time" content="2016-01-17T18:16:52.248Z">
+<meta property="og:image" content="https://odujipom3.qnssl.com/lua-01-1.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/lua-01.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/lua-02.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/lua-03.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/lua-04.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/lua-05.png">
+<meta property="og:updated_time" content="2018-05-14T11:29:31.782Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="compile Lua 5.3.0 for Windows">
 <meta name="twitter:description" content="最近想研究一下lua，平时常用的都是windows，所以原本打算使用lua for windows ，然而最新的版本却只有lua 5.1，再加上莫名其妙下载不了【墙的错】，所以决定在windows上自己编译一下lua源码。 ps.祝自己期末不挂科~ 系统：windows 10 编译器：Visual Studio 2015 源码：lua-5.3.0">
-<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/lua-01-1.png">
+<meta name="twitter:image" content="https://odujipom3.qnssl.com/lua-01-1.png">
 
 
 
@@ -457,16 +457,16 @@
 <li><p>打开Visual Studio Command prompt</p>
 </li>
 </ol>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/lua-01-1.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/lua-01-1.png" alt="此处输入图片的描述"></p>
 <p>然后cd至lua-5.3.0/src，运行以下命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cl /MD /O2 /c /DLUA_BUILD_AS_DLL *.c</div><div class="line">ren lua.obj lua.o</div><div class="line">ren luac.obj luac.o</div><div class="line">link /DLL /IMPLIB:lua5.3.0.lib /OUT:lua5.3.0.dll *.obj </div><div class="line">link /OUT:lua.exe lua.o lua5.3.0.lib </div><div class="line">lib /OUT:lua5.3.0-static.lib *.obj</div><div class="line">link /OUT:luac.exe luac.o lua5.3.0-static.lib</div></pre></td></tr></table></figure>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/lua-01.png" alt="此处输入图片的描述"></p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/lua-02.png" alt="此处输入图片的描述"></p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/lua-03.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/lua-01.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/lua-02.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/lua-03.png" alt="此处输入图片的描述"></p>
 <p>之后可以看到src目录下有了 lua.exe和luac.exe的解释器，以及 lua5.3.0.dll。</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/lua-04.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/lua-04.png" alt="此处输入图片的描述"></p>
 <p>在当前目录下运行一下lua命令，成功！【此后可以把D:/lua-5.3.0/src添加到环境变量，就可以在全局使用lua了】</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/lua-05.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/lua-05.png" alt="此处输入图片的描述"></p>
 
       
     </div>
@@ -609,7 +609,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -622,7 +622,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

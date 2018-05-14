@@ -89,15 +89,15 @@
 <meta property="og:site_name" content="One Piece">
 <meta property="og:description" content="一、实验说明1.1 简述在已有的火车票查询工具 iquery 的基础上，利用 BosonNLP 提供的中文语义分析接口，添加自然语言交互功能。 iquery 使用 Python3 编写，提供基于命令行各种信息查询。 BosonNLP 即玻森中文语义开放平台，提供中文自然语言分析云服务。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/images%202016-09-02%201472805831.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/images%202016-09-02%201472783889.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/image%2020160902.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/images%202016-09-02%201472783939.png">
-<meta property="og:updated_time" content="2016-09-04T14:10:43.305Z">
+<meta property="og:image" content="https://odujipom3.qnssl.com/images%202016-09-02%201472805831.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/images%202016-09-02%201472783889.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/image%2020160902.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/images%202016-09-02%201472783939.png">
+<meta property="og:updated_time" content="2018-05-14T11:29:31.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于 BosonNLP 实现自然语言交互的火车票查询">
 <meta name="twitter:description" content="一、实验说明1.1 简述在已有的火车票查询工具 iquery 的基础上，利用 BosonNLP 提供的中文语义分析接口，添加自然语言交互功能。 iquery 使用 Python3 编写，提供基于命令行各种信息查询。 BosonNLP 即玻森中文语义开放平台，提供中文自然语言分析云服务。">
-<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/images%202016-09-02%201472805831.png">
+<meta name="twitter:image" content="https://odujipom3.qnssl.com/images%202016-09-02%201472805831.png">
 
 
 
@@ -455,11 +455,11 @@
 <h3 id="2-1-安装-iquery"><a href="#2-1-安装-iquery" class="headerlink" title="2.1 安装 iquery"></a>2.1 安装 <code>iquery</code></h3><p>打开终端 <code>Xfce</code>，执行命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pip3 install iquery</div></pre></td></tr></table></figure>
 <p><code>iquery</code> 是一个集成了很多查询功能的工具，火车票查询只是其中之一。</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/images%202016-09-02%201472805831.png" alt=""></p>
+<p><img src="https://odujipom3.qnssl.com/images%202016-09-02%201472805831.png" alt=""></p>
 <p>使用 <code>iquery</code> 进行查询，必须严格遵守其输入格式：</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/images%202016-09-02%201472783889.png" alt=""></p>
+<p><img src="https://odujipom3.qnssl.com/images%202016-09-02%201472783889.png" alt=""></p>
 <h3 id="2-2-注册-BosonNLP"><a href="#2-2-注册-BosonNLP" class="headerlink" title="2.2 注册 BosonNLP"></a>2.2 注册 <code>BosonNLP</code></h3><p>访问 <code>BosonNLP</code> 官网 <code>http://bosonnlp.com/</code>，注册账号，获取 API 密钥：</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/image%2020160902.png" alt=""></p>
+<p><img src="https://odujipom3.qnssl.com/image%2020160902.png" alt=""></p>
 <h3 id="2-3-编码"><a href="#2-3-编码" class="headerlink" title="2.3 编码"></a>2.3 编码</h3><h4 id="2-3-1-安装依赖"><a href="#2-3-1-安装依赖" class="headerlink" title="2.3.1 安装依赖"></a>2.3.1 安装依赖</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pip3 install bosonnlp</div></pre></td></tr></table></figure>
 <p><code>bosonnlp</code> 是 <code>BosonNLP HTTP API</code> 封装库。</p>
 <h4 id="2-3-2-主程序"><a href="#2-3-2-主程序" class="headerlink" title="2.3.2 主程序"></a>2.3.2 主程序</h4><h5 id="a-导入模块："><a href="#a-导入模块：" class="headerlink" title="a. 导入模块："></a>a. 导入模块：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line"># six</div><div class="line">from distutils.log import warn as printf</div><div class="line">import sys</div><div class="line">from bosonnlp import BosonNLP</div><div class="line">from os.path import expanduser</div><div class="line">import os</div><div class="line">import collections</div><div class="line">import subprocess</div><div class="line">import datetime</div></pre></td></tr></table></figure>
@@ -472,7 +472,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python3 *.py 火车票查询语句</div></pre></td></tr></table></figure>
 <p>例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">python3 ibot.py 2016年9月十二号 成都到北京的车票</div><div class="line">python3 ibot.py 明天从成都到北京的车票</div><div class="line">python3 ibot.py 这周六从成都去北京出差，帮我看下车票</div><div class="line">python3 ibot.py 下周五离开成都去北京 查下车票</div><div class="line">python3 ibot.py 查一下成都去北京的车票，下周六</div></pre></td></tr></table></figure>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/images%202016-09-02%201472783939.png" alt=""></p>
+<p><img src="https://odujipom3.qnssl.com/images%202016-09-02%201472783939.png" alt=""></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
 <p><code>https://github.com/protream/iquery</code></p>
 <p><code>https://github.com/wwj718/ibot</code></p>
@@ -628,7 +628,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -641,7 +641,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

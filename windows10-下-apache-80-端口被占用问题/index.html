@@ -89,14 +89,14 @@
 <meta property="og:site_name" content="One Piece">
 <meta property="og:description" content="升级windows10后，总体使用感觉还是不错的。然而，今天启动apache的时候，突然发现，之前windows7下可以正常使用的apache突然无法启动了。刚开始以为是升级系统以后配置出错，但重装了apache后发现依然不行；然后怀疑是权限的问题，于是使用管理员身份的控制台去调用命令net start Apache2.4，结果还是无法打开。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/Apacheerro1.gif">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/pid.JPG">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/localhost.JPG">
-<meta property="og:updated_time" content="2015-09-12T10:34:28.125Z">
+<meta property="og:image" content="https://odujipom3.qnssl.com/Apacheerro1.gif">
+<meta property="og:image" content="https://odujipom3.qnssl.com/pid.JPG">
+<meta property="og:image" content="https://odujipom3.qnssl.com/localhost.JPG">
+<meta property="og:updated_time" content="2018-05-14T11:29:31.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows 10 下 apache 80 端口被占用问题">
 <meta name="twitter:description" content="升级windows10后，总体使用感觉还是不错的。然而，今天启动apache的时候，突然发现，之前windows7下可以正常使用的apache突然无法启动了。刚开始以为是升级系统以后配置出错，但重装了apache后发现依然不行；然后怀疑是权限的问题，于是使用管理员身份的控制台去调用命令net start Apache2.4，结果还是无法打开。">
-<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/Apacheerro1.gif">
+<meta name="twitter:image" content="https://odujipom3.qnssl.com/Apacheerro1.gif">
 
 
 
@@ -444,11 +444,11 @@
         <p>升级windows10后，总体使用感觉还是不错的。然而，今天启动apache的时候，突然发现，之前windows7下可以正常使用的apache突然无法启动了。刚开始以为是升级系统以后配置出错，但重装了apache后发现依然不行；然后怀疑是权限的问题，于是使用管理员身份的控制台去调用命令<code>net start Apache2.4</code>，结果还是无法打开。</p>
 <a id="more"></a>
 <p>手动启动服务报错：</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/Apacheerro1.gif" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/Apacheerro1.gif" alt="此处输入图片的描述"></p>
 <p>我想：干脆执行一下httpd好了。在Apache安装目录的<code>httpd.exe</code>的目录下，执行httpd命令。结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(OS 10013)以一种访问权限不允许的方式做了一个访问套接字的尝试。 : AH00072: make_sock: could not bind to address 127.0.0.1:80</div><div class="line">AH00451: no listening sockets available, shutting down</div><div class="line">AH00015: Unable to open logs</div></pre></td></tr></table></figure>
 <p>套接字绑定错误，这下可以确定是Apache的80端口被占用了。然后使用命令 <code>netstat -ano</code> 来查看一下到底是哪个程序占用了80端口:</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/pid.JPG" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/pid.JPG" alt="此处输入图片的描述"></p>
 <p>可以看到80端口被PID为4的System进程占用。什么鬼？！这时候千万不要尝试终结此进程，会蓝屏，【别问我怎么知道的】。</p>
 <p>网上找到的解除System进程对80端口占用的方法：</p>
 <ul>
@@ -462,7 +462,7 @@
 </li>
 </ul>
 <p>浏览器输入<code>http://127.0.0.1</code>，成功！</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/localhost.JPG" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/localhost.JPG" alt="此处输入图片的描述"></p>
 
       
     </div>
@@ -605,7 +605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -618,7 +618,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

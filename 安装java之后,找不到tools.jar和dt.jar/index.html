@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="One Piece">
 <meta property="og:description" content="可能很多初学者和我一样，在初次接触java开发的过程中，急于看到最终的结果，匆匆在网上下载了jdk之后，点击安装，结果等安装完，开始配置classpath时，发现jdk/lib下面根本就没有tools.jar和dt.jar 这两个包。我在首次遇到这样的问题时，也以为是下载的包有问题，于是重新下载了之后再安装，结果还是老样子。 问题的根本原因，我们没有弄清两个概念：JDK和JRE。JDK是java开">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/java-01.png">
-<meta property="og:updated_time" content="2015-10-16T17:28:06.542Z">
+<meta property="og:image" content="https://odujipom3.qnssl.com/java-01.png">
+<meta property="og:updated_time" content="2018-05-14T11:29:31.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安装java之后,找不到tools.jar和dt.jar">
 <meta name="twitter:description" content="可能很多初学者和我一样，在初次接触java开发的过程中，急于看到最终的结果，匆匆在网上下载了jdk之后，点击安装，结果等安装完，开始配置classpath时，发现jdk/lib下面根本就没有tools.jar和dt.jar 这两个包。我在首次遇到这样的问题时，也以为是下载的包有问题，于是重新下载了之后再安装，结果还是老样子。 问题的根本原因，我们没有弄清两个概念：JDK和JRE。JDK是java开">
-<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/java-01.png">
+<meta name="twitter:image" content="https://odujipom3.qnssl.com/java-01.png">
 
 
 
@@ -443,7 +443,7 @@
 <p>问题的根本原因，我们没有弄清两个概念：JDK和JRE。JDK是java开发核心组件，是用来编译解释java程序的核心组件，包含java <code>compile（javac）</code>面向的是java开发人员。JRE是java运行环境。Java一种是跨平台语言，一次编译，多次在多台电脑上运行，这种机制主要依靠JVM实现。java程序编译得到的是中间字节码，中间字节码是不能再机器上直接运行的，必须要经过JVM把中间字节码转换为机器语言，事实上，JRE中主要包含的就是JVM。JRE是面向的是java程序用户。</p>
 <p>搞清楚了JDK和JRE之后，在安装java相关的程序要当心了。在安装java包时，会遇到两次路径选择，第一次时选择jdk的路径，第二次是选择JRE的路径，如果把所选择的jdk的路径和jre的路径相同，那么jre包中的内容会覆盖掉jdk中的内容，因此，在你安装完成之后，会发现找不到tools.jar和dt.jar包。所以，在安装的过程中，jdk和jre要安装在不同的文件下，比如我的jdk安装在<code>D:\java\jdk</code>下面，jre安装在<code>D:\java\jre</code>下面。安装好之后，path和classpath的配置时针对JDK的，可以配置为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Path=&quot;D:\java\jdk\bin;&quot;</div><div class="line">classpath=&quot;D:\java\jdk\lib\dt.jar;D:\java\jdk\lib\tools.jar;&quot;</div></pre></td></tr></table></figure>
-<p>然后在cmd中输入<code>javac</code>，看到java命令帮助，表明java相关软件已经安装成功。<br><img src="http://7i7k6x.com1.z0.glb.clouddn.com/java-01.png" alt="此处输入图片的描述"></p>
+<p>然后在cmd中输入<code>javac</code>，看到java命令帮助，表明java相关软件已经安装成功。<br><img src="https://odujipom3.qnssl.com/java-01.png" alt="此处输入图片的描述"></p>
 
       
     </div>
@@ -586,7 +586,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -599,7 +599,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

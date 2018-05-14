@@ -89,13 +89,13 @@
 <meta property="og:site_name" content="One Piece">
 <meta property="og:description" content="更新phpMyAdmin后，每次登录，在其下方都会出现“配置文件现在需要一个短语密码。”的提示：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/phpmyadmin_Image%202.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/phpmyadminImage%204.png">
-<meta property="og:updated_time" content="2016-02-23T05:29:48.426Z">
+<meta property="og:image" content="https://odujipom3.qnssl.com/phpmyadmin_Image%202.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/phpmyadminImage%204.png">
+<meta property="og:updated_time" content="2018-05-14T11:29:31.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="phpMyAdmin配置文件现在需要一个短语密码">
 <meta name="twitter:description" content="更新phpMyAdmin后，每次登录，在其下方都会出现“配置文件现在需要一个短语密码。”的提示：">
-<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/phpmyadmin_Image%202.png">
+<meta name="twitter:image" content="https://odujipom3.qnssl.com/phpmyadmin_Image%202.png">
 
 
 
@@ -441,7 +441,7 @@
 
       
         <p>更新phpMyAdmin后，每次登录，在其下方都会出现“配置文件现在需要一个短语密码。”的提示：</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/phpmyadmin_Image%202.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/phpmyadmin_Image%202.png" alt="此处输入图片的描述"></p>
 <a id="more"></a>
 <p>会出现这个问题，是在配置phpmyadmin填写认证方法时，即下面这行：</p>
 <p><code>$cfg[‘Servers’][$i][‘auth_type’] = ‘cookie&#39;;</code></p>
@@ -457,7 +457,7 @@
 <p><strong>解决方法：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> 1、在phpMyAdmin/libraries/config.default.php,102行</div><div class="line">    找到$cfg[&apos;blowfish_secret&apos;] = &apos;&apos;; </div><div class="line">    改成 $cfg[&apos;blowfish_secret&apos;] = &apos;任意字符&apos;; </div><div class="line"></div><div class="line">2、在phpMyAdmin目录中，打开config.sample.inc.php，17行</div><div class="line">   找到$cfg[&apos;blowfish_secret&apos;] = &apos;&apos;; </div><div class="line">   改成 $cfg[&apos;blowfish_secret&apos;] = &apos;任意字符&apos;;</div></pre></td></tr></table></figure></p>
 <p>这个密码用于Cookies的加密，以免多个PhpMyAdmin或者和其他程序共用Cookies时搞混。</p>
 <p>之后，刷新，“配置文件现在需要一个短语密码。”的提示就不遇见了。</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/phpmyadminImage%204.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/phpmyadminImage%204.png" alt="此处输入图片的描述"></p>
 
       
     </div>
@@ -600,7 +600,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -613,7 +613,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -89,15 +89,15 @@
 <meta property="og:site_name" content="One Piece">
 <meta property="og:description" content="nodePPT 是@三水清基于nodejs来写的网页PPT，之前的版本仅仅是html语法，现在可以支持通过markdown来写网页ppt了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-01.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-02.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-03.png">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-04.png">
-<meta property="og:updated_time" content="2015-10-19T15:27:50.146Z">
+<meta property="og:image" content="https://odujipom3.qnssl.com/nodeppt-01.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/nodeppt-02.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/nodeppt-03.png">
+<meta property="og:image" content="https://odujipom3.qnssl.com/nodeppt-04.png">
+<meta property="og:updated_time" content="2018-05-14T11:29:31.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodeppt：使用markdown语法来写网页ppt">
 <meta name="twitter:description" content="nodePPT 是@三水清基于nodejs来写的网页PPT，之前的版本仅仅是html语法，现在可以支持通过markdown来写网页ppt了。">
-<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-01.png">
+<meta name="twitter:image" content="https://odujipom3.qnssl.com/nodeppt-01.png">
 
 
 
@@ -478,10 +478,10 @@ zoomout cards
 <h3 id="pdf版"><a href="#pdf版" class="headerlink" title="pdf版"></a>pdf版</h3><p>需要安装<a href="http://phantomjs.org/" target="_blank" rel="external">phantomJS</a>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 安装phantomjs，如果安装了，请忽略</div><div class="line">npm install -g phantomjs</div><div class="line"># 启动nodeppt server</div><div class="line">nodeppt start</div><div class="line"># 导出文件</div><div class="line">nodeppt pdf http://127.0.0.1:8080/md/demo.md -o a.pdf</div></pre></td></tr></table></figure>
 <h3 id="html版"><a href="#html版" class="headerlink" title="html版"></a>html版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 使用generate命令</div><div class="line">nodeppt generate filepath</div><div class="line"># 导出全部，包括nodeppt的js、img和css文件夹</div><div class="line"># 默认导出在publish文件夹</div><div class="line">nodeppt generate ./ppts/demo.md -a</div><div class="line"># 指定导出文件夹</div><div class="line">nodeppt generate ./ppts/demo.md -a -o output/path</div></pre></td></tr></table></figure>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-01.png" alt="此处输入图片的描述"></p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-02.png" alt="此处输入图片的描述"></p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-03.png" alt="此处输入图片的描述"></p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/nodeppt-04.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/nodeppt-01.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/nodeppt-02.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/nodeppt-03.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/nodeppt-04.png" alt="此处输入图片的描述"></p>
 <p>导出目录下所有ppt，并且生成ppt list首页：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nodeppt path -o output/path -a</div></pre></td></tr></table></figure></p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>类似下面的语法：(更多用法查看ppts/demo.md文件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">title: nodeppt markdown 演示</div><div class="line">speaker: Theo Wang</div><div class="line">url: https://github.com/ksky521/nodePPT</div><div class="line">transition: zoomin</div><div class="line"></div><div class="line">[slide]</div><div class="line"></div><div class="line"># 封面样式</div><div class="line">## h1是作为封面用的，内部的都用h2</div><div class="line"></div><div class="line">[slide style=&quot;background-image:url(&apos;/img/bg1.png&apos;)&quot;]</div><div class="line"></div><div class="line"># 背景图片 &#123;:&amp;.flexbox.vleft&#125;</div><div class="line">## 使用方法：[slide style=&quot;background-image:url(&apos;/img/bg1.png&apos;)&quot;]</div><div class="line"></div><div class="line">[slide]</div><div class="line"></div><div class="line">## 主页面样式</div><div class="line">### ----是上下分界线</div><div class="line">----</div><div class="line"></div><div class="line">nodeppt是基于nodejs写的支持 **Markdown!** 语法的网页PPT</div><div class="line"></div><div class="line">nodeppt：https://github.com/ksky521/nodePPT</div><div class="line"></div><div class="line">[slide]</div><div class="line"></div><div class="line">什么？这些功能还不够用？</div><div class="line"></div><div class="line">极客模式：查看源码的nodeppt.js，相信你会找到牛逼的手机互动（摇一摇换页）功能</div><div class="line"></div><div class="line">查看项目目录ppts获取更多帮助信息</div></pre></td></tr></table></figure></p>
 <p>更多demo，查看<code>ppts</code>目录的demo</p>
@@ -638,7 +638,7 @@ zoomout cards
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -651,7 +651,7 @@ zoomout cards
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

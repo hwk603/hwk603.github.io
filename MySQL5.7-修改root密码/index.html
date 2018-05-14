@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="One Piece">
 <meta property="og:description" content="版本更新，原来user数据库里的password字段已经变更为authentication_string。 同样因为版本更新缘故，之前网上的很多教程都不适用了，甚至连官网的文档也不是能够顺利操作的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160223130414.png">
-<meta property="og:updated_time" content="2016-02-23T05:30:13.902Z">
+<meta property="og:image" content="https://odujipom3.qnssl.com/QQ%E6%88%AA%E5%9B%BE20160223130414.png">
+<meta property="og:updated_time" content="2018-05-14T11:29:31.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql 5.7 修改root密码">
 <meta name="twitter:description" content="版本更新，原来user数据库里的password字段已经变更为authentication_string。 同样因为版本更新缘故，之前网上的很多教程都不适用了，甚至连官网的文档也不是能够顺利操作的。">
-<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160223130414.png">
+<meta name="twitter:image" content="https://odujipom3.qnssl.com/QQ%E6%88%AA%E5%9B%BE20160223130414.png">
 
 
 
@@ -443,7 +443,7 @@
 <p>同样因为版本更新缘故，之前网上的很多教程都不适用了，甚至连官网的文档也不是能够顺利操作的。</p>
 <a id="more"></a>
 <p>首先如果 <code>MySQL</code>正在运行，首先要将这个进程关掉。</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160223130414.png" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/QQ%E6%88%AA%E5%9B%BE20160223130414.png" alt="此处输入图片的描述"></p>
 <p>之后在命令行中进行如下操作：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">mysqld_safe --skip-grant-tables &amp;；</div><div class="line">//启动mysql时不启动grant-tables授权表，也就是说可以无须密码登录。</div><div class="line">mysql -u root</div><div class="line">//登录mysql。</div><div class="line">use mysql;</div><div class="line">//进入mysql数据库。</div><div class="line">UPDATE user SET authentication_string=PASSWORD(&quot;新密码&quot;) WHERE User=&apos;root&apos;;</div><div class="line">//修改root账户密码。</div><div class="line">FLUSH PRIVILEGES;</div><div class="line">//刷新MySQL的系统权限相关表，否则会出现拒绝访问。</div><div class="line">quit;</div><div class="line">//退出mysql。</div></pre></td></tr></table></figure>
 <p>之后，就可以用修改后的新密码登录mysql了。</p>
@@ -589,7 +589,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -602,7 +602,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

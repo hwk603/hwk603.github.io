@@ -89,15 +89,15 @@
 <meta property="og:site_name" content="One Piece">
 <meta property="og:description" content="当向 MySQL 数据库查看或者插入一条带有中文的数据出现乱码时，可以使用语句 show variables like &amp;#39;character%&amp;#39;; 来查看当前数据库的相关编码集。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/mysql.PNG">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/mysql-02.PNG">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/mysql-04.PNG">
-<meta property="og:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/mysql-05.PNG">
-<meta property="og:updated_time" content="2015-09-26T06:03:16.447Z">
+<meta property="og:image" content="https://odujipom3.qnssl.com/mysql.PNG">
+<meta property="og:image" content="https://odujipom3.qnssl.com/mysql-02.PNG">
+<meta property="og:image" content="https://odujipom3.qnssl.com/mysql-04.PNG">
+<meta property="og:image" content="https://odujipom3.qnssl.com/mysql-05.PNG">
+<meta property="og:updated_time" content="2018-05-14T11:29:31.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL中文乱码问题的解决">
 <meta name="twitter:description" content="当向 MySQL 数据库查看或者插入一条带有中文的数据出现乱码时，可以使用语句 show variables like &amp;#39;character%&amp;#39;; 来查看当前数据库的相关编码集。">
-<meta name="twitter:image" content="http://7i7k6x.com1.z0.glb.clouddn.com/mysql.PNG">
+<meta name="twitter:image" content="https://odujipom3.qnssl.com/mysql.PNG">
 
 
 
@@ -444,7 +444,7 @@
       
         <p>当向 MySQL 数据库查看或者插入一条带有中文的数据出现乱码时，可以使用语句 <code>show variables like &#39;character%&#39;;</code> 来查看当前数据库的相关编码集。</p>
 <a id="more"></a>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/mysql.PNG" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/mysql.PNG" alt="此处输入图片的描述"></p>
 <pre><code>client        为客户端使用的字符集。
 connection    为连接数据库的字符集设置类型，如果程序没有指明连接数据库使用的字符集类型则按照服务器端默认的字符集设置。
 database    为数据库服务器中某个库使用的字符集设定，如果建库时没有指明，将使用服务器安装时指定的字符集设置。
@@ -455,14 +455,14 @@ system        为数据库系统使用的字符集设定。
 <p>而当前 CMD 客户端的编码格式无法修改，所以只能修改<code>connection、 client、results</code>的编码集来告知服务器端当前插入的数据采用GBK编码，而服务器的数据库虽然是采用UTF-8编码，但却可以识别通知服务器端的GBK编码数据并将其自动转换为UTF-8进行存储。可以使用如下语句来快速设置与客户端相关的编码集：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set names gbk;</div></pre></td></tr></table></figure>
 <p>设置完成后即可解决客户端插入数据或显示数据的乱码问题了，但我们马上会发现这种形式的设置只会在当前窗口有效，当窗口关闭后重新打开CMD客户端的时候又会出现乱码问题；那么，如何进行一个一劳永逸的设置呢？在MySQL的安装目录下有一个<code>my.ini</code>配置文件，通过修改这个配置文件可以一劳永逸的解决乱码问题。</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/mysql-02.PNG" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/mysql-02.PNG" alt="此处输入图片的描述"></p>
 <p>在这个配置文件中<code>[mysql]</code>与客户端配置相关，<code>[mysqld]</code>与服务器配置相关。默认配置如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[mysql]</div><div class="line">default-character-set=utf8</div><div class="line">[mysqld]</div><div class="line">character-set-server=utf8</div></pre></td></tr></table></figure>
 <p>这时只需要将下的默认编码<code>default-character-set=utf8</code>改为 <code>default-character-set=gbk</code> ，重新启动 MySQL 服务即可。</p>
 <p>重新进行查询，显示成功：</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/mysql-04.PNG" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/mysql-04.PNG" alt="此处输入图片的描述"></p>
 <p>此时的数据库的相关编码集：</p>
-<p><img src="http://7i7k6x.com1.z0.glb.clouddn.com/mysql-05.PNG" alt="此处输入图片的描述"></p>
+<p><img src="https://odujipom3.qnssl.com/mysql-05.PNG" alt="此处输入图片的描述"></p>
 
       
     </div>
@@ -605,7 +605,7 @@ system        为数据库系统使用的字符集设定。
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -618,7 +618,7 @@ system        为数据库系统使用的字符集设定。
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
